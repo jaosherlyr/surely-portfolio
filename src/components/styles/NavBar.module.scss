@@ -5,26 +5,7 @@
     align-items: center;
 
     a {
-        text-decoration: none;
         margin: 0 40px;
-        font-size: 17px;
-        color: $color-primary;
-        transition: transform 0.2s ease-in-out;
-
-        &:hover {
-            color: $color-secondary;
-            transform: translateY(-2px);
-        }
-
-        &.active {
-            color: $color-black;
-            transform: none;
-            cursor: default;
-
-            &.dark {
-                color: $color-white;
-            }
-        }
     }
 }
 

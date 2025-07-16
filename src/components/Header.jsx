@@ -9,8 +9,8 @@ export default function Header() {
 
     return (
         <header className={`${styles.header} ${theme === 'dark' ? styles.dark : ''}`}>
-        <Logo />
-        <NavBar />
+            <Logo />
+            <NavBar />
         </header>
   );
 }

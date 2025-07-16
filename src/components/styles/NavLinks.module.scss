@@ -1,0 +1,23 @@
+@use '../../styles/variable.scss' as *;
+
+a {
+    text-decoration: none;
+    font-size: 17px;
+    color: $color-primary;
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+            color: $color-secondary;
+            transform: translateY(-2px);
+        }
+
+    &.active {
+        color: $color-black;
+        transform: none;
+        cursor: default;
+
+        &.dark {
+            color: $color-white;
+        }
+    }
+}

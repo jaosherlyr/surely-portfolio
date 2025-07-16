@@ -13,5 +13,5 @@ export default function ThemeIcon() {
     dispatch(toggleTheme());
   };
 
-  return <Icon onClick={handleToggle} className={styles.Icon} />;
+  return <Icon onClick={handleToggle} className={`${styles.Icon} ${theme === 'dark' ? styles.dark : ''}`} />;
 }

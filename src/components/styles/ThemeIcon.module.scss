@@ -6,6 +6,10 @@
     color: $color-darker;
     transition: transform 0.2s ease-in-out;
 
+    &.dark {
+        color: $color-lighter;
+    }
+
     &:hover {
         color: $color-secondary;
         transform: translateY(-2px);

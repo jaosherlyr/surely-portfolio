@@ -1,0 +1,41 @@
+@use '../../styles/variable.scss' as *;
+
+.overlay {
+  position: fixed;
+  width: 100vh;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(200px);
+}
+
+.sidebar {
+  position: fixed;
+  right: 0;
+  width: 60%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $color-lighter;
+
+  &.dark {
+    background-color: $color-darker;
+  }
+
+  a {
+    align-self: center;
+    margin: 20px 0;
+  }
+}
+
+.closeIcon {
+  font-size: 27px;
+  margin-right: auto;
+  padding: 20px;
+}
+
+@media (min-width: $breakpoint-md) {
+  .sidebar, .overlay {
+    display: none;
+  }
+}
