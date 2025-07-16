@@ -2,14 +2,16 @@
 
 .overlay {
   position: fixed;
+  top: 0;
   width: 100vh;
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(200px);
+  backdrop-filter: blur(10px);
 }
 
 .sidebar {
   position: fixed;
+  top: 0;
   right: 0;
   width: 60%;
   height: 100vh;

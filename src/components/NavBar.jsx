@@ -1,14 +1,10 @@
-import { useState } from 'react';
 import { IoMenu } from "react-icons/io5";
 
 import ThemeIcon from './ThemeIcon';
 import NavLinks from './NavLinks';
-import Sidebar from './Sidebar';
 import styles from './styles/NavBar.module.scss';
 
-export default function NavBar() {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-
+export default function NavBar({ onOpenSidebar }) {
   return (
     <>
       <nav className={styles.navbar}>
@@ -18,10 +14,8 @@ export default function NavBar() {
 
       <IoMenu
         className={styles.menuIcon}
-        onClick={() => setSidebarOpen(true)}
+        onClick={onOpenSidebar}
       />
-
-      <Sidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
     </>
   );
 }
