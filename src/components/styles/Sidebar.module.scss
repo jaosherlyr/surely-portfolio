@@ -35,9 +35,3 @@
   margin-right: auto;
   padding: 20px;
 }
-
-@media (min-width: $breakpoint-md) {
-  .sidebar, .overlay {
-    display: none;
-  }
-}

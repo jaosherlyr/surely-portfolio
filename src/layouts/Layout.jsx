@@ -10,6 +10,17 @@ export default function Layout() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   useEffect(() => {
+  const handleResize = () => {
+    if (window.innerWidth >= 768) {
+      setSidebarOpen(false);
+    }
+  };
+
+  window.addEventListener('resize', handleResize);
+  return () => window.removeEventListener('resize', handleResize);
+}, []);
+
+  useEffect(() => {
     document.body.className = theme;
   }, [theme]);
 

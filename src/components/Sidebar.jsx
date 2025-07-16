@@ -15,7 +15,7 @@ export default function Sidebar({ open, onClose }) {
       <div className={styles.overlay} onClick={onClose} />
       <div className={`${styles.sidebar} ${theme === 'dark' ? styles.dark : ''}`}>
         <IoClose className={styles.closeIcon} onClick={onClose} />
-        <NavLinks/>
+        <NavLinks onClick={onClose}/>
         <ThemeIcon />
       </div>
     </>
