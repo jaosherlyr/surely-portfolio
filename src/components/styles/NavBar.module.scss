@@ -1,11 +1,53 @@
+@use '../../styles/variable.scss' as *;
+
 .navbar {
     display: flex;
     align-items: center;
 
-    NavLink, a {
+    a {
         text-decoration: none;
-        margin: 0 50px;
-        font-size: 20px;
-        color: red;
+        margin: 0 40px;
+        font-size: 17px;
+        color: $color-primary;
+        transition: transform 0.2s ease-in-out;
+
+        &:hover {
+            color: $color-secondary;
+            transform: translateY(-2px);
+        }
+
+        &.active {
+            color: $color-black;
+            transform: none;
+            cursor: default;
+
+            &.dark {
+                color: $color-white;
+            }
+        }
+    }
+}
+
+.menuIcon {
+        display: none;
+
+}
+
+@media (max-width: $breakpoint-md) {
+    .navbar {
+        display: none;
+    }
+
+    .menuIcon {
+        display: flex;
+        font-size: 27px;
+        margin: 3vh;
+        align-self: center;
+        transition: transform 0.2s ease-in-out;
+
+        &:hover {
+            color: $color-secondary;
+            transform: translateY(-2px);
+        }
     }
 }

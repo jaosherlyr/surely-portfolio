@@ -5,13 +5,24 @@
     align-items: center;
 
     img {
-        width: 70px;
-        margin: 2vh;
+        width: 55px;
+        margin: 3vh;
     }
 
     span {
-        font-size: 45px;
+        font-size: 25px;
         font-family: $font-secondary;
         letter-spacing: 2vh;
+        color: $color-darker;
+
+        &.dark {
+            color: $color-lighter;
+        }
+    }
+}
+
+@media (max-width: $breakpoint-md) {
+    span {
+        display: none;
     }
 }

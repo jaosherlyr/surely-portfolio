@@ -1,4 +1,13 @@
+@use '../../styles/variable.scss' as *;
+
 .Icon {
-    font-size: 35px;
-    margin: 2vh;
+    font-size: 27px;
+    margin: 3vh;
+    color: $color-darker;
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+        color: $color-secondary;
+        transform: translateY(-2px);
+    }
 }

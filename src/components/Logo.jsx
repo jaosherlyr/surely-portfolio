@@ -10,7 +10,7 @@ export default function Logo() {
     return (
         <div className={styles.logo}>
             <img src={`${theme === 'dark' ? logoDark : logoLight}`} alt="Logo" />
-            <span>JAO</span>
+            <span className={`${theme === 'dark' ? styles.dark : ''}`}>JAO</span>
         </div>
     );
 }
