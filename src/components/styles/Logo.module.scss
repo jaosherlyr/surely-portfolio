@@ -1,0 +1,17 @@
+@use '../../styles/variable.scss' as *;
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    img {
+        width: 70px;
+        margin: 2vh;
+    }
+
+    span {
+        font-size: 45px;
+        font-family: $font-secondary;
+        letter-spacing: 2vh;
+    }
+}

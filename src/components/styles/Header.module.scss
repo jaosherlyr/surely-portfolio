@@ -1,0 +1,23 @@
+@use '../../styles/variable.scss' as *;
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    background: linear-gradient(
+        135deg,
+        rgba($color-white, 1),  
+        rgba($color-lighter, 1)
+    );
+    backdrop-filter: blur(100px);
+
+    &.dark {
+        background: linear-gradient(
+            135deg,
+            rgba($color-darker, 1),  
+            rgba($color-black, 1)
+        );
+        backdrop-filter: blur(100px);
+    }
+}

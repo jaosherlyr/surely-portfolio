@@ -1,0 +1,23 @@
+@use './variable.scss' as *;
+
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: $font-primary;
+
+    background: linear-gradient(
+        135deg,
+        rgba($color-white, 1),  
+        rgba($color-lighter, 1)
+    );
+    color: $color-black;
+
+    &.dark {
+        background: linear-gradient(
+          135deg,
+          rgba($color-darker, 1),  
+          rgba($color-black, 1),
+        );
+        color: $color-white;
+    } 
+}

@@ -1,0 +1,10 @@
+.navbar {
+    display: flex;
+    align-items: center;
+
+    NavLink, a {
+        text-decoration: none;
+        margin: 0 50px;
+        font-size: 20px;
+    }
+}
