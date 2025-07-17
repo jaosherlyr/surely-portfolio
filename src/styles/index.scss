@@ -1,8 +1,11 @@
 @use './variable.scss' as *;
 
+html {
+    min-height: 100%;
+}
+
 body {
     margin: 0;
-    height: 100%;
     font-family: $font-primary;
 
     background: linear-gradient(
