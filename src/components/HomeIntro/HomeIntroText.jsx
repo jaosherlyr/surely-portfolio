@@ -1,5 +1,33 @@
+import { useSelector } from 'react-redux';
+
+import styles from '../styles/HomeIntroText.module.scss';
+
 export default function HomeIntroText() {
+    const theme = useSelector((state) => state.theme.mode);
+    const textTheme = theme === 'dark' ? styles.dark : '';
+
     return (
-        <div>Home Intro Text</div>
+        <div className={`${styles.IntroText} ${textTheme}`}>
+            <p className={`${styles.introHeading} ${textTheme}`}>
+                Hi! I am
+                <span className={`${styles.name} ${textTheme}`}>
+                    Sherly R. Jao
+                </span>
+            </p>
+
+            <p className={`${styles.introSubheading} ${textTheme}`}>
+                Artist | Web Developer & Designer
+            </p>
+
+            <p>
+                I code and I draw, and I'm from the 
+                <strong>
+                    Philippines 🇵🇭
+                </strong> 
+
+                <br/>
+                Just trying my best to navigate life with the skills I have.
+            </p>
+        </div>
     );
 }

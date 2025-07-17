@@ -1,0 +1,27 @@
+@use '../../styles/variable.scss' as *;
+
+.IntroText {
+    margin: 0 50px;
+    justify-items: center;
+
+    .introHeading {
+        font-size: 50px;
+        margin: 0;
+
+        .name {
+            font-family: $font-secondary;
+            color: $color-primary;
+            letter-spacing: 7px;
+            margin-left: 30px;
+
+            &.dark {
+                color: $color-secondary;
+            }
+        }
+    }
+
+    .introSubheading {
+        color: $color-lighter;
+        letter-spacing: 10px;
+    }
+}
