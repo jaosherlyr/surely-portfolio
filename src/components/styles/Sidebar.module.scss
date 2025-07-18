@@ -7,6 +7,7 @@
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10px);
+  z-index: 1;
 }
 
 .sidebar {
@@ -19,6 +20,7 @@
   flex-direction: column;
   align-items: center;
   background-color: $color-lighter;
+  z-index: 2;
 
   &.dark {
     background-color: $color-darker;
