@@ -9,7 +9,7 @@
         margin: 3vh;
     }
 
-    span {
+    .logoText {
         font-size: 25px;
         font-family: $font-secondary;
         letter-spacing: 2vh;
@@ -22,7 +22,7 @@
 }
 
 @media (max-width: $breakpoint-md) {
-    span {
+    .logoText {
         display: none;
     }
 }

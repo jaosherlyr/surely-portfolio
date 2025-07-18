@@ -10,7 +10,7 @@ export default function HomeIntroText() {
         <div className={`${styles.IntroText} ${textTheme}`}>
             <p className={`${styles.introHeading} ${textTheme}`}>
                 Hi! I am
-                <span className={`${styles.name} ${textTheme}`}>
+                <span className={`${styles.name} ${textTheme} whitespace-nowrap`}>
                     Sherly R. Jao
                 </span>
             </p>
@@ -19,7 +19,7 @@ export default function HomeIntroText() {
                 Artist | Web Developer & Designer
             </p>
 
-            <p>
+            <p className={`${styles.text} ${textTheme}`}>
                 I code and I draw, and I'm from the 
                 <strong>
                     Philippines 🇵🇭

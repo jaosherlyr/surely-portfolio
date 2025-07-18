@@ -4,6 +4,9 @@
     display: flex;
     justify-self: center;
     align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
 }
 
 //TEMP 
@@ -12,4 +15,11 @@ h2 {
     justify-self: center;
     height: 1000px;
     background-color: red;
+}
+
+//RESPONSIVE
+@media (max-width: $breakpoint-lg) {
+    .HomeIntro {
+        justify-content: center;
+    }
 }

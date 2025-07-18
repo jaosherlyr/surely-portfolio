@@ -7,21 +7,33 @@
     .introHeading {
         font-size: 50px;
         margin: 0;
+        letter-spacing: 3px;
 
         .name {
             font-family: $font-secondary;
             color: $color-primary;
             letter-spacing: 7px;
             margin-left: 30px;
-
-            &.dark {
-                color: $color-secondary;
-            }
         }
     }
 
     .introSubheading {
         color: $color-lighter;
         letter-spacing: 10px;
+    }
+
+    .text {
+        text-align: center;
+
+        strong {
+            letter-spacing: 2px;
+            margin-left: 10px;
+            font-family: $font-secondary;
+        }
+    }
+}
+
+@media (max-width: $breakpoint-lg) {
+    .IntroText {
     }
 }
