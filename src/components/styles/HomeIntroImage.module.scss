@@ -2,8 +2,8 @@
 
 .IntroImage {
   position: relative;
-  width: 60vh;
-  height: 60vh;
+  width: 500px;
+  height: 500px;
   aspect-ratio: 1/1;
 
     .rotateText {
@@ -38,8 +38,8 @@
 //RESPONSIVE
 @media (max-width: $breakpoint-md) {
   .IntroImage {
-    width: 50vh;
-    height: 50vh;
+    width: 400px;
+    height: 400px;
 
     .profile {
       width: 250px;
