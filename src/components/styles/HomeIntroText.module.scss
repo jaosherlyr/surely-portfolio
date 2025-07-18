@@ -8,12 +8,17 @@
         font-size: 50px;
         margin: 0;
         letter-spacing: 3px;
+        text-align: center;
 
         .name {
             font-family: $font-secondary;
             color: $color-primary;
             letter-spacing: 7px;
             margin-left: 30px;
+        }
+
+        .greeting, .name {
+            display: inline;
         }
     }
 
@@ -33,7 +38,34 @@
     }
 }
 
-@media (max-width: $breakpoint-lg) {
+@media (max-width: $breakpoint-md) {
     .IntroText {
+        .introHeading {
+            font-size: 40px;
+            display: block;
+
+            .greeting, .name {
+            display: block;
+            }
+        }
+
+        .introSubheading {
+            letter-spacing: 7px;
+            margin: 10px 0 0 0;
+        }
+    }
+}
+
+@media (max-width: $breakpoint-sm) {
+    .IntroText {
+        margin: 0;
+        
+        .introHeading{
+            font-size: 30px;
+        }
+
+        .introSubheading {
+            letter-spacing: 5px;
+        }
     }
 }

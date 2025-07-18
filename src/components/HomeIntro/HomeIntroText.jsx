@@ -9,17 +9,17 @@ export default function HomeIntroText() {
     return (
         <div className={`${styles.IntroText} ${textTheme}`}>
             <p className={`${styles.introHeading} ${textTheme}`}>
-                Hi! I am
+                <span className={`${styles.greeting} whitespace-nowrap`}>Hi! I am</span>
                 <span className={`${styles.name} ${textTheme} whitespace-nowrap`}>
                     Sherly R. Jao
                 </span>
             </p>
 
-            <p className={`${styles.introSubheading} ${textTheme}`}>
+            <p className={`${styles.introSubheading} ${textTheme} whitespace-nowrap`}>
                 Artist | Web Developer & Designer
             </p>
 
-            <p className={`${styles.text} ${textTheme}`}>
+            <p className={`${styles.text} ${textTheme} whitespace-nowrap`}>
                 I code and I draw, and I'm from the 
                 <strong>
                     Philippines 🇵🇭

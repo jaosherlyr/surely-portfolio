@@ -13,13 +13,6 @@
         top: 0;
         left: 0;
         animation: rotate 100s linear infinite;
-
-        //Temporary Color
-        // background: linear-gradient(
-        //     135deg,
-        //     rgba($color-white, 1),  
-        //     rgba($color-black, 1)
-        // );
     }
 
     .profile {
@@ -43,5 +36,14 @@
 }
 
 //RESPONSIVE
-@media (max-width: $breakpoint-lg) {
+@media (max-width: $breakpoint-md) {
+  .IntroImage {
+    width: 50vh;
+    height: 50vh;
+
+    .profile {
+      width: 250px;
+      height: 250px;
+    }
+  }
 }
