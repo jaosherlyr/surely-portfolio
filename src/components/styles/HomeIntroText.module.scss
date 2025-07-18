@@ -53,19 +53,28 @@
             letter-spacing: 7px;
             margin: 10px 0 0 0;
         }
+
+        .text {
+            font-size: 14px;
+        }
     }
 }
 
 @media (max-width: $breakpoint-sm) {
     .IntroText {
         margin: 0;
-        
+
         .introHeading{
             font-size: 30px;
         }
 
         .introSubheading {
             letter-spacing: 5px;
+            font-size: 15px;
+        }
+
+        .text {
+            font-size: 12px;
         }
     }
 }
