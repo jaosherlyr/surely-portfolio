@@ -20,7 +20,7 @@
   height: 125%;
   object-fit: contain;
 
-  animation: swoopIn 1.5s ease-in-out forwards, wiggle 2s ease-in-out 1.5s;
+  animation: swoopIn 1.5s ease-out forwards, wiggleWithPause 7s ease-in-out infinite 1.5s;
 }
 
 // ANIMATIONS
@@ -33,11 +33,12 @@
   }
 }
 
-@keyframes wiggle {
+@keyframes wiggleWithPause {
   0% { transform: rotate(0deg); }
-  25% { transform: rotate(-3deg); }
-  50% { transform: rotate(5deg); }
-  75% { transform: rotate(-3deg); }
+  5% { transform: rotate(-3deg); }
+  10% { transform: rotate(5deg); }
+  15% { transform: rotate(-3deg); }
+  20% { transform: rotate(0deg); }
   100% { transform: rotate(0deg); }
 }
 
