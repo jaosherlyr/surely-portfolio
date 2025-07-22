@@ -1,4 +1,4 @@
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import styles from './styles/NavLinks.module.scss';
@@ -6,6 +6,22 @@ import styles from './styles/NavLinks.module.scss';
 export default function NavLinks({ onClick }) {
   const theme = useSelector((state) => state.theme.mode);
   const linkTheme = theme === 'dark' ? styles.dark : '';
+
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleScrollToContact = () => {
+    if (location.pathname !== '/') {
+      navigate('/', { state: { scrollToContact: true } });
+    } else {
+      const contactEl = document.getElementById('contact');
+      if (contactEl) {
+        contactEl.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    if (onClick) onClick();
+  };
 
   return (
     <>
@@ -30,13 +46,13 @@ export default function NavLinks({ onClick }) {
         Works
       </NavLink>
 
-      <Link
-        to="/#contact"
-        onClick={onClick}
+      <button
+        onClick={handleScrollToContact}
         className={linkTheme}
+        style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
       >
         Contact
-      </Link>
+      </button>
     </>
   );
 }

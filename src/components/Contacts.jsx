@@ -55,7 +55,7 @@ export default function Contacts() {
     ]
 
     return (
-        <section className={styles.Contact}>
+        <section id="contact" className={styles.Contact}>
             <div className={styles.ContactIntro}>
                 <span className={styles.ContactHeading}>Drop me a line! ✈️</span>
                 <span className={styles.ContactSubHeading}>Don't be shy and say hi!</span>

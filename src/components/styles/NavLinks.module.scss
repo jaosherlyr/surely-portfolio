@@ -1,6 +1,6 @@
 @use '../../styles/variable.scss' as *;
 
-a {
+a, button {
     text-decoration: none;
     font-size: 17px;
     color: $color-primary;
@@ -20,4 +20,8 @@ a {
             color: $color-white;
         }
     }
+}
+
+button {
+    letter-spacing: 3px;
 }
