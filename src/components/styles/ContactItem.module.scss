@@ -1,0 +1,11 @@
+@use '../../styles/variable.scss' as *;
+
+.ContactLink, .ContactCopy {
+    font-size: 18px;
+    margin: 8px;
+}
+
+.ContactCopy {
+    .copyIcon {
+    }
+}

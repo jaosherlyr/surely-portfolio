@@ -1,6 +1,6 @@
 @use '../../styles/variable.scss' as *;
 
-.HomeGreetings {
+.homeGreetings {
   position: relative;
   width: 100%;
   height: calc(100vh - 80px);
@@ -44,13 +44,13 @@
 
 //RESPONSIVE
 @media (max-width: $breakpoint-lg) {
-  .HomeGreetings {
+  .homeGreetings {
     height: calc(80vh - 80px);
   }
 }
 
 @media (max-width: $breakpoint-md) {
-  .HomeGreetings {
+  .homeGreetings {
     height: calc(60vh - 80px);
   }
 }

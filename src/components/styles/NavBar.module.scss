@@ -10,8 +10,7 @@
 }
 
 .menuIcon {
-        display: none;
-
+    display: none;
 }
 
 @media (max-width: $breakpoint-md) {
@@ -21,14 +20,5 @@
 
     .menuIcon {
         display: flex;
-        font-size: 27px;
-        margin: 3vh;
-        align-self: center;
-        transition: transform 0.2s ease-in-out;
-
-        &:hover {
-            color: $color-secondary;
-            transform: translateY(-2px);
-        }
     }
 }

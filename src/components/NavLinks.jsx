@@ -48,8 +48,6 @@ export default function NavLinks({ onClick }) {
 
       <button
         onClick={handleScrollToContact}
-        className={linkTheme}
-        style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
       >
         Contact
       </button>

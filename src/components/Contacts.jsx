@@ -55,10 +55,10 @@ export default function Contacts() {
     ]
 
     return (
-        <section id="contact" className={styles.Contact}>
-            <div className={styles.ContactIntro}>
-                <span className={styles.ContactHeading}>Drop me a line! ✈️</span>
-                <span className={styles.ContactSubHeading}>Don't be shy and say hi!</span>
+        <section id="contact" className={styles.contact}>
+            <div className={styles.contactIntro}>
+                <span className={styles.contactHeading}>Drop me a line! ✈️</span>
+                <span className={styles.contactSubHeading}>Don't be shy and say hi!</span>
             </div>
 
             {contacts.map((contact) => (

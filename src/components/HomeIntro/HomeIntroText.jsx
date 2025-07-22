@@ -7,15 +7,15 @@ export default function HomeIntroText() {
     const textTheme = theme === 'dark' ? styles.dark : '';
 
     return (
-        <div className={`${styles.IntroText} ${textTheme}`}>
-            <p className={`${styles.IntroHeading} ${textTheme}`}>
+        <div className={`${styles.introText} ${textTheme}`}>
+            <p className={`${styles.introHeading} ${textTheme}`}>
                 <span className={`${styles.greeting} whitespace-nowrap`}>Hi! I am</span>
                 <span className={`${styles.name} ${textTheme} whitespace-nowrap`}>
                     Sherly R. Jao
                 </span>
             </p>
 
-            <p className={`${styles.IntroSubheading} ${textTheme} whitespace-nowrap`}>
+            <p className={`${styles.introSubheading} ${textTheme} whitespace-nowrap`}>
                 Artist | Web Developer & Designer
             </p>
 

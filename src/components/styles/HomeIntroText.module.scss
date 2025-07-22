@@ -1,9 +1,9 @@
 @use '../../styles/variable.scss' as *;
 
-.IntroText {
+.introText {
     justify-items: center;
 
-    .IntroHeading {
+    .introHeading {
         font-size: 50px;
         margin: 0;
         text-align: center;
@@ -20,7 +20,7 @@
         }
     }
 
-    .IntroSubheading {
+    .introSubheading {
         color: $color-primary;
         letter-spacing: 10px;
     }
@@ -36,7 +36,7 @@
 }
 
 @media (max-width: $breakpoint-md) {
-    .IntroText {
+    .introText {
         .introHeading {
             font-size: 40px;
             display: block;
@@ -58,7 +58,7 @@
 }
 
 @media (max-width: $breakpoint-sm) {
-    .IntroText {
+    .introText {
         margin: 0;
 
         .introHeading{

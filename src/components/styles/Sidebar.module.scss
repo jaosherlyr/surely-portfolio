@@ -25,21 +25,9 @@
   &.dark {
     background-color: $color-darker;
   }
-
-  a {
-    align-self: center;
-    margin: 20px 0;
-  }
 }
 
 .closeIcon {
-  font-size: 27px;
   margin-right: auto;
-  padding: 20px;
-  transition: transform 0.2s ease-in-out;
-
-  &:hover {
-        color: $color-secondary;
-        transform: translateY(-2px);
-    }
+  align-self: normal;
 }

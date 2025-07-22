@@ -30,3 +30,34 @@ body {
 .whitespace-nowrap {
   white-space: nowrap;
 }
+ 
+//ICON
+.icon, a, button {
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    color: $color-secondary;
+    transform: translateY(-2px);
+  }
+}
+
+.icon {
+  display: flex;
+  font-size: 27px;
+  margin: 3vh;
+}
+
+//LINKS AND BUTTONS
+a, button {
+    text-decoration: none;
+    font-size: 17px;
+    color: $color-primary;
+    margin: 20px;
+}
+
+button {
+    letter-spacing: 3px;
+    background: none;
+    border: none;
+    padding: 0;
+}

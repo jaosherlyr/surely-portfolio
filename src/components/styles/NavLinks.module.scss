@@ -1,27 +1,15 @@
 @use '../../styles/variable.scss' as *;
 
-a, button {
-    text-decoration: none;
-    font-size: 17px;
-    color: $color-primary;
-    transition: transform 0.2s ease-in-out;
+a.active {
+  color: $color-black;
 
-    &:hover {
-            color: $color-secondary;
-            transform: translateY(-2px);
-        }
+  &.dark {
+    color: $color-white;
+  }
 
-    &.active {
-        color: $color-black;
-        transform: none;
-        cursor: default;
-
-        &.dark {
-            color: $color-white;
-        }
-    }
-}
-
-button {
-    letter-spacing: 3px;
+  &:hover {
+    color: inherit;
+    transform: none;
+    cursor: default;
+  }
 }

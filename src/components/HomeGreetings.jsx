@@ -5,7 +5,7 @@ export default function HomeGreetings() {
   const handleContextMenu = (e) => e.preventDefault();
 
   return (
-    <div className={styles.HomeGreetings} onContextMenu={handleContextMenu}>
+    <div className={styles.homeGreetings} onContextMenu={handleContextMenu}>
       <img src={hand} alt="" className={styles.hand} />
     </div>
   );

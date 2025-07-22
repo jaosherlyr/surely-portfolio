@@ -12,10 +12,12 @@ export default function NavBar({ onOpenSidebar }) {
         <ThemeIcon />
       </nav>
 
-      <IoMenu
-        className={styles.menuIcon}
-        onClick={onOpenSidebar}
-      />
+      <div className={styles.menuIcon}>
+        <IoMenu
+          className="icon"
+          onClick={onOpenSidebar}
+        />
+      </div>
     </>
   );
 }
