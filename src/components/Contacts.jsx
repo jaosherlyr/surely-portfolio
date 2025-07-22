@@ -2,6 +2,7 @@ import { useState } from "react";
 import { IoCall, IoMail, IoLogoGithub, IoLogoLinkedin, IoLogoFacebook, IoLogoInstagram } from "react-icons/io5";
 
 import ContactItem from "./ContactItem";
+import styles from "./styles/Contacts.module.scss";
 
 export default function Contacts() {
     const [copied, setCopied] = useState(false);
@@ -54,10 +55,10 @@ export default function Contacts() {
     ]
 
     return (
-        <section>
-            <div>
-                <span>Drop me a line! ✈️</span>
-                <span>Don't be shy and say hi!</span>
+        <section className={styles.Contact}>
+            <div className={styles.ContactIntro}>
+                <span className={styles.ContactHeading}>Drop me a line! ✈️</span>
+                <span className={styles.ContactSubHeading}>Don't be shy and say hi!</span>
             </div>
 
             {contacts.map((contact) => (
