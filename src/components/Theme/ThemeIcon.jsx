@@ -1,8 +1,8 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { toggleTheme } from '../store/themeSlice';
+import { toggleTheme } from '../../store/themeSlice';
 import { IoSunny, IoMoon } from "react-icons/io5";
 
-import styles from "./styles/ThemeIcon.module.scss";
+import styles from "./ThemeIcon.module.scss";
 
 export default function ThemeIcon() {
   const theme = useSelector((state) => state.theme.mode);

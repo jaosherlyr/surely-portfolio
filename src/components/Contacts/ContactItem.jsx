@@ -1,5 +1,5 @@
 import { IoCopy } from "react-icons/io5";
-import styles from './styles/ContactItem.module.scss';
+import styles from './ContactItem.module.scss';
 
 export default function ContactItem({ contactIcon, label, link, onCopy, value, actionIcon, actionLink }) {
     return (

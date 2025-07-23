@@ -3,10 +3,10 @@ import { IoCall, IoMail, IoLogoGithub, IoLogoLinkedin, IoLogoFacebook, IoLogoIns
 import { toast } from 'react-toastify';
 
 import ContactItem from "./ContactItem";
-import styles from "./styles/Contacts.module.scss";
+import styles from "./Contacts.module.scss";
 
 export default function Contacts() {
-    const [copied, setCopied] = useState(false);
+    const [setCopied] = useState(false);
 
     const handleCopy = (text) => {
         navigator.clipboard.writeText(text).then(() => {

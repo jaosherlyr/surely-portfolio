@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 
-import Header from '../components/Header';
-import Sidebar from '../components/Sidebar';
+import Header from '../components/Header/Header';
+import Sidebar from '../components/Navigation/Sidebar';
 
 export default function Layout() {
   const theme = useSelector((state) => state.theme.mode);

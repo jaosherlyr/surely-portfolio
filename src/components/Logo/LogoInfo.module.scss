@@ -1,0 +1,11 @@
+@use '../../styles/variable.scss' as *;
+
+.logoStudy {
+    display: flex;
+    justify-content: space-between;
+    height: calc(100vh - 80px);
+
+    .logoImg {
+        margin: 3vh;
+    }
+}

@@ -1,8 +1,8 @@
 import { IoMenu } from "react-icons/io5";
 
-import ThemeIcon from './ThemeIcon';
+import ThemeIcon from '../Theme/ThemeIcon';
 import NavLinks from './NavLinks';
-import styles from './styles/NavBar.module.scss';
+import styles from './NavBar.module.scss';
 
 export default function NavBar({ onOpenSidebar }) {
   return (

@@ -1,5 +1,5 @@
-import hand from "../assets/greetingHand.png";
-import styles from "./styles/HomeGreetings.module.scss";
+import hand from "../../assets/greetingHand.png";
+import styles from "./HomeGreetings.module.scss";
 
 export default function HomeGreetings() {
   const handleContextMenu = (e) => e.preventDefault();

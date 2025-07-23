@@ -2,8 +2,8 @@ import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { IoArrowForwardOutline } from "react-icons/io5";
 
-import Button from '../Button.jsx';
-import styles from '../styles/HomeIntroText.module.scss';
+import Button from '../Commons/Button';
+import styles from './HomeIntro.module.scss';
 
 export default function HomeIntroText() {
     const theme = useSelector((state) => state.theme.mode);

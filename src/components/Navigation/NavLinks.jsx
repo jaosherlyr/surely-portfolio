@@ -1,7 +1,7 @@
 import { NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-import styles from './styles/NavLinks.module.scss';
+import styles from './NavLinks.module.scss';
 
 export default function NavLinks({ onClick }) {
   const theme = useSelector((state) => state.theme.mode);

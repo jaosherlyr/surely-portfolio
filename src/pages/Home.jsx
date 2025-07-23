@@ -3,9 +3,9 @@ import { useLocation } from 'react-router-dom';
 
 import HomeIntroImage from "../components/HomeIntro/HomeIntroImage";
 import HomeIntroText from "../components/HomeIntro/HomeIntroText";
-import HomeGreetings from "../components/HomeGreetings";
-import Contacts from "../components/Contacts";
-import LogoInfo from '../components/LogoInfo';
+import HomeGreetings from "../components/Greetings/HomeGreetings";
+import Contacts from "../components/Contacts/Contacts";
+import LogoInfo from '../components/Logo/LogoInfo';
 import styles from "./styles/Home.module.scss";
 
 export default function Home() {

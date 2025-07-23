@@ -1,6 +1,6 @@
 import profile from '../../assets/profilePicture.jpg';
 import tempRotateText from '../../assets/exampleText-light.png';
-import styles from '../styles/HomeIntroImage.module.scss';
+import styles from './HomeIntro.module.scss';
 
 export default function HomeIntroImage() {
     return (
