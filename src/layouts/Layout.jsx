@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 
 import Header from '../components/Header';
 import Sidebar from '../components/Sidebar';
@@ -30,6 +31,7 @@ export default function Layout() {
       <Sidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)}/>
       <main>
         <Outlet />
+        <ToastContainer position="top-right" autoClose={2000} />
       </main>
     </>
   );

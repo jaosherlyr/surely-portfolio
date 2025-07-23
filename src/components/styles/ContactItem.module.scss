@@ -6,9 +6,17 @@
 }
 
 .linkWrapper {
+    transition: transform 0.2s ease-in-out;
+    display: contents;
+
+    &:hover {
+            color: $color-secondary;
+            transform: translateY(-2px);
+        }
+
     .contactLink {
-        font-size: 18px;
-        margin: 0;
+        width: 100%;
+        font-size: 20px;
         color: inherit;
     }
 }
@@ -20,8 +28,17 @@
     align-items: center;
     justify-content: space-between;
 
-    .copyIcon {
+    .contactIcons {
+        display: flex;
+
+    }
+
+    .copyIcon, .sendIcon {
         font-size: 20px;
-        margin: 0;
+        margin: 0 10px;
+    }
+
+    .sendIcon {
+        color: inherit;
     }
 }
