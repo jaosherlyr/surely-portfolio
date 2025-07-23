@@ -2,6 +2,7 @@
 
 .introText {
     justify-items: center;
+    margin-bottom: 50px;
 
     .introHeading {
         font-size: 50px;
@@ -27,10 +28,22 @@
 
     .text {
         text-align: center;
+        margin: 40px;
 
         strong {
             margin-left: 10px;
             font-family: $font-secondary;
+        }
+    }
+    
+    .arrowIcon {
+        margin: 0;
+        margin-left: 10px;
+        font-size: 18px;
+
+        &:hover {
+            transform: none;
+            color: inherit;
         }
     }
 }
@@ -72,6 +85,7 @@
 
         .text {
             font-size: 12px;
+            letter-spacing: 2px;
         }
     }
 }

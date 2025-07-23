@@ -1,10 +1,18 @@
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { IoArrowForwardOutline } from "react-icons/io5";
 
+import Button from '../Button.jsx';
 import styles from '../styles/HomeIntroText.module.scss';
 
 export default function HomeIntroText() {
     const theme = useSelector((state) => state.theme.mode);
     const textTheme = theme === 'dark' ? styles.dark : '';
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate('/works');
+    };
 
     return (
         <div className={`${styles.introText} ${textTheme}`}>
@@ -28,6 +36,13 @@ export default function HomeIntroText() {
                 <br/>
                 Just trying my best to navigate life with the skills I have.
             </p>
+
+            <Button 
+                onClick={handleClick}
+                label={<>
+                    Check my Works! <IoArrowForwardOutline className={`${styles.arrowIcon} icon`}/>
+                </>}
+            />
         </div>
     );
 }
