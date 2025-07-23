@@ -61,8 +61,8 @@ export default function Contacts() {
     return (
         <section id="contact" className={styles.contact}>
             <div className={styles.contactIntro}>
-                <span className={styles.contactHeading}>Drop me a line!</span>
-                <span className={styles.contactSubHeading}>Don't be shy, come say Hi!</span>
+                <span className="heading">Drop me a line!</span>
+                <span className="subheading">Don't be shy, come say Hi!</span>
             </div>
 
             <div className={styles.contactItems}>

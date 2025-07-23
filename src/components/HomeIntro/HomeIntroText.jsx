@@ -16,18 +16,18 @@ export default function HomeIntroText() {
 
     return (
         <div className={`${styles.introText} ${textTheme}`}>
-            <p className={`${styles.introHeading} ${textTheme}`}>
+            <p className={`heading ${textTheme}`}>
                 <span className={`${styles.greeting} whitespace-nowrap`}>Hi! I am</span>
                 <span className={`${styles.name} ${textTheme} whitespace-nowrap`}>
                     Sherly R. Jao
                 </span>
             </p>
 
-            <p className={`${styles.introSubheading} ${textTheme} whitespace-nowrap`}>
+            <p className={`${styles.introSubheading} ${textTheme} whitespace-nowrap subheading`}>
                 Artist | Web Developer & Designer
             </p>
 
-            <p className={`${styles.text} ${textTheme} whitespace-nowrap`}>
+            <p className={`text ${textTheme} whitespace-nowrap`}>
                 I code and I draw, and I'm from the 
                 <strong>
                     Philippines 🇵🇭

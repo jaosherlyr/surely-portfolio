@@ -4,36 +4,20 @@
     justify-items: center;
     margin-bottom: 50px;
 
-    .introHeading {
-        font-size: 50px;
-        margin: 0;
-        text-align: center;
-
-        .name {
-            font-family: $font-secondary;
-            color: $color-secondary;
-            letter-spacing: 7px;
-            margin-left: 30px;
-        }
-
-        .greeting, .name {
-            display: inline;
-        }
+    .name {
+        font-family: $font-secondary;
+        color: $color-secondary;
+        letter-spacing: 7px;
+        margin-left: 30px;
     }
 
     .introSubheading {
-        color: $color-primary;
         letter-spacing: 10px;
     }
 
-    .text {
-        text-align: center;
-        margin: 40px;
-
-        strong {
-            margin-left: 10px;
-            font-family: $font-secondary;
-        }
+    strong {
+        margin-left: 10px;
+        font-family: $font-secondary;
     }
     
     .arrowIcon {
