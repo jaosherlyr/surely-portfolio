@@ -5,6 +5,7 @@ import HomeIntroImage from "../components/HomeIntro/HomeIntroImage";
 import HomeIntroText from "../components/HomeIntro/HomeIntroText";
 import HomeGreetings from "../components/HomeGreetings";
 import Contacts from "../components/Contacts";
+import LogoInfo from '../components/LogoInfo';
 import styles from "./styles/Home.module.scss";
 
 export default function Home() {
@@ -31,6 +32,8 @@ export default function Home() {
           <HomeIntroImage />
           <HomeIntroText />
         </div>
+
+        <LogoInfo />
       </section>
 
       <Contacts />
