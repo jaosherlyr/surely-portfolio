@@ -25,7 +25,7 @@ export default function Contacts() {
             id: "email",
             icon: <IoMail />,
             label: "Email:",
-            value: "+63 922 496 9029",
+            value: "jaosherlyr@gmail.com",
             copy: true
         },
         {
@@ -57,22 +57,24 @@ export default function Contacts() {
     return (
         <section id="contact" className={styles.contact}>
             <div className={styles.contactIntro}>
-                <span className={styles.contactHeading}>Drop me a line! ✈️</span>
-                <span className={styles.contactSubHeading}>Don't be shy and say hi!</span>
+                <span className={styles.contactHeading}>Drop me a line!</span>
+                <span className={styles.contactSubHeading}>Don't be shy, say Hi!</span>
             </div>
 
-            {contacts.map((contact) => (
-                <ContactItem
-                    key={contact.id}
-                    contactIcon={contact.icon}
-                    label={contact.label}
-                    value={contact.value}
-                    link={contact.link}
-                    onCopy={
-                        contact.copy ? () => handleCopy(contact.value) : null
-                    }
-                />
-            ))}
+            <div className={styles.contactItems}>
+                {contacts.map((contact) => (
+                    <ContactItem
+                        key={contact.id}
+                        contactIcon={contact.icon}
+                        label={contact.label}
+                        value={contact.value}
+                        link={contact.link}
+                        onCopy={
+                            contact.copy ? () => handleCopy(contact.value) : null
+                        }
+                    />
+                ))}
+            </div>
         </section>
     );
 }

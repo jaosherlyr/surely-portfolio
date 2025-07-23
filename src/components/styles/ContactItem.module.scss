@@ -1,11 +1,27 @@
 @use '../../styles/variable.scss' as *;
 
-.ContactLink, .ContactCopy {
-    font-size: 18px;
-    margin: 8px;
+.contactCopy, .linkWrapper {
+    margin-top: 20px;
+    width: 60%;
 }
 
-.ContactCopy {
+.linkWrapper {
+    .contactLink {
+        font-size: 18px;
+        margin: 0;
+        color: inherit;
+    }
+}
+
+.contactCopy {
+    font-size: 18px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
     .copyIcon {
+        font-size: 20px;
+        margin: 0;
     }
 }
