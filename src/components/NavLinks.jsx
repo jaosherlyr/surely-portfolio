@@ -46,6 +46,16 @@ export default function NavLinks({ onClick }) {
         Works
       </NavLink>
 
+      <NavLink
+        to="/profile"
+        onClick={onClick}
+        className={({ isActive }) =>
+          `${linkTheme} ${isActive ? styles.active : ''}`
+        }
+      >
+        Profile
+      </NavLink>
+
       <button
         onClick={handleScrollToContact}
       >

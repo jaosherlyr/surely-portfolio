@@ -11,10 +11,10 @@
 
     background: linear-gradient(
         135deg,
-        rgba($color-white, 1),  
-        rgba($color-lighter, 1)
+        rgba($color-white, 0.8),  
+        rgba($color-lighter, 0.8)
     );
-    backdrop-filter: blur(100px);
+    backdrop-filter: blur(15px);
 
     &.dark {
         background: linear-gradient(
