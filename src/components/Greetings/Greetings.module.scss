@@ -2,23 +2,27 @@
 
 .homeGreetings {
   position: relative;
-  width: 100%;
   height: calc(100vh - 80px);
   overflow: hidden;
+  align-content: center;
+}
 
-  background-image: url('../../assets/HomeGreetings.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+.hello {
+  width: 70%;
+  height: 300px;
+}
+
+.greetingTxt {
+  margin: 100px;
+  width: 60%;
 }
 
 .hand {
   position: absolute;
-  top: 10px;
-  left: 63%;
+  top: 0;
+  left: 60%;
   width: 50%;
   height: 125%;
-  object-fit: contain;
 
   animation: swoopIn 1.5s ease-out forwards, wiggleWithPause 7s ease-in-out infinite 1.5s;
 }
@@ -43,14 +47,10 @@
 }
 
 //RESPONSIVE
-@media (max-width: $breakpoint-lg) {
-  .homeGreetings {
-    height: calc(80vh - 80px);
-  }
-}
+@media (max-width: $breakpoint-sm) {
 
-@media (max-width: $breakpoint-md) {
-  .homeGreetings {
-    height: calc(60vh - 80px);
+  .hand {
+    width: 70%;
+    right: 0;
   }
 }

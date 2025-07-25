@@ -4,13 +4,6 @@
     justify-items: center;
     margin-bottom: 50px;
 
-    .name {
-        font-family: $font-secondary;
-        color: $color-secondary;
-        letter-spacing: 7px;
-        margin-left: 30px;
-    }
-
     .introSubheading {
         letter-spacing: 10px;
     }
@@ -94,20 +87,6 @@
 @media (max-width: $breakpoint-sm) {
     .introText {
         margin: 0;
-
-        .introHeading{
-            font-size: 30px;
-        }
-
-        .introSubheading {
-            letter-spacing: 5px;
-            font-size: 15px;
-        }
-
-        .text {
-            font-size: 12px;
-            letter-spacing: 2px;
-        }
     }
 
     .introImage {

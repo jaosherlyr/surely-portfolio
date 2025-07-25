@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { IoArrowForwardOutline } from "react-icons/io5";
 
 import Button from '../Commons/Button';
-import styles from './HomeIntro.module.scss';
+import styles from './Intro.module.scss';
 
 export default function HomeIntroText() {
     const theme = useSelector((state) => state.theme.mode);
@@ -18,7 +18,7 @@ export default function HomeIntroText() {
         <div className={`${styles.introText} ${textTheme}`}>
             <p className={`heading ${textTheme}`}>
                 <span className={`${styles.greeting} whitespace-nowrap`}>Hi! I am</span>
-                <span className={`${styles.name} ${textTheme} whitespace-nowrap`}>
+                <span className={`${textTheme} whitespace-nowrap heading-secondary`}>
                     Sherly R. Jao
                 </span>
             </p>
@@ -27,7 +27,7 @@ export default function HomeIntroText() {
                 Artist | Web Developer & Designer
             </p>
 
-            <p className={`text ${textTheme} whitespace-nowrap`}>
+            <p className="textTheme">
                 I code and I draw, and I'm from the 
                 <strong>
                     Philippines 🇵🇭

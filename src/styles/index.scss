@@ -1,27 +1,13 @@
 @use './variable.scss' as *;
 
-html {
-    min-height: 100%;
-}
-
 body {
     margin: 0;
     font-family: $font-primary;
-    letter-spacing: 3px;
-
-    background: linear-gradient(
-        135deg,
-        rgba($color-white, 1),  
-        rgba($color-lighter, 1)
-    );
+    background-color: $color-lighter;
     color: $color-black;
 
     &.dark {
-        background: linear-gradient(
-          135deg,
-          rgba($color-darker, 1),  
-          rgba($color-black, 1),
-        );
+        background-color: $color-darker;
         color: $color-white;
     } 
 }
@@ -29,6 +15,12 @@ body {
 //NO BREAK
 .whitespace-nowrap {
   white-space: nowrap;
+}
+
+//TEXT DETAILS
+h1 {
+  margin: 0;
+  font-size: 70px;
 }
  
 //ICON
@@ -62,21 +54,15 @@ button {
     padding: 0;
 }
 
-//HEADINGS, SUBHEADING, AND TEXT
-.heading {
-  font-size: 50px;
-  margin: 20px 0;
-  text-align: center;
+//RESPONSIVE
+@media (max-width: $breakpoint-md) {
+  h1 {
+    font-size: 60px;
+  }
 }
 
-.subheading {
-  margin: 5px;
-  font-size: 17px;
-  letter-spacing: 5px;
-  color: $color-primary;
-}
-
-.text {
-  text-align: center;
-  margin: 40px;
+@media (max-width: $breakpoint-sm) {
+  h1 {
+    font-size: 50px;
+  }
 }

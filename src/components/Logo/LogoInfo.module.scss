@@ -1,11 +1,38 @@
 @use '../../styles/variable.scss' as *;
 
-.logoStudy {
+.logoInfo {
     display: flex;
-    justify-content: space-between;
-    height: calc(100vh - 80px);
+    margin: 7vh;
+    justify-content: space-evenly;
 
-    .logoImg {
+    .infoText {
+        background: rgba($color-primary, 0.3);
+        border-radius: 15px;
+        height: fit-content;
+        padding: 3vh;
         margin: 3vh;
+        align-self: center;
+
+        .symbols {
+            color: $color-secondary;
+        }
+    }
+
+    .logoStudy {
+        margin: 3vh;
+        height: 80vh;
+        width: fit-content;
+        align-self: center;
+    }
+}
+
+//RESPONSIVE
+@media (max-width: $breakpoint-xl) {
+    .logoInfo {
+        flex-direction: column;
+
+        .logoStudy {
+            height: 50vh;
+        }
     }
 }
