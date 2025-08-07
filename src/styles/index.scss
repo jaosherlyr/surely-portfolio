@@ -3,7 +3,7 @@
 body {
     margin: 0;
     font-family: $font-primary;
-    // background-color: $color-lighter;
+    background-color: $color-lighter;
     color: $color-black;
 
     &.dark {
@@ -23,36 +23,41 @@ h1 {
   font-size: 70px;
 }
  
-// //ICON
-// .icon, a, button {
-//   transition: transform 0.2s ease-in-out;
+//ICON, LINKS, AND BUTTONS
+.icon {
+  display: flex;
+  font-size: 27px;
+  margin: 3vh;
+}
 
-//   &:hover {
-//     color: $color-secondary;
-//     transform: translateY(-2px);
-//   }
-// }
+a, button {
+  font-size: 1.2em;
+  font-family: $font-secondary;
+  color: $color-primary;
+  margin: 20px;
+}
 
-// .icon {
-//   display: flex;
-//   font-size: 27px;
-//   margin: 3vh;
-// }
+a {
+  text-decoration: none;
+}
 
-// //LINKS AND BUTTONS
-// a, button {
-//     text-decoration: none;
-//     font-size: 17px;
-//     color: $color-primary;
-//     margin: 20px;
-// }
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
 
-// button {
-//     letter-spacing: 3px;
-//     background: none;
-//     border: none;
-//     padding: 0;
-// }
+.icon, a, button {
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    color: $color-secondary;
+    transform: translateY(-2px);
+  }
+}
+
+
 
 // //RESPONSIVE
 // @media (max-width: $breakpoint-md) {
