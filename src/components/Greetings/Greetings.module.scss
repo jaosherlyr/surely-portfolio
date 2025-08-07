@@ -2,24 +2,30 @@
 
 .homeGreetings {
   position: relative;
-  height: calc(100vh - 7rem);
+  height: calc(100vh - 6rem);
   overflow: hidden;
   align-content: center;
 }
 
-.hello {
+.leftContainerGreetings {
+  display: flex;
+  flex-direction: column;
   width: 70%;
-  height: 300px;
-}
-
-.greetingTxt {
-  margin: 100px;
-  width: 60%;
+  position: absolute;
+  align-self: center;
+  
+    .hello {
+      height: 300px;
+    }
+    
+    .greetingTxt {
+      margin: 3rem 7rem;
+    }
 }
 
 .hand {
   position: absolute;
-  top: 0;
+  top: 2rem;
   left: 60%;
   width: 50%;
   height: 125%;
@@ -45,6 +51,7 @@
   20% { transform: rotate(0deg); }
   100% { transform: rotate(0deg); }
 }
+
 
 //RESPONSIVE
 @media (max-width: $breakpoint-sm) {
