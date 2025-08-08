@@ -4,7 +4,7 @@ import ThemeIcon from '../Theme/ThemeIcon';
 import NavLinks from './NavLinks';
 import styles from './NavBar.module.scss';
 
-export default function NavBar({ onOpenSidebar }) {
+export default function NavBar({ onOpenSidebar, hidden }) {
   return (
     <>
       <nav className={styles.navbar}>
@@ -12,7 +12,7 @@ export default function NavBar({ onOpenSidebar }) {
         <ThemeIcon />
       </nav>
 
-      <div className={styles.menuIcon}>
+      <div className={`${styles.menuIcon} ${hidden ? styles.hidden : ''}`}>
         <IoMenu
           className="icon"
           onClick={onOpenSidebar}

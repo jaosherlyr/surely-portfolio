@@ -12,17 +12,20 @@ body {
     } 
 }
 
+
 //NO BREAK
 .whitespace-nowrap {
   white-space: nowrap;
 }
 
+
 //TEXT DETAILS
 h1 {
   margin: 0;
-  font-size: 70px;
+  font-size: 5rem;
 }
  
+
 //ICON, LINKS, AND BUTTONS
 .icon {
   display: flex;
@@ -58,16 +61,21 @@ button {
 }
 
 
+//RESPONSIVE
+@media (max-width: $breakpoint-lg) {
+  h1 {
+    font-size: 4rem;
+  }
+}
 
-// //RESPONSIVE
-// @media (max-width: $breakpoint-md) {
-//   h1 {
-//     font-size: 60px;
-//   }
-// }
+@media (max-width: $breakpoint-md) {
+  h1 {
+    font-size: 3rem;
+  }
+}
 
-// @media (max-width: $breakpoint-sm) {
-//   h1 {
-//     font-size: 50px;
-//   }
-// }
+@media (max-width: $breakpoint-sm) {
+  h1 {
+    font-size: 2rem;
+  }
+}

@@ -10,11 +10,35 @@
     left: 0;
     z-index: 2;
 
-    background-color: $color-lighter;
-    backdrop-filter: blur(15px);
+    background-color: rgba($color-lighter, 0.5);
+    backdrop-filter: blur(20px);
+
+    transform: translateY(-100%); 
+    animation: dropDown 0.5s ease-out forwards; 
 
     &.dark {
-        background-color: $color-darker;
-        backdrop-filter: blur(100px);
+        background-color: rgba($color-darker, 0.5);
+        backdrop-filter: blur(50px);
     }
+
+    &.hidden {
+        background-color: transparent;
+    }
+}
+
+
+//ANIMATION
+@keyframes dropDown {
+    from {
+        transform: translateY(-100%); 
+    }
+    to {
+        transform: translateY(0);  
+    }
+}
+
+
+//RESPONSIVE
+@media (max-width: $breakpoint-md) {
+    
 }

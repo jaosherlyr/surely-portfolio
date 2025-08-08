@@ -27,7 +27,10 @@ export default function Layout() {
 
   return (
     <>
-      <Header onOpenSidebar={() => setSidebarOpen(true)} />
+      <Header 
+        onOpenSidebar={() => setSidebarOpen(true)}
+        hidden={sidebarOpen}
+      />
       <Sidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)}/>
       <main>
         <Outlet />

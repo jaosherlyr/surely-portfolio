@@ -13,27 +13,53 @@
   width: 70%;
   position: absolute;
   align-self: center;
-  
-    .hello {
-      height: 300px;
-    }
-    
-    .greetingTxt {
-      margin: 3rem 7rem;
-    }
+
+  .hello {
+    object-fit: contain;
+    width: 100%;
+  }
+
+  .greetingTxt {
+    margin: 3rem 7rem;
+    width: 100%;
+    position: relative;
+  }
+
+  .typewriter {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 5px solid;
+    position: relative;
+    animation: typing 1s steps(15, end), cursor .4s step-end infinite alternate;
+  }
 }
 
 .hand {
   position: absolute;
-  top: 2rem;
-  left: 60%;
-  width: 50%;
-  height: 125%;
+  height: 120%;
+  left: 65%;
+  object-fit: cover;
+  object-position: left;
+  align-self: anchor-center;
 
   animation: swoopIn 1.5s ease-out forwards, wiggleWithPause 7s ease-in-out infinite 1.5s;
 }
 
 // ANIMATIONS
+@keyframes cursor {
+  50% { border-color: transparent; }  
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 13ch;  // Width matches the character count (13 characters here)
+  }
+}
+
 @keyframes swoopIn {
   0% {
     transform: translateX(100%) rotate(45deg);
@@ -52,12 +78,43 @@
   100% { transform: rotate(0deg); }
 }
 
+// RESPONSIVE
+@media (max-width: $breakpoint-lg) {
+  .homeGreetings {
+    height: 40rem;
+  }
 
-//RESPONSIVE
-@media (max-width: $breakpoint-sm) {
+  .leftContainerGreetings {    
+    .greetingTxt {
+      margin: 2rem 5rem;
+    }
+  }
 
   .hand {
-    width: 70%;
-    right: 0;
+    height: 100%;
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .homeGreetings {
+    height: 30rem;
+  }
+
+  .leftContainerGreetings {    
+    .greetingTxt {
+      margin: 1rem 3rem;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .homeGreetings {
+    height: 20rem;
+  }
+
+  .leftContainerGreetings {    
+    .greetingTxt {
+      margin: 1rem 2rem;
+    }
   }
 }

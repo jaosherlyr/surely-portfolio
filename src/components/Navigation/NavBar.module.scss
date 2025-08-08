@@ -20,5 +20,9 @@
 
     .menuIcon {
         display: flex;
+
+        &.hidden {
+            display: none;
+        }
     }
 }
