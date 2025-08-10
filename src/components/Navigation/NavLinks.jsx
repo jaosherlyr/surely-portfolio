@@ -23,6 +23,19 @@ export default function NavLinks({ onClick }) {
     if (onClick) onClick();
   };
 
+  const handleScrollToAbout = () => {
+  if (location.pathname !== '/') {
+    navigate('/', { state: { scrollToAbout: true } });
+  } else {
+    const aboutEl = document.getElementById('about');
+    if (aboutEl) {
+      aboutEl.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  if (onClick) onClick();
+};
+
   return (
     <>
       <NavLink
@@ -46,15 +59,9 @@ export default function NavLinks({ onClick }) {
         Works
       </NavLink>
 
-      <NavLink
-        to="/profile"
-        onClick={onClick}
-        className={({ isActive }) =>
-          `${linkTheme} ${isActive ? styles.active : ''}`
-        }
-      >
+      <button onClick={handleScrollToAbout}>
         About
-      </NavLink>
+      </button>
 
       <button
         onClick={handleScrollToContact}
