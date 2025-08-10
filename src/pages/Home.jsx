@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import IntroImage from "../components/Intro/IntroImage.jsx";
@@ -11,6 +11,7 @@ import styles from "./styles/Home.module.scss";
 
 export default function Home() {
   const location = useLocation();
+  const homeRef = useRef(null);
 
   useEffect(() => {
   if (location.state?.scrollToContact) {
@@ -24,9 +25,16 @@ export default function Home() {
   }
 }, [location]);
 
+useEffect(() => {
+  console.log('homeRef-', homeRef.current);
+}, []);
+
   return (
     <>
-      <section>
+      <section 
+        id='home'
+        ref = {ref => homeRef.current = ref}
+      >
         <Greetings />
 
         <div className={styles.intro}>
