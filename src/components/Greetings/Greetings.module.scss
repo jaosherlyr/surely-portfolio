@@ -31,7 +31,7 @@
     overflow: hidden;
     border-right: 5px solid;
     position: relative;
-    animation: typing 1s steps(15, end), cursor .4s step-end infinite alternate;
+    animation: typing 2s steps(13, end), cursor .4s step-end infinite alternate; //TO FIX ISSUE!! not clean animation + width 100% follows the width of greetingsTxt
   }
 }
 
@@ -46,6 +46,7 @@
   animation: swoopIn 1.5s ease-out forwards, wiggleWithPause 7s ease-in-out infinite 1.5s;
 }
 
+
 // ANIMATIONS
 @keyframes cursor {
   50% { border-color: transparent; }  
@@ -56,7 +57,7 @@
     width: 0;
   }
   to {
-    width: 13ch;  // Width matches the character count (13 characters here)
+    width: 13ch;
   }
 }
 
@@ -77,6 +78,7 @@
   20% { transform: rotate(0deg); }
   100% { transform: rotate(0deg); }
 }
+
 
 // RESPONSIVE
 @media (max-width: $breakpoint-lg) {

@@ -2,14 +2,15 @@
 
 .btn {
     display: flex;
-    align-items: center;
+    place-self: center;
+    width: fit-content;
     border: 2px solid rgba($color-primary, 0.5);
-    font-size: 15px;
+    font-size: 1em;
     padding: 15px 40px;
     border-radius: 50px;
     transition: transform 0.2s ease-in-out;
+    font-family: $font-secondary;
     color: $color-darker;
-
     &.dark {
         color: $color-lighter;
     }

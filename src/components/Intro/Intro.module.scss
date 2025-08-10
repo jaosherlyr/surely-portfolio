@@ -1,28 +1,7 @@
 @use '../../styles/variable.scss' as *;
 
 .introText {
-    justify-items: center;
-    margin-bottom: 50px;
-
-    .introSubheading {
-        letter-spacing: 10px;
-    }
-
-    strong {
-        margin-left: 10px;
-        font-family: $font-secondary;
-    }
-    
-    .arrowIcon {
-        margin: 0;
-        margin-left: 10px;
-        font-size: 18px;
-
-        &:hover {
-            transform: none;
-            color: inherit;
-        }
-    }
+    align-content: center;
 }
 
 @media (max-width: $breakpoint-md) {
@@ -49,9 +28,8 @@
 
 .introImage {
   position: relative;
-  width: 60vh;
+  width: 100rem;
   aspect-ratio: 1/1;
-  margin: 10px 0;
   display: flex;
   align-items: center;
   justify-content: center;

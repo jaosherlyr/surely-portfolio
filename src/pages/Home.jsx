@@ -5,7 +5,7 @@ import IntroImage from "../components/Intro/IntroImage.jsx";
 import IntroText from "../components/Intro/IntroText.jsx";
 import Greetings from "../components/Greetings/Greetings.jsx";
 import Contacts from "../components/Contacts/Contacts";
-import LogoInfo from '../components/Logo/LogoInfo';
+import LogoStudy from '../components/Logo/LogoStudy.jsx';
 import styles from "./styles/Home.module.scss";
 
 export default function Home() {
@@ -28,12 +28,12 @@ export default function Home() {
       <section>
         <Greetings />
 
-        <div className={styles.HomeIntro}>
+        <div className={styles.intro}>
           <IntroImage />
           <IntroText />
         </div>
 
-        <LogoInfo />
+        <LogoStudy />
       </section>
 
       <Contacts />

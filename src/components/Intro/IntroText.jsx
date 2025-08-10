@@ -1,48 +1,14 @@
-import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { IoArrowForwardOutline } from "react-icons/io5";
-
-import Button from '../Commons/Button';
 import styles from './Intro.module.scss';
+import Button from '../Commons/Button';
 
-export default function HomeIntroText() {
-    const theme = useSelector((state) => state.theme.mode);
-    const textTheme = theme === 'dark' ? styles.dark : '';
-    const navigate = useNavigate();
-
-    const handleClick = () => {
-        navigate('/works');
-    };
+export default function IntroText() {
 
     return (
-        <div className={`${styles.introText} ${textTheme}`}>
-            <p className={`heading ${textTheme}`}>
-                <span className={`${styles.greeting} whitespace-nowrap`}>Hi! I am</span>
-                <span className={`${textTheme} whitespace-nowrap heading-secondary`}>
-                    Sherly R. Jao
-                </span>
-            </p>
-
-            <p className={`${styles.introSubheading} ${textTheme} whitespace-nowrap subheading`}>
-                Artist | Web Developer & Designer
-            </p>
-
-            <p className="textTheme">
-                I code and I draw, and I'm from the 
-                <strong>
-                    Philippines 🇵🇭
-                </strong> 
-
-                <br/>
-                Just trying my best to navigate life with the skills I have.
-            </p>
-
-            <Button 
-                onClick={handleClick}
-                label={<>
-                    Check my Works! <IoArrowForwardOutline className={`${styles.arrowIcon} icon`}/>
-                </>}
-            />
+        <div className={styles.introText}>
+            <h4>Available for work</h4>
+            <h3>I'm currently in my final year of pursuing a Bachelor of Science in Computer Science.</h3>
+            <h3>I have experience with freelance art commissions, and I’m now focused on gaining more experience in web development.</h3>
+            <Button>Download my resume</Button>
         </div>
     );
 }
