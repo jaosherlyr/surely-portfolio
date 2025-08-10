@@ -53,7 +53,7 @@ export default function NavLinks({ onClick }) {
           `${linkTheme} ${isActive ? styles.active : ''}`
         }
       >
-        Profile
+        About
       </NavLink>
 
       <button

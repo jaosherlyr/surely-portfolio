@@ -6,6 +6,7 @@ import IntroText from "../components/Intro/IntroText.jsx";
 import Greetings from "../components/Greetings/Greetings.jsx";
 import Contacts from "../components/Contacts/Contacts";
 import LogoStudy from '../components/Logo/LogoStudy.jsx';
+import About from "./About.jsx";
 import styles from "./styles/Home.module.scss";
 
 export default function Home() {
@@ -36,6 +37,7 @@ export default function Home() {
         <LogoStudy />
       </section>
 
+      <About />
       <Contacts />
     </>
   );
