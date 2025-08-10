@@ -1,5 +1,17 @@
 @use './variable.scss' as *;
 
+:root {
+  --header-h: 6rem;
+}
+
+html {
+  scroll-padding-top: var(--header-h);
+}
+
+html, body, #root {
+  height: 100%;
+}
+
 body {
     margin: 0;
     font-family: $font-primary;
@@ -12,6 +24,9 @@ body {
     } 
 }
 
+main {
+  padding-top: var(--header-h);
+}
 
 //NO BREAK
 .whitespace-nowrap {
