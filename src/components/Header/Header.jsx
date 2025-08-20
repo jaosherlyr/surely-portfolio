@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 
-import Logo from '../Logo/Logo';
+import Logo from '../Logo/HeaderLogo';
 import NavBar from '../Navigation/NavBar';
 import styles from './Header.module.scss';
 

@@ -1,73 +1,73 @@
-@use '../../styles/variable.scss' as *;
+// @use '../../styles/variable.scss' as *;
 
-.introText {
-    align-content: center;
-}
+// .introText {
+//     align-content: center;
+// }
 
-@media (max-width: $breakpoint-md) {
-    .introText {
-        .introHeading {
-            font-size: 40px;
-            display: block;
+// @media (max-width: $breakpoint-md) {
+//     .introText {
+//         .introHeading {
+//             font-size: 40px;
+//             display: block;
 
-            .greeting, .name {
-            display: block;
-            }
-        }
+//             .greeting, .name {
+//             display: block;
+//             }
+//         }
 
-        .introSubheading {
-            letter-spacing: 7px;
-            margin: 10px 0 0 0;
-        }
+//         .introSubheading {
+//             letter-spacing: 7px;
+//             margin: 10px 0 0 0;
+//         }
 
-        .text {
-            font-size: 14px;
-        }
-    }
-}
+//         .text {
+//             font-size: 14px;
+//         }
+//     }
+// }
 
-.introImage {
-  position: relative;
-  width: 100rem;
-  aspect-ratio: 1/1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+// .introImage {
+//   position: relative;
+//   width: 100rem;
+//   aspect-ratio: 1/1;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
 
-    .rotateText {
-        // position: absolute;
-        width: 90%;
-        height: 90%;
-        top: 0;
-        left: 0;
-        animation: rotate 100s linear infinite;
-    }
+//     .rotateText {
+//         // position: absolute;
+//         width: 90%;
+//         height: 90%;
+//         top: 0;
+//         left: 0;
+//         animation: rotate 100s linear infinite;
+//     }
 
-    .profile {
-        position: absolute;
-        width: 60%;
-        height: 60%;
-        border-radius: 50%;
-    }
-}
+//     .profile {
+//         position: absolute;
+//         width: 60%;
+//         height: 60%;
+//         border-radius: 50%;
+//     }
+// }
 
-//ANIMATION
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+// //ANIMATION
+// @keyframes rotate {
+//   from {
+//     transform: rotate(0deg);
+//   }
+//   to {
+//     transform: rotate(360deg);
+//   }
+// }
 
-//RESPONSIVE
-@media (max-width: $breakpoint-sm) {
-    .introText {
-        margin: 0;
-    }
+// //RESPONSIVE
+// @media (max-width: $breakpoint-sm) {
+//     .introText {
+//         margin: 0;
+//     }
 
-    .introImage {
-        width: 50vh;
-    }
-}
+//     .introImage {
+//         width: 50vh;
+//     }
+// }

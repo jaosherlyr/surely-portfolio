@@ -1,13 +1,14 @@
-import profile from '../../assets/profilePicture.jpg';
-import tempRotateText from '../../assets/exampleText-light.png';
+//import Images
+import profileImg from '../../assets/profilePicture.jpg';
+import tempRotateText from '../../assets/exampleText.png';
+
 import styles from './Intro.module.scss';
 
-export default function HomeIntroImage() {
+export default function IntroImage() {
     return (
-        <div className={styles.introImage}>
-            {/* <div className={styles.rotateText}></div> */}
-            <img src={tempRotateText} alt="circle Text" className={styles.rotateText} />
-            <img src={profile} alt="Profile Image" className={styles.profile} />
+        <div>
+            <img src={tempRotateText} alt="Intro Section - Rotating Circle Text" />
+            <img src={profileImg} alt="Intro Section - Profile Image" />
         </div>
     );
 }

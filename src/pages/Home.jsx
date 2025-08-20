@@ -1,17 +1,16 @@
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import IntroImage from "../components/Intro/IntroImage.jsx";
-import IntroText from "../components/Intro/IntroText.jsx";
-import Greetings from "../components/Greetings/Greetings.jsx";
+import Hero from "../components/Hero/Hero.jsx";
 import Contacts from "../components/Contacts/Contacts";
 import LogoStudy from '../components/Logo/LogoStudy.jsx';
 import About from "../components/About/About.jsx";
+import Intro from '../components/Intro/Intro.jsx';
+
 import styles from "./styles/Home.module.scss";
 
 export default function Home() {
   const location = useLocation();
-  const homeRef = useRef(null);
 
   useEffect(() => {
   if (location.state?.scrollToContact) {
@@ -25,23 +24,11 @@ export default function Home() {
   }
 }, [location]);
 
-useEffect(() => {
-  console.log('homeRef-', homeRef.current);
-}, []);
-
   return (
     <>
-      <section 
-        id='home'
-        ref = {ref => homeRef.current = ref}
-      >
-        <Greetings />
-
-        <div className={styles.intro}>
-          <IntroImage />
-          <IntroText />
-        </div>
-
+      <section id='home' >
+        <Hero />
+        <Intro />
         <LogoStudy />
       </section>
 

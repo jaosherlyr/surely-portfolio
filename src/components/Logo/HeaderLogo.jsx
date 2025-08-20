@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 
 import logoLight from '../../assets/logo-light.svg';
 import logoDark from '../../assets/logo-dark.svg';
-import styles from './Logo.module.scss';
+import styles from './HeaderLogo.module.scss';
 
 export default function Logo({ hidden }) {
     const theme = useSelector((state) => state.theme.mode);

@@ -1,21 +1,27 @@
 import { useSelector } from 'react-redux';
 
-import lightStudy from '../../assets/logoStudy-light.png';
-import darkStudy from '../../assets/logoStudy-dark.png';
+import logoStudyLight from '../../assets/logoStudy-light.png';
+import logoStudyDark from '../../assets/logoStudy-dark.png';
 import styles from './LogoStudy.module.scss';
 
 export default function LogoInfo() {
     const theme = useSelector((state) => state.theme.mode);
-    const logoStudyImg = theme === 'dark' ? darkStudy : lightStudy;
+    const logoStudyImg = theme === 'dark' ? logoStudyDark : logoStudyLight;
 
     return (
-        <div className={styles.logoInfo}>
+        <div>
             <div>
                 <h1>Where Identity meets Design</h1>
-                <h3>The logo is a reflection of my identity, my culture, and my creativity.</h3>
-                <h3>I incorporated the Baybayin character for the letter “S,” our precolonial writing script in the Philippines, with the modern letter “S” to represent my name.</h3>
+
+                <p>This logo is the result of my identity, my culture, and my creativity.</p>
+                <h3>"ᜐ" + "S"</h3>
+                <p>
+                    I used the precolonial writing script of the Philippines, Baybayin. 
+                    The character ᜐ is read as ‘sa’, which I combined with the modern letter ‘S’ to represent the my name.
+                </p>
             </div>
-            <img src={logoStudyImg} alt="Logo Study Image" className={styles.logoStudy} />
+
+            <img src={logoStudyImg} alt="Logo Study Section - Logo Image" />
         </div>
     );
 }
