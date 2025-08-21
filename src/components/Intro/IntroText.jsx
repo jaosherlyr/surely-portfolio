@@ -1,7 +1,8 @@
-import Button from '../Button/Button';
 import { toast } from 'react-toastify';
+
+import Button from '../Button/Button';
+import file from '../../assets/JaoSherly_Resume.pdf';
 import styles from './Intro.module.scss';
-import file from '../../assets/JaoSherly_Resume.pdf'; // served from /public
 
 export default function IntroText() {
   const handleDownload = () => {

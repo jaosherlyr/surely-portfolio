@@ -9,19 +9,21 @@ export default function LogoInfo() {
     const logoStudyImg = theme === 'dark' ? logoStudyDark : logoStudyLight;
 
     return (
-        <div>
-            <div>
-                <h1>Where Identity meets Design</h1>
+        <div className={styles.logoStudySection}>
+            <div className={styles.logoStudyLeft}>
+                <h1 className={styles.logoStudyTitle}>Where Identity meets Design</h1>
 
-                <p>This logo is the result of my identity, my culture, and my creativity.</p>
-                <h3>"ᜐ" + "S"</h3>
-                <p>
+                <p className={styles.logoDesc}>This logo is the result of my identity, my culture, and my creativity.</p>
+
+                <h3 className={styles.logoChar}>"ᜐ" + "S"</h3>
+
+                <p className={styles.logoDesc}>
                     I used the precolonial writing script of the Philippines, Baybayin. 
                     The character ᜐ is read as ‘sa’, which I combined with the modern letter ‘S’ to represent the my name.
                 </p>
             </div>
 
-            <img src={logoStudyImg} alt="Logo Study Section - Logo Image" />
+            <img className={styles.logoStudyImg} src={logoStudyImg} alt="Logo Study Section - Logo Image" />
         </div>
     );
 }
