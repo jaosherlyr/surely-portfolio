@@ -1,6 +1,6 @@
-import SkillCard from "./SkillCard";
+import SkillCard from "../Card/SkillCard";
 
-export default function Skillset() {
+export default function SkillsList() {
     const skillData = [
         {
             title: "Illustration & Visual Design",

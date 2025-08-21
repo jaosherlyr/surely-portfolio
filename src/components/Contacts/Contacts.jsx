@@ -1,4 +1,4 @@
-import ContactList from "./ContactList";
+import ContactList from "../Lists/ContactList";
 
 export default function Contacts() {
     return (

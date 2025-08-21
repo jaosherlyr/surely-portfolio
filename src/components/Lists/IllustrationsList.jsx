@@ -1,6 +1,6 @@
-import WorkCard from "./WorkCard";
+import WorkCard from "../Works/WorkCard";
 
-export default function Illustrations() {
+export default function IllustrationsList() {
     const illustrationsData = [
         {
             title: "Hala Sombi!",

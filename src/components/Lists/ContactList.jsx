@@ -1,5 +1,5 @@
 import { IoLogoFacebook, IoLogoInstagram, IoLogoLinkedin, IoLogoGithub } from "react-icons/io5";
-import ContactCard from "./ContactCard";
+import ContactCard from "./../Card/ContactCard";
 
 export default function ContactList() {
     const contactData = [
@@ -42,7 +42,7 @@ export default function ContactList() {
     return (
         <>
             {contactData.map((contact, index) => (
-                <ContactCard 
+                <ContactCard
                     key={index}
                     label={contact.label}
                     value={contact.value}

@@ -1,6 +1,6 @@
-import Designs from "../components/Works/Designs";
-import Illustrations from "../components/Works/Illustrations";
-import WebProjects from "../components/Works/WebProjects";
+import DesignsList from "../components/Lists/DesignsList";
+import IllustrationsList from "../components/Lists/IllustrationsList";
+import WebProjectsList from "../components/Lists/WebProjectsList";
 
 export default function Works() {
   return(
@@ -9,17 +9,17 @@ export default function Works() {
 
       <h2>Developments</h2>
       <div>
-        <WebProjects/>
+        <WebProjectsList/>
       </div>
 
       <h2>UI/UX Designs</h2>
       <div>
-        <Designs />
+        <DesignsList />
       </div>
 
       <h2>Illustrations</h2>
       <div>
-        <Illustrations />
+        <IllustrationsList />
       </div>
     </section>
   );

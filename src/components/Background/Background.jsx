@@ -1,5 +1,6 @@
-import EducationList from "../Education/EducationList";
-import BackgroundList from "./BackgroundList";
+import BackgroundList from "../Lists/BackgroundList";
+import EducationList from "../Lists/EducationList";
+
 
 export default function Background() {
     return (

@@ -1,4 +1,4 @@
-import BackgroundCard from "./BackgroundCard";
+import BackgroundCard from "../Card/BackgroundCard";
 
 export default function BackgroundList() {
     const backgroundData = [

@@ -1,4 +1,4 @@
-import BackgroundCard from "../Background/BackgroundCard";
+import BackgroundCard from "../Card/BackgroundCard";
 
 export default function EducationList() {
     const educationData = [
@@ -49,7 +49,7 @@ export default function EducationList() {
     return (
         <>
             {educationData.map((education, index) => (
-                <BackgroundCard 
+                <BackgroundCard
                     key={index}
                     title={education.title}
                     timeline={education.timeline}

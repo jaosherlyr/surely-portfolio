@@ -1,6 +1,6 @@
-import WorkCard from "./WorkCard";
+import WorkCard from "../Works/WorkCard";
 
-export default function WebProjects() {
+export default function WebProjectsList() {
     const webProjectsData = [
         {
             title: "PAN",

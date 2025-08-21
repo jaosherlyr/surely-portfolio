@@ -1,4 +1,4 @@
-import Skillset from "./Skillset";
+import SkillsList from "../Lists/SkillsList";
 
 export default function Skills() {
     return (
@@ -6,7 +6,7 @@ export default function Skills() {
             <h1>The Skills I've Learned.</h1>
 
             <div>
-                <Skillset />
+                <SkillsList />
             </div>
         </div>
     );
