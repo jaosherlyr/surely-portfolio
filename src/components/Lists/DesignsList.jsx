@@ -1,6 +1,6 @@
 import WorkCard from "../Works/WorkCard";
 
-export default function Designs() {
+export default function DesignsList() {
     const designsData = [
         {
             title: "Wakey-Wakey",

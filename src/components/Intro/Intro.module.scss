@@ -1,73 +1,55 @@
-// @use '../../styles/variable.scss' as *;
+@use '../../styles/variable.scss' as *;
 
-// .introText {
-//     align-content: center;
-// }
+.introSection {
+  height: 100vh;
+  display: flex;
 
-// @media (max-width: $breakpoint-md) {
-//     .introText {
-//         .introHeading {
-//             font-size: 40px;
-//             display: block;
+  .introLeft {
+    width: 45%;
+    // background-color: blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-//             .greeting, .name {
-//             display: block;
-//             }
-//         }
+    .imgContainer {
+      position: relative;
+      width: 85%;  
+      aspect-ratio: 1/1;
+    }
 
-//         .introSubheading {
-//             letter-spacing: 7px;
-//             margin: 10px 0 0 0;
-//         }
+    .circleText {
+      height: 100%;
+      animation: rotate 100s linear infinite;
+    }
 
-//         .text {
-//             font-size: 14px;
-//         }
-//     }
-// }
+    .profileImg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 65%;
+      border-radius: 50%;
+    }
+  }
 
-// .introImage {
-//   position: relative;
-//   width: 100rem;
-//   aspect-ratio: 1/1;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
+  .introRight {
+    align-self: center;
+    margin-right: 5rem;
 
-//     .rotateText {
-//         // position: absolute;
-//         width: 90%;
-//         height: 90%;
-//         top: 0;
-//         left: 0;
-//         animation: rotate 100s linear infinite;
-//     }
+    .intro {
+        margin: 0.5em 0 1.5em;
+    }
+  }
+}
 
-//     .profile {
-//         position: absolute;
-//         width: 60%;
-//         height: 60%;
-//         border-radius: 50%;
-//     }
-// }
+//ANIMATION
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 
-// //ANIMATION
-// @keyframes rotate {
-//   from {
-//     transform: rotate(0deg);
-//   }
-//   to {
-//     transform: rotate(360deg);
-//   }
-// }
-
-// //RESPONSIVE
-// @media (max-width: $breakpoint-sm) {
-//     .introText {
-//         margin: 0;
-//     }
-
-//     .introImage {
-//         width: 50vh;
-//     }
-// }
+//RESPONSIVE

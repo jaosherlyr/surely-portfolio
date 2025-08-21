@@ -12,15 +12,19 @@ export default function Hero() {
   const greetings = theme === 'dark' ? greetingsDark : greetingsLight;
 
   return (
-    <div>
-      <div>
-        <img src={greetings} alt="Hero Section - Hello Greeting" />
+    <div className={styles.heroSection}>
+      <div className={styles.heroLeft}>
+        <img className={styles.greetings} src={greetings} alt="Hero Section - Hello Greeting" />
 
-        <h1>Hi! I'm Sherly.</h1>
-        <h1>I'm a Web Developer and Artist Based in the Philippines</h1>
+        <div className={styles.heroDetails}>
+          <h1 className={styles.name}>Hi! I'm Sherly.</h1>
+          <h1>I'm a Web Developer and Artist Based in the Philippines</h1>
+        </div>
       </div>
 
-      <img src={heroHand} alt="Hero Section - Hand with Pen Stylus" />
+      <div className={styles.heroRight}>
+        <img className={styles.heroHand} src={heroHand} alt="Hero Section - Hand with Pen Stylus" />
+      </div>
     </div>
   );
 }

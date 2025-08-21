@@ -7,7 +7,7 @@ export default function Button({ children, onClick }) {
 
     return (
         <div className={`${styles.btn} ${theme === 'dark' ? styles.dark : ''}`} onClick={onClick}>
-            {children}
+            <p>{children}</p>
         </div>
     );
 }

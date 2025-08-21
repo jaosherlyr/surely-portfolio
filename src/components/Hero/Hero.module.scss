@@ -1,66 +1,54 @@
 @use '../../styles/variable.scss' as *;
 
-.homeGreetings {
-  position: relative;
-  height: calc(100vh - 6rem);
-  overflow: hidden;
-  align-content: center;
-}
-
-.leftContainerGreetings {
+.heroSection {
   display: flex;
-  flex-direction: column;
-  width: 70%;
-  position: absolute;
-  align-self: center;
+  width: 100%;
+  height: calc(100vh - var(--header-h));
+  overflow: hidden;
+  
+  .heroLeft {
+    align-self: center;
+    width: 70%;
+    
+    .heroDetails {
+      margin: 0 3em 0 7em;
+    }
+    
+    .name {
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 5px solid;
+      animation: typing 1.5s steps(15), cursor .5s step-end infinite;
+    }
 
-  .hello {
-    object-fit: contain;
-    width: 100%;
+    .headline {
+      max-width: 100%;
+
+      span {
+        display: inline-block;
+        position: relative;
+        
+      }
+    }
+
+    .greetings {
+      margin-bottom: 5em;
+    }
   }
 
-  .greetingTxt {
-    margin: 3rem 7rem;
-    width: 100%;
-    position: relative;
-  }
+  .heroRight {
+    width: 30%;
 
-  .typewriter {
-    display: inline-block;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 5px solid;
-    position: relative;
-    animation: typing 2s steps(13, end), cursor .4s step-end infinite alternate; //TO FIX ISSUE!! not clean animation + width 100% follows the width of greetingsTxt
-  }
-}
-
-.hand {
-  position: absolute;
-  height: 120%;
-  left: 65%;
-  object-fit: cover;
-  object-position: left;
-  align-self: anchor-center;
-
-  animation: swoopIn 1.5s ease-out forwards, wiggleWithPause 7s ease-in-out infinite 1.5s;
-}
-
-
-// ANIMATIONS
-@keyframes cursor {
-  50% { border-color: transparent; }  
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 13ch;
+    .heroHand {
+      height: 100vh;
+      animation: swoopIn 1.5s ease-out forwards, wiggleWithPause 7s ease-in-out infinite 1.5s;
+    }
   }
 }
 
+
+//ANIMATION
 @keyframes swoopIn {
   0% {
     transform: translateX(100%) rotate(45deg);
@@ -79,44 +67,31 @@
   100% { transform: rotate(0deg); }
 }
 
+@keyframes cursor {
+  50% { border-color: transparent; }  
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to   { width: 15ch; }
+}
+
+@keyframes max-width {
+	from {
+		max-width: 0;
+	}
+	to {
+		max-width: 100%;
+	}
+}
+
+@keyframes max-height {
+	from {
+		max-height: 0;
+	}
+	to {
+		max-height: 100%;
+	}
+}
 
 // RESPONSIVE
-@media (max-width: $breakpoint-lg) {
-  .homeGreetings {
-    height: 40rem;
-  }
-
-  .leftContainerGreetings {    
-    .greetingTxt {
-      margin: 2rem 5rem;
-    }
-  }
-
-  .hand {
-    height: 100%;
-  }
-}
-
-@media (max-width: $breakpoint-md) {
-  .homeGreetings {
-    height: 30rem;
-  }
-
-  .leftContainerGreetings {    
-    .greetingTxt {
-      margin: 1rem 3rem;
-    }
-  }
-}
-
-@media (max-width: $breakpoint-sm) {
-  .homeGreetings {
-    height: 20rem;
-  }
-
-  .leftContainerGreetings {    
-    .greetingTxt {
-      margin: 1rem 2rem;
-    }
-  }
-}
