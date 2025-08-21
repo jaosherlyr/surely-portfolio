@@ -1,74 +1,20 @@
-@use '../../styles/variable.scss' as *;
-
 .skillSection {
-  position: relative;
-  justify-items: center;
-  background-color: rgba($color-primary, 0.5);
-  align-content: center;
+  text-align: center;
+  width: 100%;
   height: calc(100vh - var(--header-h));
-}
-
-.skillTitle {
-    margin-bottom: 0.5em;
+  background-color: red;
 }
 
 .carouselWrap {
   display: flex;
-  height: 70%;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* Track now flexes between arrows */
-.skillCardTrack {
-  --gap: 1.25rem;
+.skillsList {
+  width: 100%;
   display: grid;
-  grid-auto-flow: column;
-  gap: var(--gap);
-
-  grid-auto-columns: calc((100% - (var(--gap) * 2)) / 3);
-
-  overflow-x: auto;
-  overscroll-behavior-x: contain;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-
-  > * {
-    min-width: 0;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-  }
-
-  :where(ul, ol) {
-    display: contents;
-  }
-
-  scrollbar-width: none;
-  &::-webkit-scrollbar { height: 0; }
-}
-
-@media (max-width: 1024px) {
-  .skillCardTrack {
-    grid-auto-columns: calc((100% - var(--gap)) / 2);
-  }
-}
-@media (max-width: 640px) {
-  .skillCardTrack {
-    grid-auto-columns: 100%;
-  }
-}
-
-.navButton {
-  flex-shrink: 0;
-  font-size: 3rem;
-  cursor: pointer;
-  transition: background 180ms ease, transform 180ms ease;
-
-  &:hover { background: rgba($color-black, 0.8); }
-  &:active { transform: scale(0.95); }
-  &:disabled { opacity: 0.3; cursor: not-allowed; }
-}
-
-:global(.dark) .navButton {
-  background: rgba($color-white, 0.2);
-  color: $color-white;
-  &:hover { background: rgba($color-white, 0.35); }
+  grid-template-columns: repeat(3, minmax(0, 1fr)); 
+  gap: 1rem;
+  margin-top: 2rem;
 }
