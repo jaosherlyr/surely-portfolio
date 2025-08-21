@@ -1,0 +1,51 @@
+@use '../../styles/variable.scss' as *;
+
+.skillCardContainer {
+  background-color: $color-primary;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  padding: 3em;
+  border-radius: 2em;
+
+  .skillDesc {
+    color: $color-darker;
+
+    &.dark { color: $color-lighter; }
+  }
+
+  .listWrap {
+    overflow: hidden;
+    margin-top: 1rem;
+
+    &:hover .track { animation-play-state: paused; }
+  }
+
+  .track {
+    display: inline-flex;
+    gap: 0.5em;
+
+    animation: marquee 30s linear infinite;
+
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+    }
+  }
+
+  .skillList {
+    background-color: rgba($color-darker, 0.3);
+    padding: 0.6em 2.5em;
+    border-radius: 0.7em;
+    white-space: nowrap;
+
+    &.dark {
+        background-color: rgba($color-lighter, 0.2);
+    }
+  }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}

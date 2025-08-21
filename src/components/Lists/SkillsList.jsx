@@ -30,7 +30,7 @@ export default function SkillsList() {
             ],
         },
         {
-            title: "Programming & Web DEvelopment",
+            title: "Programming & Web Development",
             description: "My father is a Senior Web Developer, and his work really inspired me. Like him, I focus on front-end development, where I love bringing designs to life and making things easy to use. I’m also eager to learn back-end development to grow my skills even further. In school, I’ve built a solid foundation with C and Data Structures & Algorithms, which really helped my problem-solving. I pick things up quickly, stay consistent with my academics, and I’m always among the passers in my classes.",
             list: [
                 "HTML",
@@ -70,7 +70,7 @@ export default function SkillsList() {
                     key={index}
                     title={skill.title}
                     description={skill.description}
-                    list={skill.list.join(", ")}
+                    list={skill.list}
                 />
             ))}
         </>
