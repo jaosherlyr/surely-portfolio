@@ -1,0 +1,24 @@
+@use '../../styles/variable.scss' as *;
+
+.backgroundSection {
+    padding: 2.5em;
+    justify-items: center;
+
+    .backgroundTitle {
+        text-align: center;
+    }
+
+    .backgroundContainer {
+        display: flex;
+    }
+
+    .listContainer {
+        width: 50%;
+        margin: 2em 5em;
+    }
+
+    .backgroundSubtitle {
+        justify-self: center;
+        margin-bottom: 0.5em;
+    }
+}
