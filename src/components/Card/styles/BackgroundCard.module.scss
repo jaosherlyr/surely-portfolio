@@ -40,7 +40,7 @@
         display: block;              
         margin: 0 2em;
         padding: 0 1em;             
-        border-left: 0.3em solid $color-primary;
+        border-left: 0.3em solid $color-secondary;
 
         max-height: 0;
         overflow: hidden;
@@ -53,7 +53,7 @@
 
     &:hover {
         .link {
-                display: block;
+            display: block;
 
         }
 

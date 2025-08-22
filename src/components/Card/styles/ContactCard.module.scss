@@ -1,20 +1,29 @@
 @use '../../../styles/variable.scss' as *;
 
 .contactCardContainer, .socialsContainer {
+    span, .infoIcons {
+        font-size: 2em;
+    }
+
+    span {
+        margin: 0 0.5em;
+    }
+
     p {
         font-size: 1.5em;
     }
     
-    span {
-        font-size: 2em;
-        margin: 0 0.5em;
-    }
 }
 
 .contactCardContainer {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    transition: color 0.2s ease-in-out;
+
+    &:hover {
+        color: $color-primary;
+    }
 
     .info {
         display: flex;
@@ -24,8 +33,18 @@
         }
     }
 
-    .infoIcons {
+    .infoIconsContainer {
         display: flex;
+        
+        .infoIcons {
+            margin-left: 0.7em;
+            transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+
+            &:hover {
+                color: $color-primary;
+                transform: translateY(-5px);
+            }
+        }
     }
 }
 
@@ -34,4 +53,10 @@
     justify-self: center;
     align-items: center;
     width: 10em;
+    transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+
+    &:hover {
+        color: $color-primary;
+        transform: translateY(-5px);
+    }
 }
