@@ -1,33 +1,23 @@
 @use '../../styles/variable.scss' as *;
 
-.contact {
-    justify-self: right;
-    width: 70%;
-    padding: 50px;
+.contactSection {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - var(--header-h));
+    overflow: hidden;
 
-    .contactIntro {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-
-        .contactHeading {
-            
-        }
-
-        .contactSubHeading {
-            
-        }
+    .contactLeft {
+        background-color: red;
+        width: 30%;
     }
-
-    .contactItems {
-        justify-items: center;
-        margin: 20px;
     
-        .socialGrid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            width: 50%;
-            padding: 20px;
+    .contactRight {
+        justify-items: center;
+        align-content: center;
+        width: 70%;
+
+        .contactListContainer {
+            margin: 3em 0;
         }
     }
 }

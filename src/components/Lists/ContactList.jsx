@@ -6,12 +6,12 @@ export default function ContactList() {
         {
             label: "Phone Number",
             value: "+63 922 496 9029",
-            type: "info",
+            type: "number",
         },
         {
             label: "Email Address",
             value: "jaosherlyr@gmail.com",
-            type: "info",
+            type: "email",
         },
         {
             label: "Facebook",
