@@ -1,7 +1,7 @@
 @use '../../styles/variable.scss' as *;
 
 .logoStudySection {
-    // background-color: red;
+    background-color: rgba($color-primary, 0.2);
     display: flex;
     height: calc(100vh - var(--header-h));
     align-items: center;
