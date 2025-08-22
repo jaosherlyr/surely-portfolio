@@ -55,6 +55,7 @@ export default function EducationList() {
                     timeline={education.timeline}
                     school={education.school}
                     link={education.link}
+                    type={education.type}
                     details={education.details}
                 />
             ))}

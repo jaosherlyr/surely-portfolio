@@ -3,7 +3,6 @@
 .skillCardContainer {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   text-align: center;
   padding: 3em;
   border-radius: 2em;
@@ -92,9 +91,7 @@
   .track {
     display: inline-flex;
     gap: 0.5em;
-    animation: marquee 20s linear infinite;
-
-    @media (prefers-reduced-motion: reduce) { animation: none; }
+    animation: marquee 30s linear infinite;
 
     .skillList {
       padding: 0.6em 2.5em;

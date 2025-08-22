@@ -5,6 +5,7 @@
     justify-items: center;
 
     .backgroundTitle {
+        margin-top: 0.5em;
         text-align: center;
     }
 
@@ -13,12 +14,17 @@
     }
 
     .listContainer {
-        width: 50%;
         margin: 2em 5em;
+        width: 50%;
     }
 
     .backgroundSubtitle {
         justify-self: center;
         margin-bottom: 0.5em;
+        color: $color-darker;
+        
+        &.dark {
+            color: $color-lighter;
+        }
     }
 }
