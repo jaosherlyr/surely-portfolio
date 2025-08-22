@@ -1,17 +1,21 @@
 .skillSection {
+  padding-top: 5em;
   text-align: center;
   height: 50vh;
-  min-height: fit-content;                /* starting height */
-  overflow: hidden;            /* keep content clipped while resizing */
-  transition: height 1s ease;  /* animate height changes */
+  min-height: fit-content;             
+  overflow: hidden;
+  transition: height 1s ease;
+
+  .skillTitle{
+    margin-bottom: 0.5em;
+  }
 
   &:hover {
-    height: calc(100vh - var(--header-h)); /* expanded height */
+    height: calc(100vh - var(--header-h));
   }
 
   .skillsList {
     justify-content: center;
     display: flex;
-    margin: 5em;
   }
 }
