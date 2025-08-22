@@ -1,15 +1,19 @@
 @use '../../styles/variable.scss' as *;
 
-a.active {
-  color: $color-black;
-
-  &.dark {
-    color: $color-white;
-  }
-
-  &:hover {
-    color: inherit;
-    transform: none;
-    cursor: default;
+.navLink {
+  margin-right: 2em;
+  
+  a.active {
+    color: $color-black;
+  
+    &.dark {
+      color: $color-white;
+    }
+  
+    &:hover {
+      color: inherit;
+      transform: none;
+      cursor: default;
+    }
   }
 }

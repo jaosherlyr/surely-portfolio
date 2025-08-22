@@ -37,7 +37,7 @@ export default function NavLinks({ onClick }) {
 };
 
   return (
-    <>
+    <div className={styles.navLink}>
       <NavLink
         to="/"
         end
@@ -66,6 +66,6 @@ export default function NavLinks({ onClick }) {
       >
         Contact
       </button>
-    </>
+    </div>
   );
 }

@@ -29,14 +29,16 @@ export default function ContactCard({label, icon, link, value, type}) {
 
     return (
         <div 
-            className={styles.contactCardContainer}
+            className={`${type === 'socials' ? styles.socialsContainer : styles.contactCardContainer}`}
             onClick={handleLink}
             style={{ cursor: link ? 'pointer' : 'default' }}
         >
             { type !== 'socials' ? (
                 <>
-                    <p>{label}: </p>
-                    <p>{value}</p>
+                    <div className={styles.info}>
+                        <p>{label}: </p>
+                        <p className={styles.infoValue}>{value}</p>
+                    </div>
 
                     <span>
                         { type === 'email' && 
@@ -51,10 +53,10 @@ export default function ContactCard({label, icon, link, value, type}) {
                     </span>
                 </>
             ) : (
-                <div className={styles.socialsContainer}>
-                    <span>{icon}</span>
+                <>
+                    <span className="icon">{icon}</span>
                     <p>{label}</p>
-                </div>
+                </>
             )}
         </div>
     );

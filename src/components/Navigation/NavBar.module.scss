@@ -3,24 +3,27 @@
 .navbar {
     display: flex;
     align-items: center;
+    margin-right: 3em;
 
     a, button {
-        margin: 0 40px;
+        margin: 0 2em;
     }
 }
 
 .menuIcon {
     display: none;
+
 }
 
 @media (max-width: $breakpoint-md) {
     .navbar {
         display: none;
     }
-
+    
     .menuIcon {
         display: flex;
-
+        margin: 2em;
+        
         &.hidden {
             display: none;
         }

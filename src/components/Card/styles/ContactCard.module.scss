@@ -1,21 +1,32 @@
 @use '../../../styles/variable.scss' as *;
 
-.contactCardContainer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
+.contactCardContainer, .socialsContainer {
     p {
         font-size: 1.5em;
     }
-
+    
     span {
         font-size: 2em;
         display: flex;
         margin: 0 0.5em;
     }
+}
 
-    .socialsContainer {
+.contactCardContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .info {
         display: flex;
+
+        .infoValue {
+            margin-left: 1em;
+        }
     }
+}
+
+.socialsContainer {
+    display: flex;
+    justify-self: center;
 }
