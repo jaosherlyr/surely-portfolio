@@ -1,20 +1,15 @@
 .skillSection {
   text-align: center;
-  width: 100%;
-  height: calc(100vh - var(--header-h));
-  background-color: red;
-}
+  height: 50vh;               
+  transition: height 0.5s ease;
 
-.carouselWrap {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+  &:hover {
+    height: calc(100vh - var(--header-h));
+  }
 
-.skillsList {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr)); 
-  gap: 1rem;
-  margin-top: 2rem;
+  .skillsList {
+    justify-content: center;
+    display: flex;
+    margin: 2em;
+  }
 }

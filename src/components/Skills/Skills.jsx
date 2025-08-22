@@ -7,14 +7,8 @@ export default function Skills() {
     <div className={styles.skillSection}>
       <h1>The Skills I've Learned.</h1>
 
-      <div className={styles.carouselWrap}>
-        <IoChevronBack className="icon"  />
-
-        <div className={styles.skillsList}>
-            <SkillsList />
-        </div>
-
-        <IoChevronForward className="icon" />
+      <div className={styles.skillsList}>
+        <SkillsList />
       </div>
     </div>
   );

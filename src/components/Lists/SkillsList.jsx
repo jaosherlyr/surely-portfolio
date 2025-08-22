@@ -1,3 +1,4 @@
+import { useState } from "react";
 import SkillCard from "../Card/SkillCard";
 
 export default function SkillsList() {
@@ -63,14 +64,23 @@ export default function SkillsList() {
         },
     ]
 
+    const [active, setActive] = useState(null);
+
+    const handleToggle = (i) => {
+        setActive((prev) => (prev === i ? null : i));
+    };
+
     return (
         <>
-            {skillData.map((skill, index) => (
+            {skillData.map((skill, i) => (
                 <SkillCard
-                    key={index}
+                    key={i}
                     title={skill.title}
                     description={skill.description}
                     list={skill.list}
+                    isActive={active === i}
+                    isAnyActive={active !== null}
+                    onToggle={() => handleToggle(i)}
                 />
             ))}
         </>

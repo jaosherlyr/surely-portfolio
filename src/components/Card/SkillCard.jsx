@@ -1,11 +1,21 @@
 import { useSelector } from 'react-redux';
 import styles from './SkillCard.module.scss';
 
-export default function SkillCard({ title, description, list }) {
+export default function SkillCard({ title, description, list, isActive, isAnyActive, onToggle }) {
   const theme = useSelector((state) => state.theme.mode);
 
   return (
-    <div className={styles.skillCardContainer}>
+    <div
+      className={[
+        styles.skillCardContainer,
+        isActive ? styles.raised : "",
+        isAnyActive && !isActive ? styles.disabled : "",
+      ].join(" ")}
+      onClick={onToggle}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && onToggle()}
+    >
       <h3>{title}</h3>
 
       <p className={`${styles.skillDesc} ${theme === 'dark' ? styles.dark : ''}`}>
