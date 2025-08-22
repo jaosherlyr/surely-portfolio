@@ -27,6 +27,14 @@
             grid-column: 1 / -1;
             }
 
+            > *:nth-child(3),
+            > *:nth-child(4) {
+                margin-top: 3rem;
+            }
+
+            > *:nth-child(n + 5) {
+                margin-top: 2rem;
+            }
         }
     }
 }

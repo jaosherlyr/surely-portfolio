@@ -42,7 +42,7 @@ export default function NavLinks({ onClick }) {
         to="/"
         end
         className={({ isActive }) =>
-          `${linkTheme} ${isActive ? styles.active : ''}`
+          `link ${linkTheme} ${isActive ? `active ${styles.active}` : ''}`
         }
       >
         Home
@@ -51,7 +51,7 @@ export default function NavLinks({ onClick }) {
       <NavLink
         to="/works"
         className={({ isActive }) =>
-          `${linkTheme} ${isActive ? styles.active : ''}`
+          `link ${linkTheme} ${isActive ? `active ${styles.active}` : ''}`
         }
       >
         Works

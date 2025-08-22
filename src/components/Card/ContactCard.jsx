@@ -40,17 +40,18 @@ export default function ContactCard({label, icon, link, value, type}) {
                         <p className={styles.infoValue}>{value}</p>
                     </div>
 
-                    <span>
+                    <div className={styles.infoIcons}>
                         { type === 'email' && 
                             <IoNavigateOutline 
                                 onClick={handleEmail}
+                                className="icon"
                             /> 
                         }
-
                         <IoClipboardOutline 
                             onClick={handleCopy}
+                            className="icon"
                         />
-                    </span>
+                    </div>
                 </>
             ) : (
                 <>

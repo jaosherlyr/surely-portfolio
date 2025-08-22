@@ -2,7 +2,7 @@
 
 .navLink {
   margin-right: 2em;
-  
+
   a.active {
     color: $color-black;
   
@@ -11,8 +11,6 @@
     }
   
     &:hover {
-      color: inherit;
-      transform: none;
       cursor: default;
     }
   }
