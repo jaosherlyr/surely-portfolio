@@ -23,6 +23,7 @@ export default function WorkCard({ title, timeline, media, details, link, isExpa
         className={`
             ${isExpanded ? styles.expanded : styles.workCard}
             ${isAnyExpanded && !isExpanded ? styles.notExpanded : ""}
+            ${theme === 'dark' ? styles.dark : ''}
         `}
         onClick={onToggle}
         >
