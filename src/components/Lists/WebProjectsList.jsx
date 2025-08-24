@@ -29,37 +29,6 @@ export default function WebProjectsList() {
             link: "https://github.com/LaplaceXD/WakieWakie",
             details: "Wakey-Wakey was a paired academic project, a dating app where users get matched with others who wake up at the same time as they do. The app allowed matched users to chat with each other. I designed the UI/UX and contributed to the frontend development, which gave me the chance to strengthen both my design and coding skills in one project. This was also my first hands-on experience integrating backend with frontend.",
         },
-        {
-            title: "TEST CASE 3",
-            timeline: "Month YEAR",
-            media: [
-                test2,
-                test4,
-            ],
-            link: "",
-            details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        },
-        {
-            title: "TEST CASE 4",
-            timeline: "Month YEAR",
-            media: [
-                test1,
-            ],
-            link: "",
-            details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        },
-        {
-            title: "TEST CASE 5",
-            timeline: "Month YEAR",
-            media: [
-                test2,
-                test3,
-                test1,
-                test4
-            ],
-            link: "",
-            details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        },
     ]
     
     const [expanded, setExpanded] = useState(null);

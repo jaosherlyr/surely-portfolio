@@ -5,6 +5,8 @@ export default function WorkCard({
   isExpanded, isAnyExpanded, onToggle
 }) {
   const mediaArray = Array.isArray(media) ? media : [media].filter(Boolean);
+  const workHero = mediaArray[0];
+  const rest = mediaArray.slice(1);
 
   return (
     <div
@@ -16,15 +18,29 @@ export default function WorkCard({
       onClick={onToggle}
       role="button"
     >
-      {mediaArray.map((src, i) => (
-        <img className={styles.workImg} key={i} src={src} alt={`${title} screenshot ${i + 1}`} loading="lazy" />
-      ))}
-      <div>
-        <h3>{title}</h3>
-        <p>{timeline}</p>
-        <p className={styles.workDetails}>{details}</p>
+      <div className={styles.hero}>
+        <img className={styles.workImg} src={workHero} alt={`${title} hero`} />
+        <h3 className={styles.heroTitle}>{title}</h3>
       </div>
+
+      <div className={styles.content}>
+            <div className={styles.summary}>
+                <h3 className={styles.workTitle}>{title}</h3>
+                <p className={styles.workTimeline}>{timeline}</p>
+            </div>
+
+        <div className={styles.details}>
+            <p className={styles.workDetails}>{details}</p>
+        </div>
+      </div>
+
+        {rest.length > 0 && (
+          <div className={styles.workGallery}>
+            {rest.map((src, i) => (
+              <img key={i} className={styles.workImg} src={src} alt={`${title} ${i + 2}`} loading="lazy" />
+            ))}
+          </div>
+        )}
     </div>
   );
 }
-
