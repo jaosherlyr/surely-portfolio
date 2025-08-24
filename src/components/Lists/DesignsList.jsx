@@ -1,4 +1,6 @@
-import WorkCard from "../Works/WorkCard";
+import { useState } from "react";
+
+import WorkCard from "../Card/WorkCard";
 
 export default function DesignsList() {
     const designsData = [
@@ -26,17 +28,26 @@ export default function DesignsList() {
         },
     ]
 
+        const [expanded, setExpanded] = useState(null);
+        
+            const handleToggle = (i) => {
+               setExpanded((prev) => (prev === i ? null : i));
+            };
+
     return (
         <>
-            {designsData.map((project, index) => (
+            {designsData.map((project, i) => (
                 <WorkCard 
-                    key={index}
-                    title={project.title}
-                    timeline={project.timeline}
-                    media={project.media}
-                    link={project.link}
-                    details={project.details}
-                />
+                                    key={i}
+                                    title={project.title}
+                                    timeline={project.timeline}
+                                    media={project.media}
+                                    link={project.link}
+                                    details={project.details}
+                                    isExpanded={expanded === i}
+                                    isAnyExpanded={expanded !== null}
+                                    onToggle={() => handleToggle(i)}
+                                />
             ))}
         </>
     );

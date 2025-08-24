@@ -1,0 +1,21 @@
+.workCard {
+  width: 100%;
+//   grid-column: auto;  
+  order: 0;            
+  transition: transform 180ms ease, box-shadow 180ms ease;
+
+    .workDetails {
+        display: none;
+    }
+}
+
+.expanded {
+  grid-column: 1 / -1; 
+  order: -1; 
+
+  .workDetails {
+    display: block;
+  }
+}
+
+.workImg { width: 10em; }

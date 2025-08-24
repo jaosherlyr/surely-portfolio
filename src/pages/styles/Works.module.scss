@@ -1,0 +1,19 @@
+@use '../../styles/variable.scss' as *;
+
+.worksContainer {
+    justify-items: center;
+    width: 100%;
+
+    .worksListContainer {
+        --min: 23%;
+        --gap: 1rem;
+
+        display: grid;
+        gap: var(--gap);
+        grid-template-columns: repeat(auto-fit, minmax(var(--min), 1fr));
+        max-width: calc(4 * var(--min) + 3 * var(--gap));
+        justify-content: center;
+
+        grid-auto-flow: row dense;
+    }
+}
