@@ -10,11 +10,22 @@ export default function BackgroundList() {
             details: "My first internship opportunity, where I was able to learn how to work with WordPress and gain hands-on experience in SEO optimization. I also dabbled in digital marketing, where I created product posters and produced year-end videos. Although it was a short experience, it was very rewarding and gave me a good taste of working in a professional environment."
         },
         {
+            title: "Freelance Artist",
+            timeline: "2019 - present",
+            type: "experience",
+            employment: "Self-employed",
+            details: "I’ve had experience in freelance commissions, and it’s been a nice way to do what I love while earning on the side. I work on acrylic painting, digital illustration, tattoo design, branding assets, and merchandise, guiding clients from concept to sketches, revisions, and final versions. I keep communication clear and timelines organized for a smooth, friendly process.",
+        },
+        {
             title: "Children’s Book Illustrator",
             timeline: "August 2023 - April 2024",
             type: "experience",
             employment: "Rolando Jr. Z. Peralta",
-            details: "I was commissioned to design and illustrate two children’s storybooks that were officially used as part of a school program. The first book is titled Hala Sombi and the second is Beep… Boop… I Am a Robot. Both books have since been published and are ISBN-registered, making them officially part of the Philippine library system. It was an exciting and meaningful project that allowed me to bring stories to life for young readers."
+            details: (
+                <>
+                    I was commissioned to design and illustrate two children’s storybooks that were officially used as part of a school program. The first book is titled <em>Hala Sombi!</em> and the second is <em>Beep… Boop… I Am a Robot</em>. Both books have since been published and are ISBN-registered, making them officially part of the Philippine library system. It was an exciting and meaningful project that allowed me to bring stories to life for young readers.
+                </>
+            ),
         },
         {
             title: "DOST Scholar Recipient",
