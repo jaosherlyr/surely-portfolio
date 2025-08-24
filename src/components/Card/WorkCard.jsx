@@ -1,9 +1,7 @@
+import Timeline from "../Text/Timeline";
 import styles from "./styles/WorkCard.module.scss";
 
-export default function WorkCard({
-  title, timeline, media, details,
-  isExpanded, isAnyExpanded, onToggle
-}) {
+export default function WorkCard({ title, timeline, media, details, isExpanded, isAnyExpanded, onToggle }) {
   const mediaArray = Array.isArray(media) ? media : [media].filter(Boolean);
   const workHero = mediaArray[0];
   const rest = mediaArray.slice(1);
@@ -26,7 +24,7 @@ export default function WorkCard({
       <div className={styles.content}>
             <div className={styles.summary}>
                 <h3 className={styles.workTitle}>{title}</h3>
-                <p className={styles.workTimeline}>{timeline}</p>
+                <Timeline>{timeline}</Timeline>
             </div>
 
         <div className={styles.details}>

@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import { IoOpenOutline } from "react-icons/io5";
 
 import styles from './styles/BackgroundCard.module.scss';
+import Timeline from '../Text/Timeline';
 
 export default function BackgroundCard({ title, timeline, school, employment, type, link, details }) {
     const theme = useSelector((state) => state.theme.mode);
@@ -17,9 +18,7 @@ export default function BackgroundCard({ title, timeline, school, employment, ty
             <span className={styles.rail} aria-hidden="true" />
             <div>
                 <h3 className={styles.backgroundTitle}>{title}</h3>
-                <p className={`${styles.timeline} ${theme === 'dark' ? styles.dark : ''}`}>
-                    <i>{timeline}</i>
-                </p>
+                <Timeline className={styles.timeline} >{timeline}</Timeline>
 
                 {type === 'experience' && <p className={styles.backgroundSubtitle}>{employment}</p>}
 
