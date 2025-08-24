@@ -43,7 +43,7 @@ export default function WorkCard({ title, timeline, media, details, link, isExpa
                         onClick={isExpanded ? handleClick : ''}
                     >
                             {title}
-                            {isExpanded && (
+                            {isExpanded && link && (
                                 <span>
                                     <IoOpenOutline />
                                 </span>
