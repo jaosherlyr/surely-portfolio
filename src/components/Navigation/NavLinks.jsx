@@ -45,7 +45,7 @@ export default function NavLinks({ onClick }) {
           `link ${linkTheme} ${isActive ? `active ${styles.active}` : ''}`
         }
       >
-        Home
+        <p>Home</p>
       </NavLink>
 
       <NavLink
@@ -54,17 +54,17 @@ export default function NavLinks({ onClick }) {
           `link ${linkTheme} ${isActive ? `active ${styles.active}` : ''}`
         }
       >
-        Works
+        <p>Works</p>
       </NavLink>
 
       <button onClick={handleScrollToAbout}>
-        About
+        <p>About</p>
       </button>
 
       <button
         onClick={handleScrollToContact}
       >
-        Contact
+        <p>Contact</p>
       </button>
     </div>
   );

@@ -1,7 +1,7 @@
 @use './variable.scss' as *;
 
 :root {
-  --header-h: 6rem;
+  --header-h: 5rem;
 }
 
 html {
@@ -52,7 +52,7 @@ h3 {
 }
 
 p {
-  font-size: 1.2em;
+  font-size: 1em;
 }
 
 h2, p {
