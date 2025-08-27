@@ -1,22 +1,6 @@
-// @use '../../styles/variable.scss' as *;
+@use '../../styles/variable.scss' as *;
 
-// .intro {
-//     display: flex;
-//     height: 80vh;
-//     background-color: rgba($color-primary, 0.3);
-// }
-
-// //TEMP 
-// h2 {
-//     display: flex;
-//     justify-self: center;
-//     height: 1000px;
-//     background-color: red;
-// }
-
-// //RESPONSIVE
-// @media (max-width: $breakpoint-lg) {
-//     .HomeIntro {
-//         justify-content: center;
-//     }
-// }
+.homeContainer {
+    width: 65%;
+    justify-self: center;
+}

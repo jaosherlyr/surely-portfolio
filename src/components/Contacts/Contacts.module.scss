@@ -4,17 +4,22 @@
     display: flex;
     width: 100%;
     height: calc(100vh - var(--header-h));
-    overflow: hidden;
+     overflow: hidden;
 
     .contactLeft {
-        background-color: red;
-        width: 40%;
+        // background-color: red;
+        width: 30%;
+
+        .contactHand {
+            height: 120%;
+            animation: swoopIn 1.5s ease-out forwards, wiggleWithPause 7s ease-in-out infinite 1.5s;
+        }
     }
     
     .contactRight {
         justify-items: center; 
         align-content: center; 
-        width: 60%;
+        width: 70%;
 
         .contactListContainer {
             width: 55%;
@@ -41,4 +46,22 @@
             }
         }
     }
+}
+
+@keyframes swoopIn {
+  0% {
+    transform: translateX(-100%) rotate(-45deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+@keyframes wiggleWithPause {
+  0% { transform: rotate(0deg); }
+  5% { transform: rotate(5deg); }
+  10% { transform: rotate(0deg); }
+  15% { transform: rotate(10deg); }
+  20% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
 }

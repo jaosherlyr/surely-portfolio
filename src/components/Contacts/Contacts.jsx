@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 
 import ContactList from "../Lists/ContactList";
+import contactHand from '../../assets/contactHand.png';
 import styles from './Contacts.module.scss';
 
 export default function Contacts() {
@@ -9,7 +10,7 @@ export default function Contacts() {
     return (
         <section id="contact" className={styles.contactSection}>
             <div className={styles.contactLeft}>
-                <h1>Hand</h1>
+                <img className={styles.contactHand} src={contactHand} alt="Contact Section - Hand with Paper Airplane" />
             </div>
 
             <div className={styles.contactRight}>

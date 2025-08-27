@@ -15,11 +15,12 @@ html, body, #root {
 body {
     margin: 0;
     font-family: $font-primary;
-    background-color: $color-lighter;
+    background-image: url(src/assets/BG-light.png);
+    background-size: 20%;
     color: $color-black;
 
     &.dark {
-        background-color: $color-darker;
+        background-image: url(src/assets/BG-dark.png);
         color: $color-white;
     } 
 }

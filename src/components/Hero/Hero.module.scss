@@ -4,11 +4,17 @@
   display: flex;
   width: 100%;
   height: calc(100vh - var(--header-h));
+  background-color: $color-lighter;
   overflow: hidden;
   
   .heroLeft {
     align-self: center;
-    width: 70%;
+    width: 60%;
+
+    .heroGreeting {
+      display: flex;
+      justify-content: space-evenly;
+    }
     
     .heroDetails {
       margin: 0 3em 0 7em;
@@ -17,9 +23,6 @@
     .name {
       display: inline-block;
       white-space: nowrap;
-      overflow: hidden;
-      border-right: 5px solid;
-      animation: typing 1.5s steps(15), cursor .5s step-end infinite;
     }
 
     .headline {
@@ -38,24 +41,26 @@
   }
 
   .heroRight {
-    width: 30%;
+    width: 40%;
 
     .heroHand {
-      height: 100vh;
-      animation: swoopIn 1.5s ease-out forwards, wiggleWithPause 7s ease-in-out infinite 1.5s;
+      width: 110%;
+      animation: 
+      swoopIn 1s ease-out 5s both,
+      wiggleWithPause 7s ease-in-out 6s infinite;
     }
+  }
+
+  &.dark {
+    background-color: $color-darker;
   }
 }
 
 
 //ANIMATION
 @keyframes swoopIn {
-  0% {
-    transform: translateX(100%) rotate(45deg);
-  }
-  100% {
-    transform: translateX(0) rotate(0deg);
-  }
+  0%   { transform: translateX(100%) rotate(45deg); }
+  100% { transform: translateX(0)     rotate(0deg); }
 }
 
 @keyframes wiggleWithPause {
@@ -65,24 +70,6 @@
   15% { transform: rotate(-3deg); }
   20% { transform: rotate(0deg); }
   100% { transform: rotate(0deg); }
-}
-
-@keyframes cursor {
-  50% { border-color: transparent; }  
-}
-
-@keyframes typing {
-  from { width: 0; }
-  to   { width: 15ch; }
-}
-
-@keyframes max-width {
-	from {
-		max-width: 0;
-	}
-	to {
-		max-width: 100%;
-	}
 }
 
 @keyframes max-height {
