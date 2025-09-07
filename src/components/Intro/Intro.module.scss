@@ -3,7 +3,7 @@
 .introSection {
   height: fit-content;
   display: flex;
-  background-color: $color-lighter;
+  padding: 5em 0;
 
   .introLeft {
     width: 35%;
@@ -35,10 +35,10 @@
 
   .introRight {
     align-self: center;
-    margin: 4em 3em;
+    padding: 4em 3em;
 
     .intro {
-      margin: 0.5em 0 1.5em;
+      padding: 0.5em 0 1.5em;
     }
   }
 

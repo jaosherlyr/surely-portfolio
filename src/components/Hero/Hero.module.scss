@@ -3,11 +3,16 @@
 .heroSection {
   display: flex;
   width: 100%;
+  top: 0;
+  left: 0;
   height: calc(100vh - var(--header-h));
   background-color: $color-lighter;
   overflow: hidden;
-  
+
   .heroLeft {
+    left: 0;
+    // background-color: blue;
+    position: absolute;
     align-self: center;
     width: 60%;
 
@@ -41,13 +46,17 @@
   }
 
   .heroRight {
-    width: 40%;
+    height: calc(100vh - var(--header-h));;
+    position: absolute;
+    // background-color: yellow;
+    right: 0;
+    overflow: hidden;
 
     .heroHand {
-      width: 110%;
-      animation: 
-      swoopIn 1s ease-out 5s both,
-      wiggleWithPause 7s ease-in-out 6s infinite;
+      height: 110%;
+      // animation: 
+      // swoopIn 1s ease-out 6s both,
+      // wiggleWithPause 7s ease-in-out 6s infinite;
     }
   }
 
