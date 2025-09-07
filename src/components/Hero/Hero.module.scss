@@ -1,28 +1,29 @@
 @use '../../styles/variable.scss' as *;
 
+.heroSection, .heroLeft, .heroRight {
+  height: calc(100vh - var(--header-h));
+} 
+
 .heroSection {
   display: flex;
   width: 100%;
   top: 0;
   left: 0;
-  height: calc(100vh - var(--header-h));
-  background-color: $color-lighter;
-  overflow: hidden;
 
   .heroLeft {
     left: 0;
-    // background-color: blue;
+    background-color: $color-lighter;
     position: absolute;
-    align-self: center;
-    width: 60%;
+    width: 100%;
+    align-content: center;
 
     .heroGreeting {
       display: flex;
-      justify-content: space-evenly;
     }
     
     .heroDetails {
       margin: 0 3em 0 7em;
+      width: 60%;
     }
     
     .name {
@@ -46,22 +47,24 @@
   }
 
   .heroRight {
-    height: calc(100vh - var(--header-h));;
     position: absolute;
-    // background-color: yellow;
     right: 0;
     overflow: hidden;
 
     .heroHand {
-      height: 110%;
-      // animation: 
-      // swoopIn 1s ease-out 6s both,
-      // wiggleWithPause 7s ease-in-out 6s infinite;
+      width: 130%;
+      height: 120%;
+      object-fit: contain;
+      animation: 
+      swoopIn 1s ease-out 6s both,
+      wiggleWithPause 7s ease-in-out 7s infinite;
     }
   }
 
   &.dark {
-    background-color: $color-darker;
+    .heroLeft {
+      background-color: $color-darker;
+    }
   }
 }
 
