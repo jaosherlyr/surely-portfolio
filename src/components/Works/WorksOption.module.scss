@@ -1,0 +1,39 @@
+@use '../../styles/variable.scss' as *;
+
+.worksOptions {
+  display: flex;
+  margin: 3em 0;
+  align-items: center;
+  height: 2em;
+  gap: 0.5em;
+
+  .option {
+    font-size: 1.5em;
+    line-height: 1;
+    white-space: nowrap;
+    padding: 0.3em 1.5em;
+    border-radius: 0.2em;
+    cursor: pointer;
+    opacity: 0.5;
+    color: $color-darker;
+    transition: font-size 0.2s ease-in-out, background-color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+    &.dark {
+        color: $color-lighter;
+    }
+
+    &:hover {
+        opacity: 1;
+      font-size: 1.7em;
+      background-color: rgba($color-secondary, 0.5);
+    }
+    
+    &.active,
+    &.active:hover {   // 👈 active overrides hover
+        opacity: 1;
+      font-size: 2em;
+      background-color: $color-primary;
+      color: inherit;
+    }
+  }
+}
