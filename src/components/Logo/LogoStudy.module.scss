@@ -1,22 +1,30 @@
 @use '../../styles/variable.scss' as *;
 
 .logoStudySection {
-    background-color: rgba($color-primary, 0.2);
+    // background-color: red;
     display: flex;
-    height: calc(100vh - var(--header-h));
-    align-items: center;
-    text-align: center;
-    padding: 0 5em;
+    margin: 6em 0;
+    height: 40em;
+    position: relative;
 
     .logoStudyLeft {
+        position: absolute;
+        width: 50%;
+        align-self: center;
+        text-align: center;
+
+        h1 {
+            margin-bottom: 1em;
+        }
+
         .logoDesc {
-            margin: 3em 7em;
             font-size: 1.3em;
         }
     }
 
     .logoStudyImg {
-        height: 80%;
-        margin-left: 3em
+        position: absolute;
+        right: 0;
+        height: 100%;
     }
 }

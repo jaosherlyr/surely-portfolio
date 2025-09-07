@@ -28,8 +28,8 @@ export default function Home() {
     <>
       <section id='home' >
         <Hero />
-          <Intro />
-          <LogoStudy /> 
+        <Intro />
+        <LogoStudy /> 
       </section>
 
       <About />

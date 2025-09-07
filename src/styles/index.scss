@@ -15,23 +15,29 @@ html, body, #root {
 body {
     margin: 0;
     font-family: $font-primary;
-    // background-image: url(src/assets/BG-light.png);
+    background-image: url(src/assets/BG-light.png);
     // background-size: 20%;
-    background-color: $color-lighter;
+    // background-color: $color-lighter;
     color: $color-black;
     
+    main {
+      // padding-top: ;
+      margin: 0 15% ;
+      padding: var(--header-h) 5em 0;
+      background-color: $color-lighter;
+    }
+
     &.dark {
-      // background-image: url(src/assets/BG-dark.png);
-      background-color: $color-darker;
+      background-image: url(src/assets/BG-dark.png);
+      // background-color: $color-darker;
       color: $color-white;
+
+      main {
+        background-color: $color-darker;
+      }
     } 
 }
 
-main {
-  padding-top: var(--header-h);
-  margin: 0 15%;
-  background-color: teal;
-}
 
 //NO BREAK
 .whitespace-nowrap {
