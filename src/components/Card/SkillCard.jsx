@@ -16,11 +16,13 @@ export default function SkillCard({ title, description, list, isActive, isAnyAct
       role="button"
     >
       
-      <h3 className={`${theme === 'dark' ? styles.dark : ''}`}>{title}</h3>
+      <div>
+        <h3 className={`${styles.skillTitle} ${theme === 'dark' ? styles.dark : ''}`}>{title}</h3>
 
-      <p className={`${styles.skillDesc} ${theme === 'dark' ? styles.dark : ''}`}>
-        {description}
-      </p>
+        <p className={`${styles.skillDesc} ${theme === 'dark' ? styles.dark : ''}`}>
+          {description}
+        </p>
+      </div>
 
       <div className={styles.listWrap}>
         <div className={styles.track}>

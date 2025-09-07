@@ -1,17 +1,31 @@
-.skillSection {
-  background-color: red;
-  text-align: center;
-  height: 40vh;
-  min-height: fit-content;             
-  overflow: hidden;
-  transition: height 0.5s ease;
+@use '../../styles/variable.scss' as *;
 
-  &:hover {
-    height: calc(100vh - var(--header-h));
+.skillSection {
+  text-align: center;
+  height: 36em;
+  padding: 3em 0;
+  width: 100%;
+  transition: height 0.5s ease, border-color 0.3s ease-in-out;
+  border: 0.3em solid $color-darker;      /* all sides */
+  border-left: none;
+  border-right: none;
+
+  .skillTitle {
+    margin-bottom: 0.5em;
   }
 
   .skillsList {
     justify-content: center;
     display: flex;
+    align-items: center;
   }
+
+  &.dark {
+    border-color: $color-lighter;
+  }
+
+   &:hover {
+    border-color: $color-secondary;
+  }
+
 }
