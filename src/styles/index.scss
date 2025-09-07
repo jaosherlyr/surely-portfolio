@@ -1,11 +1,7 @@
 @use './variable.scss' as *;
 
-:root {
-  --header-h: 5rem;
-}
-
 html {
-  scroll-padding-top: var(--header-h);
+  scroll-padding-top: $header;
 }
 
 html, body, #root {
@@ -16,14 +12,14 @@ body {
     margin: 0;
     font-family: $font-primary;
     background-image: url(src/assets/BG-light.png);
-    // background-size: 20%;
+    background-size: 20%;
     // background-color: $color-lighter;
     color: $color-black;
     
     main {
       // padding-top: ;
       margin: 0 15% ;
-      padding: var(--header-h) 5em 0;
+      padding: $header 5em 0;
       background-color: $color-lighter;
     }
 

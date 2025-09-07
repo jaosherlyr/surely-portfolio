@@ -1,7 +1,7 @@
 @use '../../styles/variable.scss' as *;
 
 .heroSection, .heroLeft, .heroRight {
-  height: calc(100vh - var(--header-h));
+  height: calc(100vh - $header);
 } 
 
 .heroSection {
