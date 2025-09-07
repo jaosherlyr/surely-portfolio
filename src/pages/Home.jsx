@@ -28,10 +28,8 @@ export default function Home() {
     <>
       <section id='home' >
         <Hero />
-        <div className={styles.homeContainer}>
           <Intro />
           <LogoStudy /> 
-        </div>
       </section>
 
       <About />
