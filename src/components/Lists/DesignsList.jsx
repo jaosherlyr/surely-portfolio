@@ -51,16 +51,16 @@ export default function DesignsList() {
         <>
             {designsData.map((project, i) => (
                 <WorkCard 
-                                    key={i}
-                                    title={project.title}
-                                    timeline={project.timeline}
-                                    media={project.media}
-                                    link={project.link}
-                                    details={project.details}
-                                    isExpanded={expanded === i}
-                                    isAnyExpanded={expanded !== null}
-                                    onToggle={() => handleToggle(i)}
-                                />
+                    key={i}
+                    title={project.title}
+                    timeline={project.timeline}
+                    media={project.media}
+                    link={project.link}
+                    details={project.details}
+                    isExpanded={expanded === i}
+                    isAnyExpanded={expanded !== null}
+                    onToggle={() => handleToggle(i)}
+                />
             ))}
         </>
     );
