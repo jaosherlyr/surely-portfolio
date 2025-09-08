@@ -18,7 +18,26 @@
     align-content: center;
 
     .heroGreeting {
-      display: flex;
+      position: relative;   
+      display: block;      
+      min-height: 200px;   
+
+      .greetings {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 5em;
+      }
+
+      .loaderOverlay {
+        width: 70%;
+        position: absolute;
+        inset: 0;                 
+        display: grid;
+        place-items: center;     
+        pointer-events: none;   
+        z-index: 1;
+      }
     }
     
     .heroDetails {
@@ -37,12 +56,7 @@
       span {
         display: inline-block;
         position: relative;
-        
       }
-    }
-
-    .greetings {
-      margin-bottom: 5em;
     }
   }
 
@@ -56,8 +70,8 @@
       height: 120%;
       object-fit: contain;
       animation: 
-      swoopIn 1s ease-out 6s both,
-      wiggleWithPause 7s ease-in-out 7s infinite;
+        swoopIn 1s ease-out 6s both,
+        wiggleWithPause 7s ease-in-out 7s infinite;
     }
   }
 
@@ -68,8 +82,7 @@
   }
 }
 
-
-//ANIMATION
+// ANIMATIONS
 @keyframes swoopIn {
   0%   { transform: translateX(100%) rotate(45deg); }
   100% { transform: translateX(0)     rotate(0deg); }
@@ -85,12 +98,12 @@
 }
 
 @keyframes max-height {
-	from {
-		max-height: 0;
-	}
-	to {
-		max-height: 100%;
-	}
+  from {
+    max-height: 0;
+  }
+  to {
+    max-height: 100%;
+  }
 }
 
 // RESPONSIVE

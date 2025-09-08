@@ -1,37 +1,49 @@
 import { useSelector } from 'react-redux';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
-//import Images
 import greetingsDark from '../../assets/greetings-Dark-final.gif';
 import greetingsLight from '../../assets/greetings-Light-final.gif';
-import heroHand from '../../assets/heroHand.png'
+import heroHand from '../../assets/heroHand.png';
 import Loader from '../Loading/Loader';
-
 import styles from "./Hero.module.scss";
-import { useEffect, useMemo, useState } from 'react';
 
 export default function Hero() {
-  const theme = useSelector((state) => state.theme.mode);
+  const theme = useSelector((s) => s.theme.mode);
   const greetings = theme === 'dark' ? greetingsDark : greetingsLight;
 
   const [imgLoaded, setImgLoaded] = useState(false);
   const imgKey = useMemo(() => `${theme}-greetings`, [theme]);
+  const imgRef = useRef(null);
 
+  // reset when source changes
   useEffect(() => {
     setImgLoaded(false);
   }, [greetings]);
+
+  // if already cached, flip loaded immediately
+  useEffect(() => {
+    if (imgRef.current && imgRef.current.complete) {
+      setImgLoaded(true);
+    }
+  }, [greetings, imgKey]);
 
   return (
     <div className={`${theme === 'dark' ? styles.dark : ''} ${styles.heroSection}`}>
       <div className={styles.heroLeft}>
         <div className={styles.heroGreeting}>
-          {!imgLoaded && <Loader />}
-          
-          <img 
+          {!imgLoaded && (
+            <div className={styles.loaderOverlay}>
+              <Loader />
+            </div>
+          )}
+
+          <img
             key={imgKey}
-            className={styles.greetings} 
-            src={greetings} 
+            ref={imgRef}
+            className={styles.greetings}
+            src={greetings}
             alt="Hero Section - Hello Greeting"
-            onLoad={() => setImgLoaded(true)} 
+            onLoad={() => setImgLoaded(true)}
           />
         </div>
 
