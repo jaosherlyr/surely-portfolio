@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5";
-import styles from "./styles/WorkGallery.module.scss";
+import styles from "./Gallery.module.scss";
 
-export default function WorkGallery({ mediaArray, heroIndex, onSelect, isExpanded }) {
+export default function Gallery({ mediaArray, activeIndex, onSelect, isExpanded }) {
   const galleryRef = useRef(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(false);
@@ -19,10 +19,12 @@ export default function WorkGallery({ mediaArray, heroIndex, onSelect, isExpande
     galleryRef.current?.scrollBy({ left: offset, behavior: "smooth" });
   };
 
+  // reset active index when media changes
   useEffect(() => {
-    onSelect(0); // reset hero index when media changes
+    onSelect(0);
   }, [mediaArray, onSelect]);
 
+  // update scroll indicators
   useEffect(() => {
     checkScroll();
     const el = galleryRef.current;
@@ -42,6 +44,7 @@ export default function WorkGallery({ mediaArray, heroIndex, onSelect, isExpande
     };
   }, [checkScroll, mediaArray]);
 
+  // reset scroll on collapse
   useEffect(() => {
     if (!isExpanded && galleryRef.current) {
       galleryRef.current.scrollLeft = 0;
@@ -52,7 +55,7 @@ export default function WorkGallery({ mediaArray, heroIndex, onSelect, isExpande
   }, [isExpanded]);
 
   return (
-    <div className={styles.workGalleryContainer}>
+    <div className={styles.galleryContainer}>
       <span
         className={`${styles.arrow} ${canScrollLeft ? styles.active : ""}`}
         onClick={() => canScrollLeft && scrollBy(-200)}
@@ -61,13 +64,13 @@ export default function WorkGallery({ mediaArray, heroIndex, onSelect, isExpande
       </span>
 
       <div
-        className={`${styles.gallery} ${!canScrollLeft && !canScrollRight ? styles.centered : ""}`}
+        className={`${styles.galleryTrack} ${!canScrollLeft && !canScrollRight ? styles.centered : ""}`}
         ref={galleryRef}
       >
         {mediaArray.map((src, i) => (
           <img
             key={i}
-            className={`${styles.workImg} ${i === heroIndex ? styles.activeThumb : ""}`}
+            className={`${styles.galleryImg} ${i === activeIndex ? styles.activeThumb : ""}`}
             src={src}
             alt={`image ${i + 1}`}
             loading="lazy"

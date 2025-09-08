@@ -2,7 +2,7 @@ import { useState, useMemo } from "react";
 import { useSelector } from "react-redux";
 
 import styles from "./styles/WorkCard.module.scss";
-import WorkGallery from "../Works/WorkGallery";
+import Gallery from "../Gallery/Gallery";
 
 export default function WorkCard({
   title,
@@ -50,7 +50,7 @@ export default function WorkCard({
         <p className={styles.workDetails}>{details}</p>
 
         {mediaArray.length > 1 && (
-          <WorkGallery
+          <Gallery
             mediaArray={mediaArray}
             heroIndex={heroIndex}
             onSelect={setHeroIndex}

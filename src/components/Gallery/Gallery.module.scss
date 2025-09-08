@@ -1,6 +1,6 @@
-@use '../../../styles/variable.scss' as *;
+@use '../../styles/variable.scss' as *;
 
-.workGalleryContainer {
+.galleryContainer {
   display: flex;
   align-items: center;
   width: 100%;
@@ -27,7 +27,7 @@
     }
   }
 
-  .gallery {
+  .galleryTrack {
     width: 100%;
     overflow: hidden;
     gap: 0.5em;
@@ -36,7 +36,7 @@
     display: flex;
     margin-bottom: 1em;
 
-    .workImg {
+    .galleryImg {
       width: 45%;
       opacity: 0.8;
       transform-origin: center;
