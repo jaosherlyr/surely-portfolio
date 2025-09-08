@@ -5,144 +5,85 @@
 }
 
 .workCard {
-    width: 30%;
-    height: fit-content;
-    min-height: 20em;
-    margin: 0.5em;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  width: 30%;
+  height: fit-content;
+  min-height: 20em;
+  margin: 0.5em;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
 
-    .hero {
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
+  .hero {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 
-        .workImg {
-            width: 100%;
-            transform-origin: center;
-            transition: transform 0.3s ease-in-out;
-        }
+    .workImg {
+      width: 100%;
+      transform-origin: center;
+      transition: transform 0.3s ease-in-out;
     }
+  }
+
+  .workTitle {
+    font-size: 1.5em;
+    transition: font-size 0.3s ease-in-out;
+    text-wrap: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 0.5em;
+    padding: 0 0.5em;
+  }
+
+  .details {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    padding: 0 1em 1em;
+    transition: max-height 0.35s ease, opacity 0.25s ease;
+    will-change: max-height, opacity;
+
+    .workDate {
+      color: $color-darker;
+      margin: 0.3em 0;
+
+      &.dark {
+        color: $color-lighter;
+      }
+    }
+
+    .workDetails {
+      text-align: justify;
+      padding: 0.5em 2em 2em;
+    }
+  }
+
+  .open {
+    max-height: 1200px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  &:not(.expanded):hover {
+    .workTitle {
+      font-size: 2em;
+      text-wrap: auto;
+    }
+
+    .hero .workImg {
+      transform: scale(1.1);
+    }
+  }
+
+  &.expanded {
+    width: 35%;
+    background-color: rgba($color-primary, 0.5);
 
     .workTitle {
-        font-size: 1.5em;
-        transition: font-size 0.3s ease-in-out;
-        text-wrap: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        margin-top: 0.5em;
-        padding: 0 0.5em;
+      text-wrap: auto;
+      font-size: 2.5em;
     }
-
-    .details {
-        max-height: 0;
-        overflow: hidden;
-        opacity: 0;
-        pointer-events: none;
-        padding: 0 1em 1em;
-
-        transition:
-        max-height 0.35s ease,
-        opacity 0.25s ease;
-
-        will-change: max-height, opacity;
-
-        .workDate {
-            color: $color-darker;
-            margin: 0.3em 0;
-
-            &.dark {
-                color: $color-lighter;
-            }
-        }
-
-        .workDetails {
-            text-align: justify;
-            padding: 0.5em 2em 2em;
-        }
-    }
-
-    .open {
-        max-height: 1200px;
-        opacity: 1;
-        pointer-events: auto;
-    }
-
-    .workGalleryContainer {
-        display: flex;
-        align-items: center;
-        width: 100%;
-        
-        span {
-            font-size: 1.5em;
-            z-index: 2;
-        }
-
-        .arrow {
-            opacity: 0;
-            cursor: default;
-            transform-origin: center;
-            transition: opacity 0.2s ease, transform 0.3s ease-in-out;
-
-            &.active {
-                opacity: 1;
-                cursor: pointer;
-
-                &:hover {
-                    color: $color-secondary;
-                    transform: scale(1.3);
-                }
-            }
-        }
-
-        .gallery {
-            width: 100%;
-            overflow: hidden;
-            gap: 0.5em;
-            z-index: 1;
-            scroll-behavior: smooth;
-            display: flex;
-            margin-bottom: 1em;
-
-            .workImg {
-                width: 45%;
-                opacity: 0.8;
-                transform-origin: center;
-                transition: filter 0.3s ease-in-out, opacity 0.3s ease-in-out;
-                filter: brightness(0.9);
-
-                &:hover {
-                    opacity: 1;
-                    filter: brightness(1);
-                }
-            }
-
-            &.centered {
-                justify-content: center;
-            }
-        }
-    }
-
-    &:not(.expanded):hover {
-        .workTitle {
-            font-size: 2em;
-            text-wrap: auto;
-        }
-
-        .hero .workImg {
-            transform: scale(1.1);
-        }
-    }
-
-    &.expanded {
-        width: 35%;
-        background-color: rgba($color-primary, 0.5);
-
-        .workTitle {
-            text-wrap: auto;
-            font-size: 2.5em;
-        }
-    }
+  }
 }

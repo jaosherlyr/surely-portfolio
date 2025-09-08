@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import styles from "./WorksOption.module.scss";
+import styles from "./styles/WorksOption.module.scss";
 
 export default function WorksOptions({ active, setActive }) {
   const options = ["Website Development", "UI/UX Design", "Art Illustrations"];
