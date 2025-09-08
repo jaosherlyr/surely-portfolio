@@ -1,74 +1,115 @@
-import { useState, useEffect } from "react";
-import { IoOpenOutline } from "react-icons/io5";
-
-import Timeline from "../Text/Timeline";
-import styles from "./styles/WorkCard.module.scss";
+import { useState, useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
+import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5";
 
-export default function WorkCard({ title, timeline, media, details, link, isExpanded, isAnyExpanded, onToggle }) {
-  const mediaArray = Array.isArray(media) ? media : [media].filter(Boolean);
-  const theme = useSelector((state) => state.theme.mode);
+import styles from "./styles/WorkCard.module.scss";
 
-  const [heroIndex, setHeroIndex] = useState(0);
-  useEffect(() => { setHeroIndex(0); }, [media]);
+export default function WorkCard({ title, timeline, media, details, isExpanded, isAnyExpanded, onToggle }) {
+    const theme = useSelector((state) => state.theme.mode);
+    const mediaArray = Array.isArray(media) ? media.filter(Boolean) : media ? [media] : [];
 
-    const handleClick = () => {
-        if (link) {
-            window.open(link, '_blank');
+    const [heroIndex, setHeroIndex] = useState(0);
+    const hero = mediaArray[heroIndex];
+
+    const [canScrollLeft, setCanScrollLeft] = useState(false);
+    const [canScrollRight, setCanScrollRight] = useState(false);
+    const galleryRef = useRef(null);
+
+    useEffect(() => { setHeroIndex(0); }, [media]);
+
+    useEffect(() => {
+        const checkScroll = () => {
+            if (!galleryRef.current) return;
+            const { scrollLeft, scrollWidth, clientWidth } = galleryRef.current;
+
+            setCanScrollLeft(scrollLeft > 0);
+            setCanScrollRight(scrollLeft + clientWidth < scrollWidth);
+        };
+
+        checkScroll();
+        const gallery = galleryRef.current;
+        gallery?.addEventListener("scroll", checkScroll);
+        window.addEventListener("resize", checkScroll);
+
+        return () => {
+            gallery?.removeEventListener("scroll", checkScroll);
+            window.removeEventListener("resize", checkScroll);
+        };  
+    }, [mediaArray]);
+
+    const scrollBy = (offset) => {
+        if (galleryRef.current) {
+            galleryRef.current.scrollBy({ left: offset, behavior: "smooth" });
         }
-    }
+    };
+
+    useEffect(() => {
+        if (!isExpanded && galleryRef.current) {
+            galleryRef.current.scrollLeft = 0;
+
+            const { clientWidth, scrollWidth } = galleryRef.current;
+            setCanScrollLeft(false);
+            setCanScrollRight(clientWidth < scrollWidth);
+        }
+    }, [isExpanded]);
 
     return (
         <div
-        className={`
-            ${isExpanded ? styles.expanded : styles.workCard}
-            ${isAnyExpanded && !isExpanded ? styles.notExpanded : ""}
-            ${theme === 'dark' ? styles.dark : ''}
-        `}
+        className={`${styles.workCard} ${isExpanded ? styles.expanded : ""} ${isAnyExpanded && !isExpanded ? styles.notExpanded : ""}`}
         onClick={onToggle}
+        role="button"
+        tabIndex={0}
+        onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && onToggle()}
         >
+        {hero && (
             <div className={styles.hero}>
-                <img
-                className={styles.workImg}
-                src={mediaArray[heroIndex]}
-                />
-
-                <h3 className={styles.heroTitle}>{title}</h3>
+            <img className={styles.workImg} src={hero} alt={title} loading="eager" />
             </div>
+        )}
 
-            <div className={styles.content}>
-                <div className={styles.summary}>
-                    <h3 
-                        className={styles.workTitle}
-                        onClick={isExpanded ? handleClick : ''}
-                    >
-                            {title}
-                            {isExpanded && link && (
-                                <span>
-                                    <IoOpenOutline />
-                                </span>
-                            )}
-                    </h3>
+            <h3 className={styles.workTitle}>{title}</h3>
 
-                    <Timeline>{timeline}</Timeline>
-                    <p className={styles.workDetails}>{details}</p>
+        <div
+            className={`${styles.details} ${isExpanded ? styles.open : ""}`}
+            onClick={(e) => e.stopPropagation()} 
+        >
+            <p className={`${styles.workDate} ${theme === 'dark' ? styles.dark : ''}`}><em>{timeline}</em></p>
+            <p className={styles.workDetails}>{details}</p>
+
+            {mediaArray.length > 1 && (
+            <div className={styles.workGalleryContainer}>
+                <span
+                    className={`${styles.arrow} ${canScrollLeft ? styles.active : ""}`}
+                    onClick={() => canScrollLeft && scrollBy(-200)}
+                >
+                    <IoChevronBackOutline />
+                </span>
+
+                <div className={`${styles.gallery} ${!canScrollLeft && !canScrollRight ? styles.centered : ''}`} ref={galleryRef}>
+                    {mediaArray.map((src, i) => (
+                    <img
+                        key={i}
+                        className={`${styles.workImg} ${i === heroIndex ? styles.activeThumb : ""}`}
+                        src={src}
+                        alt={`${title} image ${i + 1}`}
+                        loading="lazy"
+                        onClick={() => setHeroIndex(i)}
+                        role="button"
+                        tabIndex={0}
+                        onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && setHeroIndex(i)}
+                    />
+                    ))}
                 </div>
-            </div>
 
-            <div className={`${styles.workGallery} ${theme === 'dark' ? styles.dark : ''}`} onClick={(e) => e.stopPropagation()}>
-            {mediaArray.map((src, i) => (
-                <img
-                key={i}
-                className={`${styles.workImg} ${i === heroIndex ? styles.activeThumb : ""}`}
-                src={src}
-                loading="lazy"
-                onClick={() => setHeroIndex(i)}
-                role="button"
-                tabIndex={0}
-                />
-            ))}
-
+                <span
+                    className={`${styles.arrow} ${canScrollRight ? styles.active : ""}`}
+                    onClick={() => canScrollRight && scrollBy(200)}
+                >
+                    <IoChevronForwardOutline />
+                </span>
             </div>
+            )}
+        </div>
         </div>
     );
 }

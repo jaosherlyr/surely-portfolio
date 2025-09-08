@@ -2,11 +2,13 @@
 
 .worksContainer {
     justify-items: center;
-    height: calc(100vh - $header);
-
+    min-height: calc(100vh - $header);
+    
     .display {
         padding: 1em 0;
         display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
 
         h2 {
             opacity: 0.8;

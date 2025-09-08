@@ -30,7 +30,7 @@ export default function IllustrationsList() {
             details: "This was the second children’s book I illustrated, commissioned by the same client as Hala Sombi. Unlike the first project, this one was a unique challenge for me since I had no prior experience drawing robots, especially ones that needed to look cute and approachable for children. I went through several iterations of character designs, experimenting with different looks and color schemes, before finalizing a design that was approved. It was a great learning experience, and I really enjoyed pushing myself outside of my usual style.",
         },
         {
-            title: "Si Perlas, and iring sa isla Santa Fe (Perlas, the cat in the island of Santa Fe)",
+            title: "Si Perlas, and iring sa isla Santa Fe",
             timeline: "April 2024",
             media: [
                 test1,
@@ -40,7 +40,16 @@ export default function IllustrationsList() {
             ],
             link: "https://drive.google.com/file/d/1FxOJjwlr6X2ApG-v9OpS1ZVMJ4HR1c_W/view",
             details: "This was a group academic project where I took the lead in the design aspect, being the more artistic member of the team. We created an eBook as part of a partnership between the University of San Carlos (USC) and the National Commission for Culture and the Arts (NCCA). Thanks to this collaboration, our work became part of the Taga Sugbo Ako Digital Children’s Books on Cebuano Festivals, a collection of free digital books. It was a meaningful project that combined creativity, culture, and teamwork.",
-
+        },
+        {
+            title: "Test 1",
+            timeline: "April 2024",
+            media: [
+                test3,
+                test4
+            ],
+            link: "https://drive.google.com/file/d/1FxOJjwlr6X2ApG-v9OpS1ZVMJ4HR1c_W/view",
+            details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         },
     ]
 
