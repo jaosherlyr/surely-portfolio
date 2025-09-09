@@ -1,5 +1,27 @@
 @use '../../../styles/variable.scss' as *;
 
-.navLink {
-  gap: 10em;
+.header {
+  display: flex;
+  gap: 5em;
+  margin-right: 5em;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+}
+
+.header, .sidebar {
+  .active {
+    color: $color-black;
+    cursor: default;
+    transform: none;
+    pointer-events: none;
+
+    &.dark {
+      color: $color-white;
+    }
+  }
 }

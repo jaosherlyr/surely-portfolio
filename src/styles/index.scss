@@ -5,75 +5,77 @@ html {
 }
 
 body {
-    margin: 0;
+  margin: 0;
+  font-family: $font-primary;
+  background-image: url(src/assets/BG-light.png);
+  background-size: 20%;
+  color: $color-black;
+
+  // MAIN CONTENT
+  main {
+    margin: 0 15%;
+    padding: $header 5em 0;
+    background-color: $color-lighter;
+  }
+
+  // ICONS
+  .icon {
+    font-size: 2em;
+  }
+
+  // LINKS + BUTTONS
+  a {
+    text-decoration: none;
+    display: inline-flex;
+  }
+
+  button {
+    background: none;
+    border: none;
+    padding: 0;
+  }
+
+  a,
+  button {
+    font-size: 1.3em;
     font-family: $font-primary;
-    background-image: url(src/assets/BG-light.png);
-    background-size: 20%;
-    // background-color: $color-lighter;
-    color: $color-black;
-    
-    //CSS FOR MAIN CONTENT
+    color: $color-primary;
+    transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+
+    &:hover {
+      color: $color-secondary;
+      transform: translateY(-5px);
+    }
+  }
+
+  // DARK THEME
+  &.dark {
+    background-image: url(src/assets/BG-dark.png);
+    color: $color-white;
+
     main {
-      margin: 0 15% ;
-      padding: $header 5em 0;
-      background-color: $color-lighter;
+      background-color: $color-darker;
     }
 
-
-    //ICONS, LINKS, and BUTTONS
-    .icon {
-      font-size: 2em;
-    }
-
-    a {
-      text-decoration: none;
-      display: inline-flex;
-    }
-
+    a,
     button {
-      background: none;
-      border: none;
-      padding: 0;
-    }
-
-    a, button {
-      margin-right: 5em;
-      font-size: 1.3em;
-      font-family: $font-primary;
-      color: $color-darker;
-      transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
-      
       &:hover {
         color: $color-secondary;
-        transform: translateY(-5px);
       }
     }
-    
-
-    //DARK THEME 
-    &.dark {
-      background-image: url(src/assets/BG-dark.png);
-      color: $color-white;
-
-      main {
-        background-color: $color-darker;
-      }
-
-      a, button {
-        color: $color-lighter;
-      }
-    } 
+  }
 }
 
-
-//NO BREAK
+// NO BREAK
 .whitespace-nowrap {
   white-space: nowrap;
 }
 
-
-//TEXT details
-h1, h2, h3, p {
+// TEXT
+h1,
+h2,
+h3,
+p {
   margin: 0;
 }
 
@@ -93,68 +95,12 @@ p {
   font-size: 1em;
 }
 
-h2, p {
+h2,
+p {
   font-family: $font-secondary;
 }
- 
 
-//ICON, LINKS, AND BUTTONS
-
-
-
-// .icon {
-//   display: flex;
-//   font-size: 2em;
-//   transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
-
-//   &:hover {
-//     color: $color-secondary;
-//     transform: translateY(-5px);
-//   }
-// }
-
-// a,
-// button {
-//   font-size: 1.2em;
-//   font-family: $font-secondary;
-//   color: $color-primary;
-//   margin: 20px;
-//   transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
-
-//   &:hover {
-//     color: $color-secondary;
-//     transform: translateY(-5px);
-//   }
-// }
-
-// a {
-//   text-decoration: none;
-// }
-
-// button {
-//   background: none;
-//   border: none;
-//   cursor: pointer;
-//   padding: 0;
-// }
-
-// .link {
-//   display: inline-flex;
-//   align-items: center;
-//   transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
-
-//   &:not(.active):hover {
-//     transform: translateY(-5px);
-//     color: $color-secondary;
-//   }
-
-//   &.active:hover {
-//     transform: none;
-//   }
-// }
-
-
-//RESPONSIVE
+// RESPONSIVE
 @media (max-width: $breakpoint-lg) {
   h1 {
     font-size: 4rem;

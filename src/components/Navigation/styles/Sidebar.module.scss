@@ -7,29 +7,30 @@
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10px);
-  z-index: 1;
+  z-index: 2;
 }
 
 .sidebar {
   position: fixed;
   top: 0;
   right: 0;
-  width: 60%;
+  width: 50%;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 3em;
   background-color: $color-lighter;
-  z-index: 2;
+  z-index: 3;
+
+  .sidebarContent {
+    width: 100%;
+    height: 50%;
+    padding: 2em 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
 
   &.dark {
     background-color: $color-darker;
   }
-
-}
-
-.closeIcon {
-  margin-right: auto;
-  align-self: normal;
-  margin: 1em;
 }
