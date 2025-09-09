@@ -1,4 +1,3 @@
-import { IoClose } from "react-icons/io5";
 import { useSelector } from 'react-redux';
 
 import NavLinks from './NavLinks';
@@ -16,6 +15,7 @@ export default function Sidebar({ open, onClose }) {
       <div className={`${styles.sidebar} ${theme === 'dark' ? styles.dark : ''}`}>
          <HeaderIcon type="close" onClick={onClose}/>
         <NavLinks onClick={onClose}/>
+        <HeaderIcon type="theme"/>
       </div>
     </>
   );
