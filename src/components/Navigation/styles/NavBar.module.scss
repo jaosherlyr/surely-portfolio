@@ -1,13 +1,9 @@
-@use '../../styles/variable.scss' as *;
+@use '../../../styles/variable.scss' as *;
 
 .navbar {
     display: flex;
     align-items: center;
     margin-right: 3em;
-
-    a, button {
-        margin: 0 2em;
-    }
 }
 
 .menuIcon {

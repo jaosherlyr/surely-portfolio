@@ -2,7 +2,8 @@ import { useSelector } from 'react-redux';
 
 import Logo from '../Logo/HeaderLogo';
 import NavBar from '../Navigation/NavBar';
-import styles from './Header.module.scss';
+
+import styles from './styles/Header.module.scss';
 
 export default function Header({ onOpenSidebar, hidden }) {
     const theme = useSelector((state) => state.theme.mode);

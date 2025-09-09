@@ -1,7 +1,7 @@
 import { NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useScrollSpy } from '../../context/ScrollSpyContext';
-import styles from './NavLinks.module.scss';
+import styles from './styles/NavLinks.module.scss';
 
 export default function NavLinks({ onClick }) {
   const theme = useSelector((s) => s.theme.mode);
@@ -26,11 +26,7 @@ export default function NavLinks({ onClick }) {
       <NavLink
         to="/"
         end
-        className={({ isActive }) =>
-          [linkTheme, isActive && onHome && activeSection === 'home' && styles.active]
-            .filter(Boolean)
-            .join(' ')
-        }
+        className={({ isActive }) => isActive ? "link active" : "link"}
       >
         Home
       </NavLink>

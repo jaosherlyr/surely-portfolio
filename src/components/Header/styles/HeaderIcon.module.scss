@@ -1,0 +1,10 @@
+@use '../../../styles/variable.scss' as *;
+
+.headerIcon {
+    transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+
+    &:hover {
+        color: $color-secondary;
+        transform: translateY(-5px);
+    }
+}
