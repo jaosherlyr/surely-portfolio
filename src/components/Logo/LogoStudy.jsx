@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 
 import logoStudyLight from '../../assets/logoStudy-light.png';
 import logoStudyDark from '../../assets/logoStudy-dark.png';
-import styles from './LogoStudy.module.scss';
+import styles from './styles/LogoStudy.module.scss';
 
 export default function LogoInfo() {
     const theme = useSelector((state) => state.theme.mode);
