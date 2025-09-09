@@ -1,40 +1,25 @@
 import { NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-
+import { useScrollSpy } from '../../context/ScrollSpyContext';
 import styles from './NavLinks.module.scss';
 
 export default function NavLinks({ onClick }) {
-  const theme = useSelector((state) => state.theme.mode);
+  const theme = useSelector((s) => s.theme.mode);
   const linkTheme = theme === 'dark' ? styles.dark : '';
+  const { activeSection } = useScrollSpy();
 
   const navigate = useNavigate();
-  const location = useLocation();
+  const { pathname } = useLocation();
+  const onHome = pathname === '/';
 
-  const handleScrollToContact = () => {
-    if (location.pathname !== '/') {
-      navigate('/', { state: { scrollToContact: true } });
+  const handleScrollTo = (id, stateKey) => {
+    if (onHome) {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
     } else {
-      const contactEl = document.getElementById('contact');
-      if (contactEl) {
-        contactEl.scrollIntoView({ behavior: 'smooth' });
-      }
+      navigate('/', { state: { [stateKey]: true } }); // useRouteScroll will handle it
     }
-
-    if (onClick) onClick();
+    onClick?.();
   };
-
-  const handleScrollToAbout = () => {
-  if (location.pathname !== '/') {
-    navigate('/', { state: { scrollToAbout: true } });
-  } else {
-    const aboutEl = document.getElementById('about');
-    if (aboutEl) {
-      aboutEl.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
-
-  if (onClick) onClick();
-};
 
   return (
     <div className={styles.navLink}>
@@ -42,29 +27,39 @@ export default function NavLinks({ onClick }) {
         to="/"
         end
         className={({ isActive }) =>
-          `link ${linkTheme} ${isActive ? `active ${styles.active}` : ''}`
+          [linkTheme, isActive && onHome && activeSection === 'home' && styles.active]
+            .filter(Boolean)
+            .join(' ')
         }
       >
-        <p>Home</p>
+        Home
       </NavLink>
 
       <NavLink
         to="/works"
         className={({ isActive }) =>
-          `link ${linkTheme} ${isActive ? `active ${styles.active}` : ''}`
+          [linkTheme, isActive && styles.active].filter(Boolean).join(' ')
         }
       >
-        <p>Works</p>
+        Works
       </NavLink>
 
-      <button onClick={handleScrollToAbout}>
-        <p>About</p>
+      <button
+        onClick={() => handleScrollTo('about', 'scrollToAbout')}
+        className={[linkTheme, onHome && activeSection === 'about' && styles.active]
+          .filter(Boolean)
+          .join(' ')}
+      >
+        About
       </button>
 
       <button
-        onClick={handleScrollToContact}
+        onClick={() => handleScrollTo('contact', 'scrollToContact')}
+        className={[linkTheme, onHome && activeSection === 'contact' && styles.active]
+          .filter(Boolean)
+          .join(' ')}
       >
-        <p>Contact</p>
+        Contact
       </button>
     </div>
   );

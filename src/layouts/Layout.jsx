@@ -6,41 +6,35 @@ import { ToastContainer } from 'react-toastify';
 import Header from '../components/Header/Header';
 import Sidebar from '../components/Navigation/Sidebar';
 import ScrollToTop from '../components/ScrollToTop';
+import { ScrollSpyProvider } from '../context/ScrollSpyContext';
 
 export default function Layout() {
   const theme = useSelector((state) => state.theme.mode);
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-
-  //automatically close sidebar if screen is resized
   useEffect(() => {
-  const handleResize = () => {
-    if (window.innerWidth >= 768) {
-      setSidebarOpen(false);
-    }
-  };
+    const handleResize = () => {
+      if (window.innerWidth >= 768) setSidebarOpen(false);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
-  window.addEventListener('resize', handleResize);
-  return () => window.removeEventListener('resize', handleResize);
-}, []);
-
-  useEffect(() => {
-    document.body.className = theme;
-  }, [theme]);
+  useEffect(() => { document.body.className = theme; }, [theme]);
 
   return (
-    <>
+    <ScrollSpyProvider>
       <ScrollToTop />
-      <Header 
+      <Header
         onOpenSidebar={() => setSidebarOpen(true)}
         hidden={sidebarOpen}
       />
-      <Sidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)}/>
+      <Sidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
 
       <main>
         <Outlet />
         <ToastContainer position="top-right" autoClose={2000} />
       </main>
-    </>
+    </ScrollSpyProvider>
   );
 }

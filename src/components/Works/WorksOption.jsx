@@ -14,7 +14,6 @@ export default function WorksOptions({ active, setActive }) {
             theme === "dark" ? styles.dark : ""
           }`}
           onClick={() => {
-            console.log(`Clicked: ${opt}`);
             setActive(opt);
           }}
         >
