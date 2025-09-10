@@ -10,18 +10,3 @@
     display: none;
 
 }
-
-@media (max-width: $breakpoint-md) {
-    .navbar {
-        display: none;
-    }
-    
-    .menuIcon {
-        display: flex;
-        margin: 2em;
-        
-        &.hidden {
-            display: none;
-        }
-    }
-}

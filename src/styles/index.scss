@@ -101,20 +101,3 @@ p {
 }
 
 // RESPONSIVE
-@media (max-width: $breakpoint-lg) {
-  h1 {
-    font-size: 4rem;
-  }
-}
-
-@media (max-width: $breakpoint-md) {
-  h1 {
-    font-size: 3rem;
-  }
-}
-
-@media (max-width: $breakpoint-sm) {
-  h1 {
-    font-size: 2rem;
-  }
-}
