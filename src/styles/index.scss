@@ -35,8 +35,7 @@ body {
     padding: 0;
   }
 
-  a,
-  button {
+  a, button {
     font-size: 1.3em;
     font-family: $font-primary;
     color: $color-primary;
@@ -57,8 +56,7 @@ body {
       background-color: $color-darker;
     }
 
-    a,
-    button {
+    a, button {
       &:hover {
         color: $color-secondary;
       }
@@ -72,10 +70,7 @@ body {
 }
 
 // TEXT
-h1,
-h2,
-h3,
-p {
+h1, h2, h3, p {
   margin: 0;
 }
 
@@ -83,11 +78,7 @@ h1 {
   font-size: 4em;
 }
 
-h2 {
-  font-size: 2.5em;
-}
-
-h3 {
+h2, h3 {
   font-size: 2.5em;
 }
 
@@ -95,9 +86,22 @@ p {
   font-size: 1em;
 }
 
-h2,
-p {
+h2, p {
   font-family: $font-secondary;
 }
 
-// RESPONSIVE
+
+//====================//
+// RESPONSIVE CSS     //
+//====================//
+@media (max-width: $breakpoint-lg) {
+  body {
+    .icon {
+      font-size: 1.8em;
+    }
+
+    a, button {
+      font-size: 1.2em;
+    }
+  }
+}

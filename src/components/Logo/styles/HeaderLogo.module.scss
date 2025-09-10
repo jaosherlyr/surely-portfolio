@@ -5,14 +5,14 @@
     align-items: center;
 
     img {
-        width: 50px;
-        margin: 0 3vh;
+        width: 3.5em;
+        margin: 0 3em;
     }
 
     .logoText {
-        font-size: 25px;
+        font-size: 1.8em;
         font-family: $font-secondary;
-        letter-spacing: 2vh;
+        letter-spacing: 1em;
         color: $color-darker;
 
         &.dark {
@@ -22,5 +22,42 @@
 
     &.hidden {
         display: none;
+    }
+}
+
+
+//====================//
+// RESPONSIVE CSS     //
+//====================//
+@media (max-width: $breakpoint-lg) {
+    .logo {
+        img {
+            width: 3em;
+        }
+
+        .logoText {
+            font-size: 1.5em;
+        }
+    }
+}
+
+@media (max-width: $breakpoint-md) {
+    .logo {
+        img {
+            margin-right: 1.2em;
+        }
+    }
+}
+
+@media (max-width: $breakpoint-sm) {
+    .logo .logoText {
+        display: none;
+    }
+}
+
+@media (max-width: $breakpoint-xs) {
+    .logo img {
+        width: 2.5em;
+        margin-left: 1.5em;
     }
 }

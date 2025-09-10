@@ -25,3 +25,14 @@
     }
   }
 }
+
+
+//====================//
+// RESPONSIVE CSS     //
+//====================//
+@media (max-width: $breakpoint-md) {
+  .header {
+    gap: 3em;
+    margin-right: 3em;
+  }
+}

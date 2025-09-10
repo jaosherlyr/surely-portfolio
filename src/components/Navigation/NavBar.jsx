@@ -10,6 +10,8 @@ export default function NavBar({ onOpenSidebar, hidden }) {
         <HeaderIcon type="theme"/>
       </nav>
 
+
+      {/* Menu Icon for Sidebar */}
       <div className={`${styles.menuIcon} ${hidden ? styles.hidden : ''}`}>
         <HeaderIcon type="menu" onClick={onOpenSidebar} />
       </div>

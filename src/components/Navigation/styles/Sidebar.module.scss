@@ -1,21 +1,22 @@
 @use '../../../styles/variable.scss' as *;
 
-.overlay {
+.overlay, .sidebar {
   position: fixed;
   top: 0;
-  width: 100vh;
-  height: 100vh;
+  height: 100%;
+
+}
+
+.overlay {
+  width: 100%;
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10px);
   z-index: 2;
 }
 
 .sidebar {
-  position: fixed;
-  top: 0;
   right: 0;
-  width: 50%;
-  height: 100vh;
+  width: 30%;
   padding: 3em;
   background-color: $color-lighter;
   z-index: 3;
