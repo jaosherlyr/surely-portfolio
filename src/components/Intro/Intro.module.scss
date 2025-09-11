@@ -1,7 +1,7 @@
 @use '../../styles/variable.scss' as *;
 
 .introSection {
-  padding: 6em 0;
+  padding: 8em 0 4em;
   height: fit-content;
   display: flex;
 
@@ -59,7 +59,7 @@
 //====================//
 @media (max-width: $breakpoint-lg) {
   .introSection {
-    padding: 4em 0;
+    padding: 4em 0 2em;
   }
 }
 
@@ -85,6 +85,6 @@
 
 @media (max-width: $breakpoint-xs) {
   .introSection {
-    padding: 3em 0;
+    padding: 3em 0 1.5em;
   }
 }

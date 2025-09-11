@@ -22,7 +22,7 @@ export default function Home() {
         <Hero />
         <div className='paddedContent'>
           <Intro />
-          {/* <LogoStudy /> */}
+          <LogoStudy />
         </div>
       </section>
       {/* <About />
