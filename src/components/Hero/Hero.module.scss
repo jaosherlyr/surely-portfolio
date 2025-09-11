@@ -1,33 +1,20 @@
 @use '../../styles/variable.scss' as *;
 
-.heroSection, .heroLeft, .heroRight {
-  height: calc(100vh - $header);
-} 
-
 .heroSection {
+  height: calc(100vh - var(--header));
+  padding-top: var(--header);
+  width: 100vw;
   display: flex;
-  width: 100%;
-  top: 0;
-  left: 0;
+  background-color: $color-lighter;
+  overflow: hidden;
 
   .heroLeft {
-    left: 0;
-    background-color: $color-lighter;
-    position: absolute;
-    width: 100%;
+    width: 65%;
     align-content: center;
+    // background-color: red;
 
     .heroGreeting {
-      position: relative;   
-      display: block;      
-      min-height: 200px;   
-
-      .greetings {
-        display: block;
-        max-width: 100%;
-        height: auto;
-        margin-bottom: 5em;
-      }
+      position: relative;
 
       .loaderOverlay {
         width: 70%;
@@ -40,47 +27,37 @@
       }
     }
     
-    .heroDetails {
-      margin: 0 3em 0 7em;
-      width: 60%;
-    }
     
-    .name {
-      display: inline-block;
-      white-space: nowrap;
-    }
-
-    .headline {
-      max-width: 100%;
-
-      span {
-        display: inline-block;
-        position: relative;
-      }
+    .heroDetails {
+      width: 120%;
+      margin: 5em 5em 0;
+      
+        .name {
+          display: inline-block;
+          white-space: nowrap;
+        }
     }
   }
-
+  
   .heroRight {
-    position: absolute;
-    right: 0;
-    overflow: hidden;
+    position: relative;
+    width: 35%;
+    padding-left: 1.5em;
 
     .heroHand {
-      width: 130%;
-      height: 120%;
       object-fit: contain;
+      height: 120%;
       animation: 
-        swoopIn 1s ease-out 6s both,
+//         swoopIn 1s ease-out 6s both,
         wiggleWithPause 7s ease-in-out 7s infinite;
     }
   }
 
   &.dark {
-    .heroLeft {
-      background-color: $color-darker;
-    }
+    background-color: $color-darker;
   }
 }
+
 
 // ANIMATIONS
 @keyframes swoopIn {
@@ -106,4 +83,70 @@
   }
 }
 
-// RESPONSIVE
+
+//====================//
+// RESPONSIVE CSS     //
+//====================//
+@media (max-width: $breakpoint-xl) {
+  .heroSection {
+    .heroLeft {
+      .heroGreeting .greetings {
+        width: 120%;
+      }
+  
+      .heroDetails {
+        margin-right: 3em;
+      }
+    }
+
+    .heroRight .heroHand {
+      height: 100%;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-lg) {
+  .heroSection {
+    height: 80vh;
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .heroSection {
+    height: 70vh;
+
+    .heroLeft .heroDetails {
+      margin: 2em 0 0 3.5em;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .heroSection {
+    height: 40vh;
+    
+    .heroLeft .heroDetails {
+      margin: 2em 0 0 2em;
+    }
+
+    .heroRight .heroHand {
+      width: 130%;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-xs) {
+  .heroSection {
+    height: 35vh;
+
+    .heroLeft {
+      .heroGreeting .greetings {
+        width: 110%;
+      }
+      
+      .heroDetails {
+        margin: 1.5em 0 0 1.5em;
+      }
+    }
+  }
+}

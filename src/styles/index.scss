@@ -1,7 +1,11 @@
 @use './variable.scss' as *;
 
+:root {
+  --header: 5em;
+}
+
 html {
-  scroll-padding-top: $header;
+  scroll-padding-top: var(--header);
 }
 
 body {
@@ -10,52 +14,72 @@ body {
   background-image: url(src/assets/BG-light.png);
   background-size: 20%;
   color: $color-black;
-
-  // MAIN CONTENT
-  main {
-    margin: 0 15%;
-    padding: $header 5em 0;
-    background-color: $color-lighter;
+  
+  // TEXT
+  h1, h2, h3, p {
+    margin: 0;
+  }
+  
+  h1 {
+    font-size: 4em;
+  }
+  
+  h2, h3 {
+    font-size: 2.5em;
+  }
+  
+  p {
+    font-size: 1em;
+  }
+  
+  h2, p {
+    font-family: $font-secondary;
   }
 
   // ICONS
   .icon {
     font-size: 2em;
   }
-
+  
   // LINKS + BUTTONS
   a {
     text-decoration: none;
     display: inline-flex;
   }
-
+  
   button {
     background: none;
     border: none;
     padding: 0;
   }
-
+  
   a, button {
     font-size: 1.3em;
     font-family: $font-primary;
     color: $color-primary;
     transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
-
+    
     &:hover {
       color: $color-secondary;
       transform: translateY(-5px);
     }
+  }
+  
+  .paddedContent {
+    margin: 0 15%;
+    padding: var(--header) 5em 0;
+    background-color: $color-lighter;
   }
 
   // DARK THEME
   &.dark {
     background-image: url(src/assets/BG-dark.png);
     color: $color-white;
-
-    main {
+    
+    .paddedContent {
       background-color: $color-darker;
     }
-
+    
     a, button {
       &:hover {
         color: $color-secondary;
@@ -64,31 +88,12 @@ body {
   }
 }
 
-// NO BREAK
-.whitespace-nowrap {
-  white-space: nowrap;
-}
 
-// TEXT
-h1, h2, h3, p {
-  margin: 0;
-}
+// // NO BREAK
+// .whitespace-nowrap {
+//   white-space: nowrap;
+// }
 
-h1 {
-  font-size: 4em;
-}
-
-h2, h3 {
-  font-size: 2.5em;
-}
-
-p {
-  font-size: 1em;
-}
-
-h2, p {
-  font-family: $font-secondary;
-}
 
 
 //====================//
@@ -102,6 +107,38 @@ h2, p {
 
     a, button {
       font-size: 1.2em;
+    }
+
+    h1 {
+      font-size: 3.5em;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  body h1 {
+    font-size: 3em;
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  body h1 {
+    font-size: 2em;
+  }
+}
+
+@media (max-width: $breakpoint-xs) {
+  :root {
+    --header: 3em;
+  }
+
+  body {
+    .icon {
+      font-size: 1.5em;
+    }
+
+    h1 {
+      font-size: 1.7em;
     }
   }
 }

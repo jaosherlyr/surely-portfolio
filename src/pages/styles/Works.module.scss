@@ -2,7 +2,7 @@
 
 .worksContainer {
     justify-items: center;
-    min-height: calc(100vh - $header);
+    min-height: calc(100vh - var(--header));
     
     .display {
         padding-bottom: 2em;

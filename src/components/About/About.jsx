@@ -4,7 +4,7 @@ import styles from "./About.module.scss";
 
 export default function Profile() {
   return (
-    <section id="about">
+    <section id="about" className="paddedContent">
         <Skills />
         <Background />
     </section>

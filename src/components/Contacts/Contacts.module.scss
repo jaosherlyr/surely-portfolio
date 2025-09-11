@@ -2,8 +2,7 @@
 
 .contactSection {
     display: flex;
-    width: 100%;
-    height: calc(100vh - $header);
+    height: calc(100vh - var(--header));
     overflow: hidden;
     justify-content: right;
 
@@ -11,7 +10,7 @@
         overflow: hidden;
         position: absolute;
         left: 0;
-        height: calc(100vh - $header);;
+        height: calc(100vh - var(--header));;
 
         .contactHand {
             height: 120%;

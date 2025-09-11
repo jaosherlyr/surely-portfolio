@@ -15,13 +15,9 @@ $font-secondary: 'Noto Sans', sans-serif;
 
 
 //BREAKPOINTS
-$breakpoint-xs: 480px;   // small phones
+$breakpoint-xs: 500px;   // small phones
 $breakpoint-sm: 768px;   // tablets (portrait) → often switch header → sidebar
 $breakpoint-md: 1024px;  // tablets (landscape) / small laptops
 $breakpoint-lg: 1280px;  // laptops / desktop base
 $breakpoint-xl: 1440px;  // large desktops
 $breakpoint-xxl: 1600px; // very large monitors
-
-
-//HEADER
-$header: 5em;

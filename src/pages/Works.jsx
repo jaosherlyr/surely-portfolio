@@ -10,7 +10,7 @@ export default function Works() {
   const [active, setActive] = useState("default");
 
   return (
-    <section id="works" className={styles.worksContainer}>
+    <section id="works" className={`paddedContent ${styles.worksContainer}`}>
       <h1 className={styles.worksTitle}>Explore my Works!</h1>
 
       <WorksOptions active={active} setActive={setActive} />

@@ -20,11 +20,13 @@ export default function Home() {
     <div ref={spyRootRef}>
       <section id="home">
         <Hero />
-        <Intro />
-        <LogoStudy />
+        {/* <div className='paddedContent'>
+          <Intro />
+          <LogoStudy />
+        </div> */}
       </section>
-      <About />
-      <Contacts />
+      {/* <About />
+      <Contacts /> */}
     </div>
   );
 }
