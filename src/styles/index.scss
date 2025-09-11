@@ -67,7 +67,7 @@ body {
   
   .paddedContent {
     margin: 0 15%;
-    padding: var(--header) 5em 0;
+    padding: 0 5em;
     background-color: $color-lighter;
   }
 
@@ -99,6 +99,12 @@ body {
 //====================//
 // RESPONSIVE CSS     //
 //====================//
+@media (max-width: $breakpoint-xl) {
+  body .paddedContent {
+    margin: 0 10%;
+  }
+}
+
 @media (max-width: $breakpoint-lg) {
   body {
     .icon {
@@ -112,18 +118,42 @@ body {
     h1 {
       font-size: 3.5em;
     }
+
+    h2, h3 {
+      font-size: 2.3em;
+    }
   }
 }
 
 @media (max-width: $breakpoint-md) {
-  body h1 {
-    font-size: 3em;
-  }
+  body {
+    h1 {
+      font-size: 3em;
+    }
+
+    h2, h3 {
+      font-size: 2em
+    }
+  } 
 }
 
 @media (max-width: $breakpoint-sm) {
-  body h1 {
-    font-size: 2em;
+  body {
+    .paddedContent {
+      padding: 0 4em;
+    }
+
+    h1 {
+      font-size: 2em;
+    }
+
+    h2, h3 {
+      font-size: 1.7em;
+    }
+
+    p {
+      font-size: 0.9em;
+    }
   }
 }
 
@@ -133,12 +163,25 @@ body {
   }
 
   body {
+    .paddedContent {
+      margin: 0;
+      padding: 0 3em;
+    }
+
     .icon {
       font-size: 1.5em;
     }
 
     h1 {
       font-size: 1.7em;
+    }
+
+    h2, h3 {
+      font-size: 1.5em;
+    }
+
+    p {
+      font-size: 0.8em;
     }
   }
 }
