@@ -1,17 +1,16 @@
 @use '../../styles/variable.scss' as *;
 
 .backgroundSection {
-    margin: 6em 0;
+    padding: 4em 0;
     justify-items: center;
 
     .backgroundTitle {
-        margin-top: 0.5em;
+        margin-bottom: 0.5em;
         text-align: center;
     }
 
     .backgroundContainer {
         display: flex;
-        margin-top: 1em;
         gap: 3em;
     }
 
@@ -20,12 +19,22 @@
     }
 
     .backgroundSubtitle {
+        margin-bottom: 0.5em;
         justify-self: center;
-        margin-bottom: 0.7em;
         color: $color-darker;
         
         &.dark {
             color: $color-lighter;
         }
+    }
+}
+
+
+//====================//
+// RESPONSIVE CSS     //
+//====================//
+@media (max-width: $breakpoint-lg) {
+    .backgroundSection {
+        padding: 2em 0;
     }
 }
