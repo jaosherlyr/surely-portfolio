@@ -1,121 +1,125 @@
 @use '../../../styles/variable.scss' as *;
 
 .skillCardContainer {
-  margin: 0.5em;
-  width: 15%;
-  border-radius: 1em;
+  width: 16%;
   padding: 1.5em;
-  height: 25em;
+  color: $color-darker;
+  overflow: hidden;
+  opacity: 1;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
+  
+  border-radius: 1em;
   border: 0.1em solid $color-darker;
-  color: $color-darker;
-  opacity: 1;
 
   transition:
     border 0.3s ease-in-out,
-    margin 0.3s ease-in-out,
-    width 0.3s ease-in-out,
-    opacity 0.3s ease-in-out;
+    opacity 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
 
-  .skillTitle,
-  .skillDesc,
-  .listWrap {
+  .skillTitle, .skillDesc, .listWrap {
     opacity: 0.5;
     transition: opacity 0.3s ease-in-out, font-size 0.3s ease-in-out;
   }
 
   .skillTitle {
-    font-size: 1.5em;
+    font-size: 1.3em;
     margin-bottom: 1em;
   }
 
-  .skillDesc {
+  .skillDesc, .listWrap .track .skillItem {
     font-size: 0.7em;
+  }
+  
+  .skillDesc {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .listWrap {
-    overflow: hidden;
     margin-top: 2em;
+    overflow: hidden;
 
     .track {
-      display: flex;
-      /* `text-wrap` isn’t needed; keep `white-space` */
+      height: 3em;
+      width: max-content;
       white-space: nowrap;
       gap: 0.5em;
-      width: max-content;
-      will-change: transform;
-      animation: marquee 10s linear infinite;
+    
+      display: flex;
       align-items: center;
-      height: 3em;
+    
+      animation: marquee 10s linear infinite;
+      will-change: transform;
 
-      .skillList {
+      .skillItem {
         padding: 0.5em 2em;
         border-radius: 0.5em;
-        font-size: 0.8em;
         transition: font-size 0.3s ease-in-out;
       }
     }
   }
 
-  &:hover,
-  &.raised {
-    width: 40%;
-    border: transparent;
+  &:hover, &.raised {
     background-color: rgba($color-primary, 0.5);
+    width: 32%;
+    height: fit-content;
+    min-height: 40vh;
 
-    .skillTitle {
-      font-size: 2.5em;
+    border: transparent;
+    
+    .skillTitle { 
+      font-size: 2.5em; 
     }
 
-    .skillTitle,
-    .skillDesc,
-    .listWrap {
+    .skillDesc, .listWrap .track .skillItem { 
+      font-size: 1em; 
+    }
+
+    .skillDesc {
+      display: block;
+    }
+    
+    .skillTitle, .skillDesc, .listWrap {
       opacity: 1;
       color: $color-black;
-
-      .track {
-        animation-duration: 30s;
-      }
     }
-
-    .skillDesc,
-    .listWrap .track .skillList {
-      font-size: 1em;
-    }
-
+    
     .listWrap .track {
-      &:hover {
-        animation-play-state: paused;
+      animation-duration: 30s;
+      
+      &:hover { 
+        animation-play-state: paused; 
       }
 
-      .skillList {
-        &:hover {
-          font-size: 1.5em;
-        }
+      .skillItem { 
+        &:hover { 
+          font-size: 1.5em; 
+        } 
       }
     }
   }
-
+  
   &.disabled {
     cursor: default;
     pointer-events: none;
     opacity: 0.3;
   }
-
+  
   &.dark {
     color: $color-lighter;
     border-color: $color-lighter;
-
-    &:hover {
+    
+    &:hover, &.raised {
       .skillTitle,
       .skillDesc,
-      .listWrap {
-        color: $color-white;
-      }
+      .listWrap { color: $color-white; }
     }
   }
 }
@@ -123,4 +127,86 @@
 @keyframes marquee {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
+}
+
+
+//====================//
+// RESPONSIVE CSS     //
+//====================//
+@media (max-width: $breakpoint-lg) {
+  .skillCardContainer {
+    width: 30%;
+    
+    &:hover, &.raised {
+      min-height: 30vh;
+      width: 50%;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .skillCardContainer {
+    width: 24%;
+
+    &:hover, &.raised {
+      .skillTitle { font-size: 2em; }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .skillCardContainer {
+    width: 70%;
+
+    .skillTitle {
+      font-size: 1.1em;
+      margin-bottom: 0.5em;
+    }
+
+    .listWrap {
+      display: none;
+    }
+
+    &:hover, &.raised {
+      width: 80%;
+
+      .skillTitle {
+        font-size: 1.7em;
+        margin-bottom: 1em;
+      }
+
+      .skillDesc, .listWrap .track .skillItem {
+        font-size: 0.9em;
+      }
+
+      .listWrap {
+        display: block;
+
+        .track .skillItem {
+          &:hover {
+            font-size: 1em;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-xs) {
+  .skillCardContainer {
+    .skillDesc {
+      font-size: 0.5em;
+    }
+
+    &:hover, &.raised {
+      .skillTitle {
+        font-size: 1.5em;
+      }
+
+      .skillDesc, .listWrap .track .skillItem {
+        font-size: 0.8em;
+      }
+    }
+  }
+
 }

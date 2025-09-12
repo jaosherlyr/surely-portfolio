@@ -25,8 +25,8 @@ export default function Home() {
           <LogoStudy />
         </div>
       </section>
-      {/* <About />
-      <Contacts /> */}
+      <About />
+      {/* <Contacts /> */}
     </div>
   );
 }

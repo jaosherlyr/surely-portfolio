@@ -1,5 +1,5 @@
-import { useSelector } from 'react-redux';
-import styles from './styles/SkillCard.module.scss';
+import { useSelector } from "react-redux";
+import styles from "./styles/SkillCard.module.scss";
 
 export default function SkillCard({ title, description, list, isActive, isAnyActive, onToggle }) {
   const theme = useSelector((state) => state.theme.mode);
@@ -12,28 +12,23 @@ export default function SkillCard({ title, description, list, isActive, isAnyAct
         ${isAnyActive && !isActive ? styles.disabled : ""}
         ${theme === "dark" ? styles.dark : ""}
       `}
+      data-raised={isActive ? "true" : undefined}
       onClick={onToggle}
       role="button"
     >
-      
       <div>
-        <h3 className={`${styles.skillTitle} ${theme === 'dark' ? styles.dark : ''}`}>{title}</h3>
-
-        <p className={`${styles.skillDesc} ${theme === 'dark' ? styles.dark : ''}`}>
-          {description}
-        </p>
+        <h3 className={`${styles.skillTitle} ${theme === "dark" ? styles.dark : ""}`}>{title}</h3>
+        <p className={`${styles.skillDesc} ${theme === "dark" ? styles.dark : ""}`}>{description}</p>
       </div>
 
       <div className={styles.listWrap}>
         <div className={styles.track}>
-            {list.map((item, i) => (
-                <p key={`a-${i}`} className={`${styles.skillList} ${theme === 'dark' ? styles.dark : ''}`}>{item}</p>
-            ))}
-
-            {/* duplicated for smoother loop */}
-            {list.map((item, i) => (
-                <p key={`b-${i}`} className={`${styles.skillList} ${theme === 'dark' ? styles.dark : ''}`}>{item}</p>
-            ))}
+          {list.map((item, i) => (
+            <p key={`a-${i}`} className={`${styles.skillItem} ${theme === "dark" ? styles.dark : ""}`}>{item}</p>
+          ))}
+          {list.map((item, i) => (
+            <p key={`b-${i}`} className={`${styles.skillItem} ${theme === "dark" ? styles.dark : ""}`}>{item}</p>
+          ))}
         </div>
       </div>
     </div>
