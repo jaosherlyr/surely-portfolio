@@ -1,4 +1,4 @@
-import BackgroundCard from "../Card/BackgroundCard";
+import BackgroundCard from "../cards/BackgroundCard";
 
 export default function EducationList() {
     const educationData = [

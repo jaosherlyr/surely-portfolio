@@ -1,26 +1,29 @@
-import DesignsList from "../components/Lists/DesignsList";
-import IllustrationsList from "../components/Lists/IllustrationsList";
-import WebProjectsList from "../components/Lists/WebProjectsList";
+import WebProjects from "../components/lists/WebProjects";
+import ProductDesignProjects from "../components/lists/ProductDesignProjects"
+import IllustrationProjects from "../components/lists/IllustrationProjects"
+import WorksTabs from "../components/sections/Works/WorksTabs";
 
 import styles from "./styles/Works.module.scss";
-import { useState } from "react";
-import WorksOptions from "../components/Works/WorksOption";
 
-export default function Works() {
+import { useState } from "react";
+
+export default function WorksSection() {
   const [active, setActive] = useState("default");
 
   return (
-    <section id="works" className={`paddedContent ${styles.worksContainer}`}>
-      <h1 className={styles.worksTitle}>Explore my Works!</h1>
+    <section id="works" className={`paddedContent ${styles.worksSection}`}>
+      <h1 className={styles.worksTitle}>Explore My Works</h1>
 
-      <WorksOptions active={active} setActive={setActive} />
+      <WorksTabs active={active} setActive={setActive} />
 
-      <div className={styles.display}>
-        {active === "default" && <h2>Select an option!</h2>}
+      <div className={styles.worksDisplay}>
+        {active === "default" && <h2>Select an option</h2>}
 
-        {active === "Website Development" && <WebProjectsList />}
-        {active === "UI/UX Design" && <DesignsList />}
-        {active === "Art Illustrations" && <IllustrationsList />}
+        
+
+        {active === "Website Development" && <WebProjects />}
+        {active === "UI/UX Design" && <ProductDesignProjects/>}
+        {active === "Art Illustrations" && <IllustrationProjects />}
       </div>
     </section>
   );

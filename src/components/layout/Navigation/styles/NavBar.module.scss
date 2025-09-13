@@ -1,0 +1,21 @@
+@use '../../../../styles/variable.scss' as *;
+
+.bar {
+  display: flex;
+  align-items: center;
+  margin-right: 3em;
+}
+
+.menu {
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: $breakpoint-sm) {
+  .bar { display: none; }
+  .menu { display: block; margin-right: 3em; }
+}
+
+@media (max-width: $breakpoint-xs) {
+  .menu { margin-right: 1.5em; }
+}

@@ -1,0 +1,24 @@
+@use '../../../styles/variable.scss' as *;
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  border: 0.2em solid rgba($color-primary, 0.5);
+  padding: 0.7em 3em;
+  border-radius: 2em;
+  transition: transform 0.2s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  cursor: pointer;
+
+  &.dark {
+    color: rgba($color-lighter, 0.8);
+  }
+
+  &:hover {
+    border-color: transparent;
+    background-color: rgba($color-primary, 0.5);
+    transform: translateY(-2px);
+    color: inherit;
+  }
+}

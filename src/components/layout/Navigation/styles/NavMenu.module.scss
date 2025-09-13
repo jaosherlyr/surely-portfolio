@@ -1,0 +1,30 @@
+@use '../../../../styles/variable.scss' as *;
+
+.inline {
+  display: flex;
+  gap: 5em;
+  margin-right: 5em;
+}
+
+.vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+}
+
+.inline, .vertical {
+  .active {
+    color: $color-black;
+    cursor: default;
+    transform: none;
+    pointer-events: none;
+
+    &.dark { color: $color-white; }
+  }
+}
+
+/* Responsive */
+@media (max-width: $breakpoint-md) {
+  .inline { gap: 3em; margin-right: 3em; }
+}

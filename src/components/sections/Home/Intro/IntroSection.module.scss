@@ -1,0 +1,74 @@
+@use '../../../../styles/variable.scss' as *;
+
+.section {
+  padding: 8em 0 4em;
+  height: fit-content;
+  display: flex;
+
+  .left {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .media {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+    }
+
+    .ring {
+      height: 100%;
+      animation: rotate 100s linear infinite;
+    }
+
+    .avatar {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 65%;
+      border-radius: 50%;
+    }
+  }
+
+  .right {
+    width: 50%;
+    align-self: center;
+    padding: 0 1em;
+
+    .copy {
+      padding: 0.5em 0 1.5em;
+    }
+  }
+}
+
+/* Animation */
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: $breakpoint-lg) {
+  .section { padding: 4em 0 2em; }
+}
+
+@media (max-width: $breakpoint-md) {
+  .section {
+    flex-direction: column;
+    align-items: center;
+
+    .left { width: 60%; }
+    .right {
+      width: 100%;
+      margin-top: 1em;
+
+      .copy { padding-top: 0.2em; }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-xs) {
+  .section { padding: 3em 0 1.5em; }
+}

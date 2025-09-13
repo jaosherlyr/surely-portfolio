@@ -1,9 +1,0 @@
-@use '../../../styles/variable.scss' as *;
-
-.timeline {
-    color: $color-darker;
-    
-    &.dark {
-        color: $color-lighter;
-    }
-}

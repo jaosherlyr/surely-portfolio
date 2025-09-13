@@ -1,0 +1,33 @@
+@use '../../../../styles/variable.scss' as *;
+
+.section {
+  padding: 4em 0;
+  justify-items: center;
+
+  .title {
+    margin-bottom: 0.5em;
+    text-align: center;
+  }
+
+  .grid {
+    display: flex;
+    gap: 3em;
+  }
+
+  .column {
+    width: 50%;
+  }
+
+  .subtitle {
+    margin-bottom: 0.5em;
+    justify-self: center;
+    color: $color-darker;
+
+    &.dark { color: $color-lighter; }
+  }
+}
+
+/* Responsive */
+@media (max-width: $breakpoint-lg) {
+  .section { padding: 2em 0; }
+}

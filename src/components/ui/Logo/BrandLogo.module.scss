@@ -1,0 +1,48 @@
+@use '../../../styles/variable.scss' as *;
+
+.brand {
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 3.5em;
+    margin: 0 3em;
+  }
+
+  .wordmark {
+    font-size: 1.8em;
+    font-family: $font-secondary;
+    letter-spacing: 1em;
+    color: $color-darker;
+
+    &.dark { color: $color-lighter; }
+  }
+
+  &.hidden { display: none; }
+}
+
+
+//======================// 
+//   RESPONSIVE CSS     // 
+//======================//
+@media (max-width: $breakpoint-lg) {
+  .brand {
+    img { width: 3em; }
+    .wordmark { font-size: 1.5em; }
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .brand img { margin-right: 1.2em; }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .brand .wordmark { display: none; }
+}
+
+@media (max-width: $breakpoint-xs) {
+  .brand img {
+    width: 2em;
+    margin-left: 1.5em;
+  }
+}

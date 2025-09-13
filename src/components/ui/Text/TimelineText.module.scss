@@ -1,0 +1,9 @@
+@use '../../../styles/variable.scss' as *;
+
+.text {
+  color: $color-darker;
+
+  &.dark {
+    color: $color-lighter;
+  }
+}

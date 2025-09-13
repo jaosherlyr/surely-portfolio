@@ -1,56 +1,57 @@
 import { IoLogoFacebook, IoLogoInstagram, IoLogoLinkedin, IoLogoGithub } from "react-icons/io5";
-import ContactCard from "./../Card/ContactCard";
+
+import ContactCard from "../cards/ContactCard";
 
 export default function ContactList() {
-    const contactData = [
-        {
-            label: "Phone Number",
-            value: "+63 922 496 9029",
-            type: "number",
-        },
-        {
-            label: "Email Address",
-            value: "jaosherlyr@gmail.com",
-            type: "email",
-        },
-        {
-            label: "Facebook",
-            icon: <IoLogoFacebook />,
-            link: "https://web.facebook.com/surely.how",
-            type: "socials",
-        },
-        {
-            label: "Instagram",
-            icon: <IoLogoInstagram />,
-            link: "https://www.instagram.com/thesurelyhow/",
-            type: "socials",
-        },
-        {
-            label: "Linkedin",
-            icon: <IoLogoLinkedin />,
-            link: "https://www.linkedin.com/in/sherly-jao-46a720215/",
-            type: "socials",
-        },
-        {
-            label: "GitHub",
-            icon: <IoLogoGithub />,
-            link: "https://github.com/jaosherlyr",
-            type: "socials",
-        },
-    ]
+  const contactData = [
+    {
+      label: "Phone Number",
+      value: "+63 922 496 9029",
+      type: "direct",
+    },
+    {
+      label: "Email Address",
+      value: "jaosherlyr@gmail.com",
+      type: "direct",
+    },
+    {
+      label: "Facebook",
+      icon: <IoLogoFacebook />,
+      link: "https://web.facebook.com/surely.how",
+      type: "social",
+    },
+    {
+      label: "Instagram",
+      icon: <IoLogoInstagram />,
+      link: "https://www.instagram.com/thesurelyhow/",
+      type: "social",
+    },
+    {
+      label: "LinkedIn",
+      icon: <IoLogoLinkedin />,
+      link: "https://www.linkedin.com/in/sherly-jao-46a720215/",
+      type: "social",
+    },
+    {
+      label: "GitHub",
+      icon: <IoLogoGithub />,
+      link: "https://github.com/jaosherlyr",
+      type: "social",
+    },
+  ];
 
-    return (
-        <>
-            {contactData.map((contact, index) => (
-                <ContactCard
-                    key={index}
-                    label={contact.label}
-                    value={contact.value}
-                    icon={contact.icon}
-                    link={contact.link}
-                    type={contact.type}
-                />
-            ))}
-        </>
-    );
+  return (
+    <>
+      {contactData.map((contact, index) => (
+        <ContactCard
+          key={index}
+          label={contact.label}
+          value={contact.value}
+          icon={contact.icon}
+          link={contact.link}
+          type={contact.type}
+        />
+      ))}
+    </>
+  );
 }

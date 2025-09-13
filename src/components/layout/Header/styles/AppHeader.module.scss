@@ -1,0 +1,31 @@
+@use '../../../../styles/variable.scss' as *;
+
+.bar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: var(--header);
+  position: fixed;
+  align-items: center;
+  z-index: 2;
+
+  background-color: rgba($color-lighter, 0.5);
+  backdrop-filter: blur(20px);
+
+  transform: translateY(-100%);
+  animation: dropDown 1s ease-out forwards;
+
+  &.dark {
+    background-color: rgba($color-darker, 0.5);
+    backdrop-filter: blur(50px);
+  }
+
+  &.hidden {
+    background-color: transparent;
+  }
+}
+
+@keyframes dropDown {
+  from { transform: translateY(-100%); }
+  to   { transform: translateY(0); }
+}

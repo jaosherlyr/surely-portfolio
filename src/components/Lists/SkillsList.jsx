@@ -1,5 +1,6 @@
 import { useState } from "react";
-import SkillCard from "../Card/SkillCard";
+
+import SkillCard from "../cards/SkillCard";
 
 export default function SkillsList() {
     const skillData = [

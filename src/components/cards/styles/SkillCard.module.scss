@@ -1,0 +1,199 @@
+@use '../../../styles/variable.scss' as *;
+
+.card {
+  width: 16%;
+  padding: 1.5em;
+  color: $color-darker;
+  overflow: hidden;
+  opacity: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  border-radius: 1em;
+  border: 0.1em solid $color-darker;
+
+  transition:
+    border 0.3s ease-in-out,
+    opacity 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
+
+  .title, .desc, .list {
+    opacity: 0.5;
+    transition: opacity 0.3s ease-in-out, font-size 0.3s ease-in-out;
+  }
+
+  .title {
+    font-size: 1.3em;
+    margin-bottom: 1em;
+  }
+
+  .desc,
+  .list .track .item {
+    font-size: 0.7em;
+  }
+
+  .desc {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .list {
+    margin-top: 2em;
+    overflow: hidden;
+
+    .track {
+      height: 3em;
+      width: max-content;
+      white-space: nowrap;
+      gap: 0.5em;
+
+      display: flex;
+      align-items: center;
+
+      animation: marquee 10s linear infinite;
+      will-change: transform;
+
+      .item {
+        padding: 0.5em 2em;
+        border-radius: 0.5em;
+        transition: font-size 0.3s ease-in-out;
+      }
+    }
+  }
+
+  &:hover,
+  &.raised {
+    background-color: rgba($color-primary, 0.5);
+    width: 32%;
+    height: fit-content;
+    min-height: 40vh;
+
+    border: transparent;
+
+    .title { font-size: 2.5em; }
+
+    .desc,
+    .list .track .item { font-size: 1em; }
+
+    .desc { display: block; }
+
+    .title, .desc, .list {
+      opacity: 1;
+      color: $color-black;
+    }
+
+    .list .track {
+      animation-duration: 30s;
+
+      &:hover { animation-play-state: paused; }
+
+      .item {
+        &:hover { font-size: 1.5em; }
+      }
+    }
+  }
+
+  &.disabled {
+    cursor: default;
+    pointer-events: none;
+    opacity: 0.3;
+  }
+
+  &.dark {
+    color: $color-lighter;
+    border-color: $color-lighter;
+
+    &:hover,
+    &.raised {
+      .title,
+      .desc,
+      .list { color: $color-white; }
+    }
+  }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ==================== */
+/* RESPONSIVE           */
+/* ==================== */
+@media (max-width: $breakpoint-lg) {
+  .card {
+    width: 30%;
+
+    &:hover,
+    &.raised {
+      min-height: 30vh;
+      width: 50%;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .card {
+    width: 24%;
+
+    &:hover,
+    &.raised {
+      .title { font-size: 2em; }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .card {
+    width: 70%;
+
+    .title {
+      font-size: 1.1em;
+      margin-bottom: 0.5em;
+    }
+
+    .list { display: none; }
+
+    &:hover,
+    &.raised {
+      width: 80%;
+
+      .title {
+        font-size: 1.7em;
+        margin-bottom: 1em;
+      }
+
+      .desc,
+      .list .track .item {
+        font-size: 0.9em;
+      }
+
+      .list {
+        display: block;
+
+        .track .item {
+          &:hover { font-size: 1em; }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-xs) {
+  .card {
+    .desc { font-size: 0.5em; }
+
+    &:hover,
+    &.raised {
+      .title { font-size: 1.5em; }
+      .desc,
+      .list .track .item { font-size: 0.8em; }
+    }
+  }
+}

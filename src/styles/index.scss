@@ -11,7 +11,7 @@ html {
 body {
   margin: 0;
   font-family: $font-primary;
-  background-image: url(src/assets/BG-light.png);
+  background-image: url(src/assets/Images/BG-light.png);
   background-size: 20%;
   color: $color-black;
   
@@ -73,7 +73,7 @@ body {
 
   // DARK THEME
   &.dark {
-    background-image: url(src/assets/BG-dark.png);
+    background-image: url(src/assets/Images/BG-dark.png);
     color: $color-white;
     
     .paddedContent {

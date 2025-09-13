@@ -1,12 +1,12 @@
-import { useSelector } from 'react-redux';
-import { useEffect, useState } from 'react';
-import { Outlet } from 'react-router-dom';
-import { ToastContainer } from 'react-toastify';
+import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import { Outlet } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import { ScrollSpyProvider } from "../context/ScrollSpyContext";
 
-import Header from '../components/Header/Header';
-import Sidebar from '../components/Navigation/Sidebar';
-import ScrollToTop from '../components/ScrollToTop';
-import { ScrollSpyProvider } from '../context/ScrollSpyContext';
+import ScrollToTop from "../components/ui/ScrollToTop";
+import ApppHeader from "../components/layout/Header/AppHeader";
+import AppSidebar from "../components/layout/Navigation/AppSidebar";
 
 export default function Layout() {
   const theme = useSelector((state) => state.theme.mode);
@@ -16,8 +16,8 @@ export default function Layout() {
     const handleResize = () => {
       if (window.innerWidth >= 768) setSidebarOpen(false);
     };
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   useEffect(() => { document.body.className = theme; }, [theme]);
@@ -25,13 +25,13 @@ export default function Layout() {
   return (
     <ScrollSpyProvider>
       <ScrollToTop />
-      <Header
+      <ApppHeader
         onOpenSidebar={() => setSidebarOpen(true)}
         hidden={sidebarOpen}
       />
-      <Sidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+      <AppSidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
 
-      <main>
+      <main className="layout-main">
         <Outlet />
         <ToastContainer position="top-right" autoClose={2000} />
       </main>
