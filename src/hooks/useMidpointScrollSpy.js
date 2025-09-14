@@ -1,8 +1,10 @@
+// useMidpointScrollSpy.js
 import { useEffect, useRef } from 'react';
 
-// Custom hook: tells you which <section id="..."> is around the viewport midpoint
-// Returns a ref; attach it to the parent wrapper that holds all your sections.
-export default function useMidpointScrollSpy(onChange, { headerEm = 5, headerCssVar = '--header-h' } = {}) {
+export default function useMidpointScrollSpy(
+  onChange,
+  { headerEm = 5, headerCssVar = '--header' } = {} // <-- use --header
+) {
   const rootRef = useRef(null);
   const observerRef = useRef(null);
 
@@ -10,9 +12,11 @@ export default function useMidpointScrollSpy(onChange, { headerEm = 5, headerCss
     const container = rootRef.current;
     if (!container) return;
 
-    // figure out header height in px
+    // header height in px
     const headerPx = (() => {
-      const cssVal = getComputedStyle(document.documentElement).getPropertyValue(headerCssVar).trim();
+      const cssVal = getComputedStyle(document.documentElement)
+        .getPropertyValue(headerCssVar)
+        .trim();
       if (cssVal) {
         const temp = document.createElement('div');
         temp.style.height = cssVal;
@@ -20,7 +24,7 @@ export default function useMidpointScrollSpy(onChange, { headerEm = 5, headerCss
         temp.style.visibility = 'hidden';
         document.body.appendChild(temp);
         const px = temp.getBoundingClientRect().height;
-        document.body.removeChild(temp);
+        temp.remove();
         return px || 0;
       }
       const base = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
@@ -34,29 +38,55 @@ export default function useMidpointScrollSpy(onChange, { headerEm = 5, headerCss
       return `${top}px 0px ${bottom}px 0px`;
     };
 
-    const sections = [...container.querySelectorAll('section[id]')];
+    const getSections = () =>
+      [...container.querySelectorAll('section[id], section[data-section]')];
 
-    const createObserver = () =>
-      new IntersectionObserver(
-        (entries) => {
-          const hit = entries.find(e => e.isIntersecting);
-          if (hit) onChange?.(hit.target.id);
-        },
-        { root: null, rootMargin: getRootMargin(), threshold: 0 }
-      );
+    const emitClosest = (entries) => {
+      const midY = window.innerHeight / 2;
+      const visible = entries.filter(e => e.isIntersecting);
+      if (!visible.length) return;
 
-    const setup = () => {
-      observerRef.current?.disconnect();
-      observerRef.current = createObserver();
-      sections.forEach(sec => observerRef.current.observe(sec));
+      const best = visible
+        .map(e => {
+          const r = e.target.getBoundingClientRect();
+          const center = r.top + r.height / 2;
+          return { e, d: Math.abs(center - midY) };
+        })
+        .sort((a, b) => a.d - b.d)[0];
+
+      const id = best.e.target.id || best.e.target.getAttribute('data-section');
+      if (id) onChange?.(id);
     };
 
-    setup();
-    window.addEventListener('resize', setup);
+    const createObserver = () =>
+      new IntersectionObserver(emitClosest, {
+        root: null,
+        rootMargin: getRootMargin(),
+        threshold: 0,
+      });
+
+    const observeAll = () => {
+      observerRef.current?.disconnect();
+      const obs = createObserver();
+      observerRef.current = obs;
+      getSections().forEach(sec => obs.observe(sec));
+    };
+
+    observeAll();
+
+    const onResize = () => observeAll();
+    window.addEventListener('resize', onResize);
+    window.addEventListener('orientationchange', onResize);
+
+    // Re-scan when children change
+    const mo = new MutationObserver(observeAll);
+    mo.observe(container, { childList: true, subtree: true });
 
     return () => {
-      window.removeEventListener('resize', setup);
+      window.removeEventListener('resize', onResize);
+      window.removeEventListener('orientationchange', onResize);
       observerRef.current?.disconnect();
+      mo.disconnect();
     };
   }, [onChange, headerEm, headerCssVar]);
 

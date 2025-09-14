@@ -8,7 +8,7 @@ export default function ContactSection() {
   const theme = useSelector((state) => state.theme.mode);
 
   return (
-    <section className={`paddedContent ${styles.contactSection}`}>
+    <section id="contact" className={`paddedContent ${styles.contactSection}`}>
       <div className={styles.left}>
         <img
           className={styles.hand}
