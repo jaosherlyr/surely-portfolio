@@ -10,31 +10,32 @@ import test4 from "../../assets/_test_/test4.jpg";
 
 export default function ProductDesignProjects() {
   const projects = [
-    {
-      title: "Wakey-Wakey",
-      timeline: "August 2023",
-      media: [test1, test3],
-      link: "",
-      details:
-        "The prototype for Wakey-Wakey was designed with both light and dark themes...",
-    },
-    {
-      title: "Jip",
-      timeline: "May 2023",
-      media: [test2],
-      link: "",
-      details:
-        "A UI/UX exploration for a commuter helper app inspired by Cebu jeepney routes...",
-    },
-    {
-      title: "Witness",
-      timeline: "May 2024",
-      media: [test4, test1],
-      link: "",
-      details:
-        "A traffic-minor-incident reporting concept; I led the Figma prototype...",
-    },
-  ];
+  {
+    title: "Wakey-Wakey",
+    timeline: "August 2023",
+    media: [test1, test3],
+    link: "",
+    details:
+      "A light-and-dark themed prototype exploring playful clock transitions between analog and digital. Built in Figma, it was a creative exercise that taught me more about interaction and theme design.",
+  },
+  {
+    title: "Jip",
+    timeline: "May 2023",
+    media: [test2],
+    link: "",
+    details:
+      "A commuter-focused UI/UX design inspired by Cebu jeepney routes. Though still conceptual, it was one of my favorite projects because it addressed a real local challenge.",
+  },
+  {
+    title: "Witness",
+    timeline: "May 2024",
+    media: [test4, test1],
+    link: "",
+    details:
+      "A group prototype built in Figma to help drivers report minor traffic incidents faster. I led the UI/UX design and focused on clear, responsible user flows.",
+  },
+];
+
 
   const [expanded, setExpanded] = useState(null);
   const toggle = (i) => setExpanded((prev) => (prev === i ? null : i));

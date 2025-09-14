@@ -9,23 +9,24 @@ import test4 from "../../assets/_test_/test4.jpg";
 
 export default function WebProjects() {
   const projects = [
-    {
-      title: "PAN",
-      timeline: "November 2022",
-      media: [test1],
-      link: "https://github.com/LaplaceXD/Pan",
-      details:
-        "Bakery POS built as an academic project; I led UI/UX in Figma and contributed to React front-end.",
-    },
-    {
-      title: "Wakey-Wakey",
-      timeline: "August 2023",
-      media: [test2, test3, test4],
-      link: "https://github.com/LaplaceXD/WakieWakie",
-      details:
-        "Pair project: matching/chat app for early risers; designed UI/UX and helped integrate frontend with backend.",
-    },
-  ];
+  {
+    title: "PAN",
+    timeline: "November 2022",
+    media: [test1],
+    link: "https://github.com/LaplaceXD/Pan",
+    details:
+      "PAN is a Point-of-Sale system built as a group project for a bakery. I designed the UI/UX in Figma and contributed to the front-end in React.js—my first hands-on React experience that balanced design and coding.",
+  },
+  {
+    title: "Wakey-Wakey",
+    timeline: "August 2023",
+    media: [test2, test3, test4],
+    link: "https://github.com/LaplaceXD/WakieWakie",
+    details:
+      "A paired project: a dating app that matches users by wake-up time. I created the interface and worked on the front-end, while also practicing front-to-back integration. It was a fun way to grow in both design and development.",
+  },
+];
+
 
   const [expanded, setExpanded] = useState(null);
   const toggle = (i) => setExpanded((prev) => (prev === i ? null : i));

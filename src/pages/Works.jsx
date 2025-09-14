@@ -21,9 +21,9 @@ export default function WorksSection() {
 
         
 
-        {active === "Website Development" && <WebProjects />}
+        {active === "Web Development" && <WebProjects />}
         {active === "UI/UX Design" && <ProductDesignProjects/>}
-        {active === "Art Illustrations" && <IllustrationProjects />}
+        {active === "Illustrations" && <IllustrationProjects />}
       </div>
     </section>
   );
