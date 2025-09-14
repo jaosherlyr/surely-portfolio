@@ -123,9 +123,8 @@
   to   { transform: translateX(-50%); }
 }
 
-/* ==================== */
-/* RESPONSIVE           */
-/* ==================== */
+
+/* Responsive */
 @media (max-width: $breakpoint-lg) {
   .card {
     width: 30%;

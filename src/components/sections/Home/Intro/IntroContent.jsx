@@ -24,13 +24,15 @@ export default function IntroContent() {
     <div className={styles.right}>
       <p>I&apos;m currently looking for work!</p>
 
-      <h3 className={styles.copy}>
-        I’m currently in my final year of pursuing a Bachelor of Science in Computer Science. <br />
-        I’ve gained some experience as a freelance artist through commissioned work, but now
-        I’m focusing on building my career by developing stronger skills in web development.
-      </h3>
+      <div className={styles.introContent}>
+        <h3 className={styles.text}>
+          I’m currently in my final year of pursuing a Bachelor of Science in Computer Science. <br />
+          I’ve gained some experience as a freelance artist through commissioned work, but now
+          I’m focusing on building my career by developing stronger skills in web development.
+        </h3>
 
-      <Button onClick={handleDownload}>Download my resume</Button>
+        <Button onClick={handleDownload}>Download my resume</Button>
+      </div>
     </div>
   );
 }

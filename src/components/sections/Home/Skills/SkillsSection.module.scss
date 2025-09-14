@@ -22,6 +22,7 @@
   &:hover { border-color: $color-secondary; }
 }
 
+
 /* Responsive */
 @media (max-width: $breakpoint-lg) {
   .section .list { flex-wrap: wrap; }
