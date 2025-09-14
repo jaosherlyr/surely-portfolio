@@ -35,7 +35,7 @@
 
 /* Responsive */
 @media (max-width: $breakpoint-lg) {
-  .section {
+  .logoStudySection {
     padding: 2em 0;
 
     .left {
@@ -50,7 +50,7 @@
 }
 
 @media (max-width: $breakpoint-md) {
-  .section {
+  .logoStudySection {
     border-top: 0.3em solid $color-darker;
     flex-direction: column-reverse;
     align-items: center;
@@ -68,14 +68,14 @@
 }
 
 @media (max-width: $breakpoint-sm) {
-  .section .left {
+  .logoStudySection .left {
     .title { margin-bottom: 0; }
     .desc  { font-size: 1em; }
   }
 }
 
 @media (max-width: $breakpoint-xs) {
-  .section .left {
+  .logoStudySection .left {
     .title { margin-bottom: 0; }
     .desc  { font-size: 0.9em; }
   }

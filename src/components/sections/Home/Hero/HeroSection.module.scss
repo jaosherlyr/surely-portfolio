@@ -65,7 +65,7 @@
 
 /* Responsive */
 @media (max-width: $breakpoint-xl) {
-  .section {
+  .heroSection {
     .left {
       .greeting .greetings { width: 120%; }
       .details { margin-right: 3em; }
@@ -75,11 +75,11 @@
 }
 
 @media (max-width: $breakpoint-lg) {
-  .section { height: 80vh; }
+  .heroSection { height: 80vh; }
 }
 
 @media (max-width: $breakpoint-md) {
-  .section {
+  .heroSection {
     height: 70vh;
 
     .left .details { margin: 2em 0 0 3.5em; }
@@ -87,7 +87,7 @@
 }
 
 @media (max-width: $breakpoint-sm) {
-  .section {
+  .heroSection {
     height: 40vh;
     .left .details { margin: 2em 0 0 2em; }
     .right .hand { width: 130%; }
@@ -95,7 +95,7 @@
 }
 
 @media (max-width: $breakpoint-xs) {
-  .section {
+  .heroSection {
     height: 35vh;
     .left {
       .greeting .greetings { width: 110%; }

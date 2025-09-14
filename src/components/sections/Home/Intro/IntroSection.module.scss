@@ -56,11 +56,11 @@
 
 /* Responsive */
 @media (max-width: $breakpoint-lg) {
-  .section { padding: 4em 0 2em; }
+  .introSection { padding: 4em 0 2em; }
 }
 
 @media (max-width: $breakpoint-md) {
-  .section {
+  .introSection {
     flex-direction: column;
     align-items: center;
 
@@ -75,5 +75,5 @@
 }
 
 @media (max-width: $breakpoint-xs) {
-  .section { padding: 3em 0 1.5em; }
+  .introSection { padding: 3em 0 1.5em; }
 }

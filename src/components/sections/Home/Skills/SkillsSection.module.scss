@@ -25,11 +25,15 @@
 
 /* Responsive */
 @media (max-width: $breakpoint-lg) {
-  .section .list { flex-wrap: wrap; }
+  .skillsSection {
+    padding: 2em 0;
+   
+    .list { flex-wrap: wrap; }
+  } 
 }
 
 @media (max-width: $breakpoint-sm) {
-  .section .list {
+  .skillsSection .list {
     align-items: center;
     flex-direction: column;
   }
