@@ -9,7 +9,7 @@ export default function LogoStudySection() {
   const logoStudyImg = theme === "dark" ? logoStudyDark : logoStudyLight;
 
   return (
-    <section className={styles.section}>
+    <section className={styles.logoStudySection}>
       <div className={styles.left}>
         <h1 className={styles.title}>Where Identity meets Design</h1>
 

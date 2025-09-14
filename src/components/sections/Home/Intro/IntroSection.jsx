@@ -8,7 +8,7 @@ export default function IntroSection() {
   const theme = useSelector((state) => state.theme.mode);
 
   return (
-    <section className={`${styles.section} ${theme === "dark" ? styles.dark : ""}`}>
+    <section className={`${styles.introSection} ${theme === "dark" ? styles.dark : ""}`}>
       <IntroMedia />
       <IntroContent />
     </section>

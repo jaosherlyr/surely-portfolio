@@ -8,7 +8,7 @@ export default function BackgroundSection() {
   const theme = useSelector((state) => state.theme.mode);
 
   return (
-    <section className={styles.section}>
+    <section className={styles.backgroundSection}>
       <h1 className={styles.title}>
         I am the sum of all my experiences and education.
       </h1>

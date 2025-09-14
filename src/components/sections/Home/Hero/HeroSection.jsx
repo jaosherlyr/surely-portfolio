@@ -22,7 +22,7 @@ export default function HeroSection() {
   }, [greetings, imgKey]);
 
   return (
-    <section className={`${styles.section} ${theme === "dark" ? styles.dark : ""}`}>
+    <section className={`${styles.heroSection} ${theme === "dark" ? styles.dark : ""}`}>
       <div className={styles.left}>
         <div className={styles.greeting}>
           {!imgLoaded && (

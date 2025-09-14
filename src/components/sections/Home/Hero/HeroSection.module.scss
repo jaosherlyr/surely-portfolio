@@ -1,6 +1,6 @@
 @use '../../../../styles/variable.scss' as *;
 
-.section {
+.heroSection {
   height: calc(100vh - var(--header));
   padding-top: var(--header);
   width: 100vw;
@@ -81,6 +81,7 @@
 @media (max-width: $breakpoint-md) {
   .section {
     height: 70vh;
+
     .left .details { margin: 2em 0 0 3.5em; }
   }
 }
