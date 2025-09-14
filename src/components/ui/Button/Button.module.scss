@@ -9,6 +9,9 @@
   padding: 0.7em 3em;
   border-radius: 2em;
   transition: transform 0.2s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+
+  font-family: $font-secondary;
+  font-size: 1em;
   cursor: pointer;
 
   &.dark {
@@ -20,5 +23,19 @@
     background-color: rgba($color-primary, 0.5);
     transform: translateY(-2px);
     color: inherit;
+  }
+}
+
+
+/* Responsive */
+@media (max-width: $breakpoint-sm) {
+  .button {
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: $breakpoint-xs) {
+  .button {
+    font-size: 0.8em;
   }
 }

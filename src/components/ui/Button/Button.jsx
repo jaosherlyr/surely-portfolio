@@ -10,7 +10,7 @@ export default function Button({ children, onClick, type = "button" }) {
       className={`${styles.button} ${theme === "dark" ? styles.dark : ""}`}
       onClick={onClick}
     >
-      <p>{children}</p>
+      {children}
     </button>
   );
 }
