@@ -14,7 +14,7 @@ export default function BackgroundCard({ title, timeline, school, employment, ty
   return (
     <div className={`${styles.card} ${theme === "dark" ? styles.dark : ""}`}>
       <span className={styles.rail} aria-hidden="true" />
-      <div>
+      <div className={styles.content}>
         <h3 className={styles.title}>{title}</h3>
         <TimelineText className={styles.timeline}>{timeline}</TimelineText>
 

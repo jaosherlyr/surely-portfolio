@@ -12,11 +12,12 @@
   .grid {
     display: flex;
     gap: 3em;
+
+    .column {
+      width: 50%;
+    }
   }
 
-  .column {
-    width: 50%;
-  }
 
   .subtitle {
     margin-bottom: 0.5em;
@@ -31,4 +32,22 @@
 /* Responsive */
 @media (max-width: $breakpoint-lg) {
   .backgroundSection { padding: 2em 0; }
+}
+
+@media (max-width: $breakpoint-md) {
+  .backgroundSection {
+    .grid { 
+      flex-direction: column; 
+      gap: 2em;
+
+      .column {
+        align-self: center;
+        width: 90%;
+
+        .subtitle {
+          margin-bottom: 0.7em;
+        }
+      }
+    }
+  }
 }
