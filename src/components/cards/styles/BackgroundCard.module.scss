@@ -1,21 +1,20 @@
 @use '../../../styles/variable.scss' as *;
 
 .card {
-  border-left: 0.3em solid $color-darker;
   padding-left: 2em;
-
-  &.dark {
-    border-color: $color-lighter;
-  }
+  border-left: 0.3em solid $color-darker;
+  transition: border-color 0.2s ease-in-out;
+  
+  &.dark { border-color: $color-lighter; }
+  
+  &:hover { border-color:  $color-primary; }
 
   .timeline, .subtitle {
     padding-left: 1em;
     margin-bottom: 0.2em;
   }
 
-  .timeline {
-    padding-top: 0.5em;
-  }
+  .timeline { padding-top: 0.5em; }
 
   .school {
     padding-bottom: 1em;
@@ -27,9 +26,7 @@
       display: none;
     }
 
-    &:hover {
-      color: $color-primary;
-    }
+    &:hover { color: $color-primary; }
   }
 
   .detail {
@@ -48,9 +45,7 @@
   }
 
   &:hover {
-    .link {
-      display: block;
-    }
+    .link { display: block; }
 
     .detail {
       max-height: fit-content;
@@ -73,7 +68,7 @@
 }
 
 @media (max-width: $breakpoint-md) {
-    .card {
+  .card {
     padding-left: 2em;
 
     .content .detail {
@@ -83,17 +78,15 @@
 }
 
 @media (max-width: $breakpoint-sm) {
-    .card {
-      padding-left: 1.5em;
+  .card {
+    padding-left: 1.5em;
 
-      .content .detail {
-        margin: 0 1.5em;
-      }
+    .content .detail {
+      margin: 0 1.5em;
+    }
   }
 }
 
 @media (max-width: $breakpoint-sm) {
-    .card {
-      padding-left: 1em;
-    }
+  .card { padding-left: 1em; }
 }

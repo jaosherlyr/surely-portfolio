@@ -30,7 +30,7 @@ export default function Home() {
       </section>
 
       <AboutSection />
-      {/* <ContactSection /> */}
+      <ContactSection />
     </div>
   );
 }
