@@ -8,19 +8,26 @@ const cx = (...classes) => classes.filter(Boolean).join(" ");
 export default function NavMenu({ onClick, type = "header" }) {
   const theme = useSelector((s) => s.theme.mode);
   const linkTheme = theme === "dark" ? styles.dark : "";
-  const { activeSection } = useScrollSpy();
+  const { activeSection, setActiveSection } = useScrollSpy();
 
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const onHome = pathname === "/";
 
   const handleScrollTo = (id, stateKey) => {
+    // set a short programmatic-scroll lock so hook won't re-assert "contact"
+    window.__scrollSpyProgrammatic = { until: Date.now() + 800, target: id };
+
+    setActiveSection(id); // optimistic selection so UI updates immediately
+
     if (onHome) {
-      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
     } else {
       navigate("/", { state: { [stateKey]: true } });
     }
-    onClick?.();
+
+    onClick?.(); // close sidebar
   };
 
   return (
@@ -28,6 +35,7 @@ export default function NavMenu({ onClick, type = "header" }) {
       <NavLink
         to="/"
         end
+        onClick={onClick}
         className={({ isActive }) =>
           cx(linkTheme, isActive && onHome && activeSection === "home" && styles.active)
         }
@@ -37,6 +45,7 @@ export default function NavMenu({ onClick, type = "header" }) {
 
       <NavLink
         to="/works"
+        onClick={onClick}
         className={({ isActive }) => cx(linkTheme, isActive && styles.active)}
       >
         Works

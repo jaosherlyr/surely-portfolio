@@ -14,10 +14,7 @@ export default function Home() {
   const { setActiveSection } = useScrollSpy();
 
   useRouteScroll(location);
-  const spyRootRef = useMidpointScrollSpy(setActiveSection, {
-    headerEm: 5,
-    headerCssVar: "--header-h",
-  });
+  const spyRootRef = useMidpointScrollSpy(setActiveSection, { headerCssVar: "--header" });
 
   return (
     <div ref={spyRootRef}>
