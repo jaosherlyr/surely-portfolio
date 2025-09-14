@@ -1,6 +1,7 @@
 @use '../../styles/variable.scss' as *;
 
 .worksSection {
+  padding: 0 !important;
   justify-items: center;
   min-height: calc(100vh - var(--header));
   padding-top: var(--header) !important;

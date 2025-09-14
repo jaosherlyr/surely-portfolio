@@ -83,7 +83,7 @@ export default function ProjectCard({ title, timeline, media, link, details, isE
 
         {link && (
           <div
-            className={`${styles.cta} ${theme === "dark" ? styles.dark : ""}`}
+            className={`${styles.link} ${theme === "dark" ? styles.dark : ""}`}
             onClick={handleLinkClick}
             role="button"
             tabIndex={0}

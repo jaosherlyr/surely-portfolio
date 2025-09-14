@@ -33,6 +33,14 @@ export default function IllustrationProjects() {
     details:
       "An academic eBook project in partnership with USC and NCCA. I led the visual design, contributing to a collection of free Cebuano digital books celebrating culture and festivals.",
   },
+  {
+    title: "Si Perlas, ang iring sa isla Santa Fe",
+    timeline: "April 2024",
+    media: [test1, test2, test3, test4],
+    link: "https://drive.google.com/file/d/1FxOJjwlr6X2ApG-...",
+    details:
+      "An academic eBook project in partnership with USC and NCCA. I led the visual design, contributing to a collection of free Cebuano digital books celebrating culture and festivals.",
+  },
 ];
 
 
