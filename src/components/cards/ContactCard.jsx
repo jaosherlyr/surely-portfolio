@@ -32,19 +32,18 @@ export default function ContactCard({ label, icon, link, value, type }) {
       style={{ cursor: link ? "pointer" : "default" }}
     >
       {type === "direct" ? (
-        <>
-          <div className={styles.info}>
-            <p>{label}: </p>
+        <div className={styles.info}>
+          <p>{label}: </p>
+          <div className={styles.content}>
             <p className={styles.value}>{value}</p>
-          </div>
-
           <div className={styles.icons}>
             {label.toLowerCase().includes("email") && (
               <IoNavigateOutline onClick={handleEmail} className={styles.icon} />
             )}
             <IoClipboardOutline onClick={handleCopy} className={styles.icon} />
           </div>
-        </>
+          </div>
+        </div>
       ) : (
         <>
           <span>{icon}</span>
