@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 
 import ContactList from '../../../lists/ContactList'
-import contactHand from "../../../../assets/Images/contactHand.png";
+import contactHand from "../../../../assets/Images/hand/contactHand.png";
 import styles from "./ContactSection.module.scss";
 
 export default function ContactSection() {

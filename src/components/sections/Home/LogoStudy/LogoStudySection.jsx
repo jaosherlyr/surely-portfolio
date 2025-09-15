@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 
-import logoStudyLight from "../../../../assets/Images/logoStudy-light.png";
-import logoStudyDark from "../../../../assets/Images/logoStudy-dark.png";
+import logoStudyLight from "../../../../assets/Images/logoStudy/logoStudy-light.png";
+import logoStudyDark from "../../../../assets/Images/logoStudy/logoStudy-dark.png";
 import styles from "./LogoStudySection.module.scss";
 
 export default function LogoStudySection() {

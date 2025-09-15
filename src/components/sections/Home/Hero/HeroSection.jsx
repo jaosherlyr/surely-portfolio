@@ -3,7 +3,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 
 import greetingsDark from "../../../../assets/gif/greetings-Dark-final.gif";
 import greetingsLight from "../../../../assets/gif/greetings-Light-final.gif";
-import heroHand from "../../../../assets/Images/heroHand.png";
+import heroHand from "../../../../assets/Images/hand/heroHand.png";
 import Loader from "../../../ui/Loader/Loader";
 import styles from "./HeroSection.module.scss";
 
