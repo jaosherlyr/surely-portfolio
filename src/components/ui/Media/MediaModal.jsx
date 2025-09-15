@@ -1,5 +1,5 @@
 import { IoClose } from "react-icons/io5";
-import styles from "./MediaModal.module.scss";
+import styles from "./styles/MediaModal.module.scss"
 import MediaGallery from "./MediaGallery";
 
 export default function MediaModal({ mediaArray, activeIndex, onSelect, onClose }) {

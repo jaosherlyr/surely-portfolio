@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5";
-import styles from "./MediaGallery.module.scss";
+import styles from "./styles/MediaGallery.module.scss";
 
 export default function MediaGallery({ mediaArray, heroIndex, onSelect, isExpanded }) {
   const trackRef = useRef(null);
