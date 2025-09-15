@@ -36,8 +36,10 @@
     margin-bottom: 1em;
 
     .thumb {
-      width: 45%;
+      aspect-ratio: 16/9;
+      width: 40%;
       opacity: 0.8;
+      object-fit: cover;
       transform-origin: center;
       transition: filter 0.3s ease-in-out, opacity 0.3s ease-in-out;
       filter: brightness(0.9);

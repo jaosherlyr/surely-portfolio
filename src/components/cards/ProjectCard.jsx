@@ -65,7 +65,7 @@ export default function ProjectCard({ title, timeline, media, link, details, isE
     >
       {hero && (
         <div className={styles.hero}>
-          <img className={styles.image} src={hero} alt={title} loading="eager" />
+        <img className={styles.image} src={hero} alt={title} loading="lazy" decoding="async" />
         </div>
       )}
 

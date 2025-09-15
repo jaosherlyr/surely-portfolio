@@ -75,7 +75,8 @@ export default function MediaGallery({ mediaArray, heroIndex, onSelect, isExpand
             className={`${styles.thumb} ${i === heroIndex ? styles.active : ""}`}
             src={src}
             alt={`image ${i + 1}`}
-            loading="lazy"
+            loading="lazy" 
+            decoding="async" 
             onClick={() => onSelect(i)}
           />
         ))}
