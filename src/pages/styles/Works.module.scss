@@ -5,6 +5,10 @@
   justify-items: center;
   min-height: calc(100vh - var(--header));
   padding-top: var(--header) !important;
+  
+  .btn {
+    margin: 2em 0;
+  }
 
   .worksDisplay {
     padding-bottom: 2em;

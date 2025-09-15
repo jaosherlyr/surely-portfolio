@@ -1,12 +1,6 @@
 import { useState } from "react";
 import ProjectCard from "../cards/ProjectCard";
 
-// TEST images
-import test1 from "../../assets/_test_/test1.jpg";
-import test2 from "../../assets/_test_/test2.jpg";
-import test3 from "../../assets/_test_/test3.jpg";
-import test4 from "../../assets/_test_/test4.jpg";
-
 //IMG imports
 import panHero from "../../assets/Images/projects/pan/PAN-hero.png";
 import pan1 from "../../assets/Images/projects/pan/PAN-1.png";
