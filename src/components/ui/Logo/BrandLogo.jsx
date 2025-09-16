@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 
-import logoLight from "../../../assets/Icons/logo-light.svg"; 
-import logoDark from "../../../assets/Icons/logo-dark.svg"; 
+import logoLight from "/images/Icons/logo-light.svg"; 
+import logoDark from "/images/Icons/logo-dark.svg"; 
 import styles from "./BrandLogo.module.scss";
 
 export default function BrandLogo({ hidden }) {
