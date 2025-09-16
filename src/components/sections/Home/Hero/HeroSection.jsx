@@ -1,43 +1,99 @@
 import { useSelector } from "react-redux";
 import { useEffect, useMemo, useRef, useState } from "react";
 
-import greetingsDark from "../../../../assets/gif/greetings-Dark-final.gif";
-import greetingsLight from "../../../../assets/gif/greetings-Light-final.gif";
 import heroHand from "../../../../assets/Images/hand/heroHand.png";
 import Loader from "../../../ui/Loader/Loader";
 import styles from "./HeroSection.module.scss";
 
 export default function HeroSection() {
   const theme = useSelector((s) => s.theme.mode);
-  const greetings = theme === "dark" ? greetingsDark : greetingsLight;
 
-  const [imgLoaded, setImgLoaded] = useState(false);
-  const imgKey = useMemo(() => `${theme}-greetings`, [theme]);
-  const imgRef = useRef(null);
+  const greetingsWebm =
+    theme === "dark" ? "/videos/greetings-dark.webm" : "/videos/greetings-light.webm";
+  const greetingsMp4 =
+    theme === "dark" ? "/videos/greetings-dark.mp4"  : "/videos/greetings-light.mp4";
 
-  useEffect(() => { setImgLoaded(false); }, [greetings]);
+  const [isReady, setIsReady] = useState(false);
+  const key = useMemo(() => `${theme}-greetings-video`, [theme]);
 
+  const videoRef = useRef(null);
+  const loopTimeoutRef = useRef(null);
+
+  // reset loader on source change
+  useEffect(() => { setIsReady(false); }, [greetingsWebm, greetingsMp4]);
+
+  // loading / readiness handlers
   useEffect(() => {
-    if (imgRef.current && imgRef.current.complete) setImgLoaded(true);
-  }, [greetings, imgKey]);
+    const v = videoRef.current;
+    if (!v) return;
+
+    const onCanPlay = () => setIsReady(true);
+    const onLoadedData = () => setIsReady(true);
+    const onError = () => setIsReady(true);
+
+    v.addEventListener("canplay", onCanPlay, { once: true });
+    v.addEventListener("loadeddata", onLoadedData, { once: true });
+    v.addEventListener("error", onError, { once: true });
+
+    if (v.readyState >= 2) setIsReady(true);
+
+    return () => {
+      v.removeEventListener("canplay", onCanPlay);
+      v.removeEventListener("loadeddata", onLoadedData);
+      v.removeEventListener("error", onError);
+    };
+  }, [key]);
+
+  // delay between loops: 60s after each end
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+
+    const scheduleReplay = () => {
+      if (loopTimeoutRef.current) clearTimeout(loopTimeoutRef.current);
+      loopTimeoutRef.current = setTimeout(() => {
+        if (!videoRef.current) return;
+        videoRef.current.currentTime = 0;
+        videoRef.current.play().catch(() => { /* ignore autoplay block */ });
+      }, 60_000); // 1 minute
+    };
+
+    v.addEventListener("ended", scheduleReplay);
+
+    return () => {
+      v.removeEventListener("ended", scheduleReplay);
+      if (loopTimeoutRef.current) {
+        clearTimeout(loopTimeoutRef.current);
+        loopTimeoutRef.current = null;
+      }
+    };
+  }, [key]);
 
   return (
     <section className={`${styles.heroSection} ${theme === "dark" ? styles.dark : ""}`}>
       <div className={styles.left}>
         <div className={styles.greeting}>
-          {!imgLoaded && (
+          {!isReady && (
             <div className={styles.loader}>
               <Loader />
             </div>
           )}
-          <img
-            key={imgKey}
-            ref={imgRef}
+
+          <video
+            key={key}
+            ref={videoRef}
             className={styles.greetings}
-            src={greetings}
-            alt="Hello Greeting"
-            onLoad={() => setImgLoaded(true)}
-          />
+            autoPlay       
+            muted
+            playsInline
+            preload="metadata"
+            aria-label="Hello Greeting animation"
+            style={{ opacity: isReady ? 1 : 0 }}
+          >
+            <source src={greetingsWebm} type="video/webm" />
+            <source src={greetingsMp4} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
 
         <div className={styles.details}>
