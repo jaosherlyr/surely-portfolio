@@ -1,19 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ProjectCard from "../cards/ProjectCard";
 
 //IMG imports
-import panHero from "../../assets/Images/projects/pan/PAN-hero.png";
-import pan1 from "../../assets/Images/projects/pan/PAN-1.png";
-import pan2 from "../../assets/Images/projects/pan/PAN-2.png";
-import pan3 from "../../assets/Images/projects/pan/PAN-3.png";
-import wakieHero from "../../assets/Images/projects/wakie/Wakie-hero.png";
-import wakie1 from "../../assets/Images/projects/wakie/Wakie-1.png";
-import wakie2 from "../../assets/Images/projects/wakie/Wakie-2.png";
-import wakie3 from "../../assets/Images/projects/wakie/Wakie-3.png";
-import wakie4 from "../../assets/Images/projects/wakie/Wakie-4.png";
-import wakie5 from "../../assets/Images/projects/wakie/Wakie-5.png";
-import wakie6 from "../../assets/Images/projects/wakie/Wakie-6.png";
-import wakie7 from "../../assets/Images/projects/wakie/Wakie-7.png";
+import panHero from "/images/pan/PAN-hero.webp";
+import pan1 from "/images/pan/PAN-1.webp";
+import pan2 from "/images/pan/PAN-2.webp";
+import pan3 from "/images/pan/PAN-3.webp";
+import wakieHero from "/images/wakie/Wakie-hero.webp";
+import wakie1 from "/images/wakie/Wakie-1.webp";
+import wakie2 from "/images/wakie/Wakie-2.webp";
+import wakie3 from "/images/wakie/Wakie-3.webp";
+import wakie4 from "/images/wakie/Wakie-4.webp";
+import wakie5 from "/images/wakie/Wakie-5.webp";
+import wakie6 from "/images/wakie/Wakie-6.webp";
+import wakie7 from "/images/wakie/Wakie-7.webp";
 
 export default function WebProjects() {
   const projects = [
@@ -38,6 +38,15 @@ export default function WebProjects() {
 
   const [expanded, setExpanded] = useState(null);
   const toggle = (i) => setExpanded((prev) => (prev === i ? null : i));
+  
+  useEffect(() => {
+    if (expanded === null) return;
+
+    const handleDocClick = () => setExpanded(null);
+    document.addEventListener("click", handleDocClick);
+
+    return () => document.removeEventListener("click", handleDocClick);
+  }, [expanded]);
 
   return (
     <>

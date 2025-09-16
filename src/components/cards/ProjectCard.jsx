@@ -1,25 +1,17 @@
-// ProjectCard.jsx
 import { useState, useMemo, useEffect, useRef } from "react";
 import { IoOpenOutline } from "react-icons/io5";
 import { useSelector } from "react-redux";
 
+import usePrefetchImages from "../../hooks/usePrefetchImages";
 import styles from "./styles/ProjectCard.module.scss";
 import MediaGallery from "../ui/Media/MediaGallery";
 import MediaModal from "../ui/Media/MediaModal";
 
-export default function ProjectCard({
-  title,
-  timeline,
-  media,
-  link,
-  details,
-  isExpanded,
-  isAnyExpanded,
-  onToggle,
-}) {
+export default function ProjectCard({ title, timeline, media, link, details, isExpanded, isAnyExpanded, onToggle, }) {
   const theme = useSelector((state) => state.theme.mode);
   const cardRef = useRef(null);
   const [isModalOpen, setModalOpen] = useState(false);
+  const [hovered, setHovered] = useState(false);
 
   const mediaArray = useMemo(() => {
     return Array.isArray(media) ? media.filter(Boolean) : media ? [media] : [];
@@ -28,6 +20,33 @@ export default function ProjectCard({
   const [heroIndex, setHeroIndex] = useState(0);
   const hero = mediaArray[heroIndex];
 
+  // === Prefetch rest of gallery on hover or expand ===
+  usePrefetchImages(mediaArray.slice(1), hovered || isExpanded);
+
+  // Also warm first 2 gallery images when card is near viewport
+  useEffect(() => {
+    const el = cardRef.current;
+    if (!el || mediaArray.length <= 1) return;
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          mediaArray.slice(1, 3).forEach((src) => {
+            const img = new Image();
+            img.decoding = "async";
+            img.src = src;
+          });
+          io.disconnect();
+        }
+      },
+      { rootMargin: "200px" }
+    );
+
+    io.observe(el);
+    return () => io.disconnect();
+  }, [mediaArray]);
+
+  // === Scroll into view when expanding ===
   useEffect(() => {
     if (!isExpanded || !cardRef.current) return;
 
@@ -62,7 +81,6 @@ export default function ProjectCard({
     if (link) window.open(link, "_blank", "noopener,noreferrer");
   };
 
-  // 👇 NEW: only open modal if already expanded; otherwise expand first
   const handleHeroClick = (e) => {
     e.stopPropagation();
     if (!isExpanded) {
@@ -87,10 +105,18 @@ export default function ProjectCard({
         ${isExpanded ? styles.expanded : ""}
         ${isAnyExpanded && !isExpanded ? styles.dimmed : ""}
       `}
-      onClick={onToggle}
+      onClick={(e) => { e.stopPropagation(); onToggle(); }}
       role="button"
       tabIndex={0}
-      onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && onToggle()}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          e.stopPropagation();
+          onToggle();
+        }
+      }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
     >
       {hero && (
         <div
@@ -105,8 +131,9 @@ export default function ProjectCard({
             className={styles.image}
             src={hero}
             alt={title}
-            loading="lazy"
+            loading="eager"
             decoding="async"
+            fetchpriority="high"
           />
         </div>
       )}

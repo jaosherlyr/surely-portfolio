@@ -1,35 +1,29 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import ProjectCard from "../cards/ProjectCard";
 
-// TEST images
-import test1 from "../../assets/_test_/test1.jpg";
-import test2 from "../../assets/_test_/test2.jpg";
-import test3 from "../../assets/_test_/test3.jpg";
-import test4 from "../../assets/_test_/test4.jpg";
-
 //IMG imports
-import wakieHero from "../../assets/Images/projects/wakie/Wakie-figmaHero.png";
-import wakie1 from "../../assets/Images/projects/wakie/Wakie-1.png";
-import wakie2 from "../../assets/Images/projects/wakie/Wakie-2.png";
-import wakie3 from "../../assets/Images/projects/wakie/Wakie-3.png";
-import wakie4 from "../../assets/Images/projects/wakie/Wakie-4.png";
-import wakie5 from "../../assets/Images/projects/wakie/Wakie-5.png";
-import wakie6 from "../../assets/Images/projects/wakie/Wakie-6.png";
-import wakie7 from "../../assets/Images/projects/wakie/Wakie-7.png";
-import wakie8 from "../../assets/Images/projects/wakie/Wakie-8.png";
-import jipHero from "../../assets/Images/projects/jip/JIP-hero.png";
-import jip1 from "../../assets/Images/projects/jip/JIP-1.png";
-import jip2 from "../../assets/Images/projects/jip/JIP-2.png";
-import jip3 from "../../assets/Images/projects/jip/JIP-3.png";
-import jip4 from "../../assets/Images/projects/jip/JIP-4.png";
-import jip5 from "../../assets/Images/projects/jip/JIP-5.png";
-import jip6 from "../../assets/Images/projects/jip/JIP-6.png";
-import jip7 from "../../assets/Images/projects/jip/JIP-7.png";
-import witnessHero from "../../assets/Images/projects/witness/Witness-hero.png";
-import witness1 from "../../assets/Images/projects/witness/Witness-1.png";
-import witness2 from "../../assets/Images/projects/witness/Witness-2.png";
-import witness3 from "../../assets/Images/projects/witness/Witness-3.png";
+import wakieHero from "/images/wakie/Wakie-hero.webp";
+import wakie1 from "/images/wakie/Wakie-1.webp";
+import wakie2 from "/images/wakie/Wakie-2.webp";
+import wakie3 from "/images/wakie/Wakie-3.webp";
+import wakie4 from "/images/wakie/Wakie-4.webp";
+import wakie5 from "/images/wakie/Wakie-5.webp";
+import wakie6 from "/images/wakie/Wakie-6.webp";
+import wakie7 from "/images/wakie/Wakie-7.webp";
+import wakie8 from "/images/wakie/Wakie-8.webp";
+import jipHero from "/images/jip/JIP-hero.webp";
+import jip1 from "/images/jip/JIP-1.webp";
+import jip2 from "/images/jip/JIP-2.webp";
+import jip3 from "/images/jip/JIP-3.webp";
+import jip4 from "/images/jip/JIP-4.webp";
+import jip5 from "/images/jip/JIP-5.webp";
+import jip6 from "/images/jip/JIP-6.webp";
+import jip7 from "/images/jip/JIP-7.webp";
+import witnessHero from "/images/witness/Witness-hero.webp";
+import witness1 from "/images/witness/Witness-1.webp";
+import witness2 from "/images/witness/Witness-2.webp";
+import witness3 from "/images/witness/Witness-3.webp";
 
 export default function ProductDesignProjects() {
   const projects = [
@@ -62,6 +56,15 @@ export default function ProductDesignProjects() {
 
   const [expanded, setExpanded] = useState(null);
   const toggle = (i) => setExpanded((prev) => (prev === i ? null : i));
+
+  useEffect(() => {
+      if (expanded === null) return;
+  
+      const handleDocClick = () => setExpanded(null);
+      document.addEventListener("click", handleDocClick);
+  
+      return () => document.removeEventListener("click", handleDocClick);
+    }, [expanded]);
 
   return (
     <>

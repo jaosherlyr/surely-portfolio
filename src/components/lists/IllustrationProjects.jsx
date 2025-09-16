@@ -1,21 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ProjectCard from "../cards/ProjectCard";
 
-import sombiHero from "../../assets/Images/projects/sombi/Sombi-hero.png";
-import sombi1 from "../../assets/Images/projects/sombi/Sombi-1.jpg";
-import sombi2 from "../../assets/Images/projects/sombi/Sombi-2.png";
-import sombi3 from "../../assets/Images/projects/sombi/Sombi-3.jpg";
-import sombi4 from "../../assets/Images/projects/sombi/Sombi-4.jpg";
-import robotHero from "../../assets/Images/projects/robot/Robot-hero.png";
-import robot1 from "../../assets/Images/projects/robot/Robot-1.png";
-import robot2 from "../../assets/Images/projects/robot/Robot-2.png";
-import robot3 from "../../assets/Images/projects/robot/Robot-3.png";
-import robot4 from "../../assets/Images/projects/robot/Robot-4.png";
-import perlasHero from "../../assets/Images/projects/perlas/Perlas-hero.png";
-import perlas1 from "../../assets/Images/projects/perlas/Perlas-1.png";
-import perlas2 from "../../assets/Images/projects/perlas/Perlas-2.png";
-import perlas3 from "../../assets/Images/projects/perlas/Perlas-3.png";
-import perlas4 from "../../assets/Images/projects/perlas/Perlas-4.png";
+import sombiHero from "/images/sombi/Sombi-hero.webp";
+import sombi1 from "/images/sombi/Sombi-1.webp";
+import sombi2 from "/images/sombi/Sombi-2.webp";
+import sombi3 from "/images/sombi/Sombi-3.webp";
+import sombi4 from "/images/sombi/Sombi-4.webp";
+import robotHero from "/images/robot/Robot-hero.webp";
+import robot1 from "/images/robot/Robot-1.webp";
+import robot2 from "/images/robot/Robot-2.webp";
+import robot3 from "/images/robot/Robot-3.webp";
+import robot4 from "/images/robot/Robot-4.webp";
+import perlasHero from "/images/perlas/Perlas-hero.webp";
+import perlas1 from "/images/perlas/Perlas-1.webp";
+import perlas2 from "/images/perlas/Perlas-2.webp";
+import perlas3 from "/images/perlas/Perlas-3.webp";
+import perlas4 from "/images/perlas/Perlas-4.webp";
 
 export default function IllustrationProjects() {
   const projects = [
@@ -48,6 +48,15 @@ export default function IllustrationProjects() {
 
   const [expanded, setExpanded] = useState(null);
   const toggle = (i) => setExpanded((prev) => (prev === i ? null : i));
+
+  useEffect(() => {
+    if (expanded === null) return;
+  
+    const handleDocClick = () => setExpanded(null);
+    document.addEventListener("click", handleDocClick);
+  
+    return () => document.removeEventListener("click", handleDocClick);
+  }, [expanded]);
 
   return (
     <>
